@@ -1,12 +1,12 @@
-🌟 **Kevin Ostheimer** is a German electrical engineer and tech leader specializing in cloud computing, AI, and automotive innovation. With 15+ years at Volkswagen Group companies, he bridges cutting-edge tech with sustainable mobility solutions.  
+**Kevin Ostheimer** is a German electrical engineer and tech leader specializing in cloud computing, AI, and automotive innovation. With 15+ years at Volkswagen Group companies, he bridges cutting-edge tech with sustainable mobility solutions.  
 
 ### 🚀 Professional Journey  
 
 | **Role** | **Key Contributions** |  
 |----------|------------------------|  
-| **Product Owner/Solution Architect** | Developed Azure-based EV charging infrastructure 💻⚡Led migration to Azure Databricks/Spark 🌐🔧 |  
-| **Software Engineer** | Delivered China's first plugin-hybrid vehicle 🚗🇨🇳Pioneered battery charging systems 🔋⚙️ |  
-| **Technical Expert** | Spearheaded safety protocols for hybrid transmissions 🛡️🔍Established international DevOps workflows 🌍🤖 |  
+| **Product Owner/Solution Architect** | Developed Azure-based infrastructure 💻⚡Led migration to Azure Kubernetes, GitHub-CI/CD and Terraform 🌐🔧 |  
+| **Software Engineer** | Delivered China's first plugin-hybrid vehicle 🚗🇨🇳 Pioneered battery charging systems 🔋⚙️ |
+| **Technical Expert** | Spearheaded safety protocols for hybrid transmissions 🛡️🔍 Established international DevOps workflows 🌍🤖 |  
 
 ### 🔧 Technical Expertise  
 
@@ -24,21 +24,13 @@
 - 🌐 **Languages**: German (Native), English (C1), Mandarin (HSK2)
 
 
-**Innovation Mantra:**  
-*"Connecting mobility intelligence through cloud ecosystems"* 🌍💡  
+**Innovation Mantra:** Connecting mobility intelligence through cloud ecosystems 🌍💡  
 
 ### 🏹 Personal Pursuits  
 
-- 🧗♂️ Adventure Sports: Hiking, Archery, Rock Climbing  
+- 🧗 Adventure Sports: Hiking, Archery, Rock Climbing  
 - 📚 Literary Passion: English classics & Chinese philosophy  
 - 🌱 Sustainability Advocacy: EU clean city initiatives
-
-### 📞 Contact Channels  
-
-| Platform | Handle |  
-|----------|--------|  
-| Telegram | [@KevinOstheimer](https://t.me/KevinOstheimer) |  
-| WeChat | kevin-ostheimer |  
 
 Key Patents: `DE 102013000759B3` (Hybrid Drivetrains), `WO 2022194658A1` (EV Charging)
 
