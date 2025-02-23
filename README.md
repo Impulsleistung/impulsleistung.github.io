@@ -1,12 +1,12 @@
 **Kevin Ostheimer** is a German electrical engineer and tech leader specializing in cloud computing, AI, and automotive innovation.
-With 15+ years at Volkswagen Group companies, he bridges cutting-edge tech with sustainable mobility solutions.  
+With 12+ years at Volkswagen Group companies, he bridges cutting-edge tech with sustainable mobility solutions.  
 
 ### 🚀 Professional Journey  
 
 | **Role** | **Key Contributions** |  
 |----------|------------------------|  
 | **Product Owner** | Developed Azure-based infrastructure 💻⚡<br> Led migration to Azure Kubernetes, GitHub-CI/CD and Terraform 🌐🔧 |  
-| **Software Engineer** | Delivered China's first plugin-hybrid vehicle 🚗🇨🇳 <br> Pioneered battery charging systems 🔋⚙️ |
+| **Software Engineer** | Delivered China's first AUDI plugin-hybrid vehicle 🚗🇨🇳 <br> Pioneered vehicle charging systems 🔋⚙️ |
 | **Technical Expert** | Spearheaded safety protocols for hybrid transmissions 🛡️🔍 <br> Established international DevOps workflows 🌍🤖 |  
 
 ### 🔧 Technical Expertise  
@@ -24,7 +24,13 @@ With 15+ years at Volkswagen Group companies, he bridges cutting-edge tech with 
 - 📜 **Certifications**: Microsoft Azure, Terraform, GitHub Enterprise
 - 🌐 **Languages**: German (Native), English (C1), Mandarin (HSK2)
 
-**Innovation Mantra:** Connecting intelligence through cloud ecosystems 🌍💡
+### 🔄 My Leadership
+
+| **Pillars** | **Values** |
+|-------------|------------|
+| **Transparency** | Courage    |
+| **Inspection**  | Focus      |
+| **Adaptation**  | Commitment |
 
 ### 🏹 Personal Pursuits  
 
