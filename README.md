@@ -24,7 +24,7 @@ With 12+ years at Volkswagen Group companies, he bridges cutting-edge tech with 
 - 📜 **Certifications**: Microsoft Azure, Terraform, GitHub Enterprise
 - 🌐 **Languages**: German (Native), English (C1), Mandarin (HSK2)
 
-### 🔄 My Leadership
+### 🔄 Leadership Standard
 
 | **Pillars** | **Values** |
 |-------------|------------|
