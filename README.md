@@ -2,20 +2,16 @@
 
 Hello! I'm a **Dipl.-Ing. (FH)** in Electrical Engineering and Information Systems, with over 15 years of international experience in technical development. My expertise lies in **Cloud, AI, and DevOps**, particularly in the automotive industry. Currently, I work as a **Product Owner at CARIAD SE**, where I lead innovative projects that bridge mobility with cloud intelligence.
 
----
-
 ## 💼 Professional Highlights
-- **Current Role**: Product Owner at CARIAD SE  
+### **Current Role**: Product Owner at CARIAD SE  
   - Developing Azure-based data analytics infrastructure.
   - Leading a business unit for data-driven product development.
   - Migrating to cutting-edge tools like Azure Databricks, Kubernetes, and Terraform.
 
-- **Past Roles**:
+### **Past Roles**:
   - Software Engineer for Battery Electric Charging Technologies at AUDI AG.
   - Technical Expert Leader for Plug-in Hybrid Electric Vehicles at FAW-VW (China).
   - Various roles in software engineering, safety management, and system development.
-
----
 
 ## 🚀 Future Technology Trends I'm Working On
 
