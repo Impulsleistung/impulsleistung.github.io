@@ -32,6 +32,6 @@ With 15+ years at Volkswagen Group companies, he bridges cutting-edge tech with 
 - 📚 Literary Passion: English classics & Chinese philosophy  
 - 🌱 Sustainability Advocacy: EU clean city initiatives
 
-Key Patents: `DE 102013000759B3` (Hybrid Drivetrains), `WO 2022194658A1` (EV Charging)
+Key Patents: [EV-Blockchain, IC-Engine](https://patents.google.com/?q=(Kevin)&inventor=Ostheimer&oq=Kevin+Ostheimer)
 
 🌐 *Featured in Pforzheim University's alumni network as a cross-cultural tech bridgebuilder*
