@@ -5,7 +5,7 @@ With 15+ years at Volkswagen Group companies, he bridges cutting-edge tech with 
 
 | **Role** | **Key Contributions** |  
 |----------|------------------------|  
-| **Product Owner/Solution Architect** | Developed Azure-based infrastructure 💻⚡<br> Led migration to Azure Kubernetes, GitHub-CI/CD and Terraform 🌐🔧 |  
+| **Product Owner** | Developed Azure-based infrastructure 💻⚡<br> Led migration to Azure Kubernetes, GitHub-CI/CD and Terraform 🌐🔧 |  
 | **Software Engineer** | Delivered China's first plugin-hybrid vehicle 🚗🇨🇳 <br> Pioneered battery charging systems 🔋⚙️ |
 | **Technical Expert** | Spearheaded safety protocols for hybrid transmissions 🛡️🔍 <br> Established international DevOps workflows 🌍🤖 |  
 
@@ -20,12 +20,11 @@ With 15+ years at Volkswagen Group companies, he bridges cutting-edge tech with 
 
 ### 🎓 Education & Credentials  
 
-- 🏫 **Dipl.-Ing. Electrical Engineering**: Pforzheim University (2007)
+- 🏫 **Dipl.-Ing. Electrical Engineering and Information Technology**: Pforzheim University
 - 📜 **Certifications**: Microsoft Azure, Terraform, GitHub Enterprise
 - 🌐 **Languages**: German (Native), English (C1), Mandarin (HSK2)
 
-
-**Innovation Mantra:** Connecting mobility intelligence through cloud ecosystems 🌍💡  
+**Innovation Mantra:** Connecting intelligence through cloud ecosystems 🌍💡
 
 ### 🏹 Personal Pursuits  
 
