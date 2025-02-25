@@ -7,7 +7,7 @@ With 12+ years at Volkswagen Group companies, he bridges cutting-edge tech with 
 |----------|------------------------|  
 | **Product Owner** | Developed Azure-based infrastructure 💻⚡<br> Led migration to Azure Kubernetes, GitHub-CI/CD and Terraform 🌐🔧 |  
 | **Software Engineer** | Delivered China's first AUDI plugin-hybrid vehicle 🚗🇨🇳 <br> Pioneered vehicle charging systems 🔋⚙️ |
-| **Technical Expert** | Spearheaded safety protocols for hybrid transmissions 🛡️🔍 <br> Established international DevOps workflows 🌍🤖 |  
+| **Technical Expert** | Spearheaded safety protocols for hybrid transmissions 🛡️🔍 <br> Established international GitOps collaboration 🌍🤖 |  
 
 ### 🔧 Technical Expertise  
 
@@ -15,7 +15,7 @@ With 12+ years at Volkswagen Group companies, he bridges cutting-edge tech with 
 |------------|----------------------|  
 | ☁️ Cloud Computing | Azure, Terraform, Kubernetes |  
 | 🧠 Artificial Intelligence | Agentic AI, Multimodal Systems | 
-| ⚡ DevOps | CI/CD Pipelines, GitOps, Docker |  
+| ⚡ DevOps | CI/CD Pipelines, GitOps, Docker, ArgoCD, Helm |  
 | 🚗 Automotive Tech | EV Charging, Digital Twin, Vehicle Big Loop |  
 
 ### 🎓 Education & Credentials  
