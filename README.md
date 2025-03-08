@@ -11,12 +11,14 @@ With 12+ years at Volkswagen Group companies, he bridges cutting-edge tech with 
 
 ### 🔧 Technical Expertise  
 
-| **Domain**                | **Tools & Methods**                           |
-| ------------------------- | --------------------------------------------- |
-| ☁️ Cloud Computing         | Azure, Terraform, Kubernetes, Cost Saving     |
-| 🧠 Artificial Intelligence | Agentic AI, Multimodal Systems                |
-| ⚡ DevOps                  | CI/CD Pipelines, GitOps, Docker, ArgoCD, Helm |
-| 🚗 Automotive Tech         | EV Charging, Digital Twin, Vehicle Big Loop   |
+| **Domain**        | **Tools & Methods**                            |
+| ----------------- | ---------------------------------------------- |
+| ☁️ Cloud Computing | Azure, Terraform, Kubernetes, Cost Saving      |
+| 🧠 AI, DataOps     | Agentic AI, Multimodal Systems                 |
+| ⚡ DevOps          | CI/CD Pipelines, GitOps, Docker, ArgoCD & Helm |
+| 🚗 Automotive Tech | EV Charging, Digital Twin, Vehicle Big Loop    |
+| 🫡⚔️🛡️ Tech          | C4ISR, CSPM, Autonomous OSINT                  |
+
 
 ### 🎓 Education & Credentials  
 
