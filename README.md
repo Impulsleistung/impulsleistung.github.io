@@ -3,20 +3,20 @@ With 12+ years at Volkswagen Group companies, he bridges cutting-edge tech with 
 
 ### 🚀 Professional Journey  
 
-| **Role** | **Key Contributions** |  
-|----------|------------------------|  
-| **Product Owner** | Developed Azure-based infrastructure 💻⚡<br> Led migration to Azure Kubernetes, GitHub-CI/CD and Terraform 🌐🔧 |  
-| **Software Engineer** | Delivered China's first AUDI plugin-hybrid vehicle 🚗🇨🇳 <br> Pioneered vehicle charging systems 🔋⚙️ |
-| **Technical Expert** | Spearheaded safety protocols for hybrid transmissions 🛡️🔍 <br> Established international GitOps collaboration 🌍🤖 |  
+| **Role**              | **Key Contributions**                                                                                           |
+| --------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Product Owner**     | Developed Azure-based infrastructure 💻⚡<br> Led migration to Azure Kubernetes, GitHub-CI/CD and Terraform 🌐🔧    |
+| **Software Engineer** | Delivered China's first AUDI plugin-hybrid vehicle 🚗🇨🇳 <br> Pioneered vehicle charging systems 🔋⚙️                |
+| **Technical Expert**  | Spearheaded safety protocols for hybrid transmissions 🛡️🔍 <br> Established international GitOps collaboration 🌍🤖 |
 
 ### 🔧 Technical Expertise  
 
-| **Domain** | **Tools & Methods** |  
-|------------|----------------------|  
-| ☁️ Cloud Computing | Azure, Terraform, Kubernetes, Cost Saving |  
-| 🧠 Artificial Intelligence | Agentic AI, Multimodal Systems | 
-| ⚡ DevOps | CI/CD Pipelines, GitOps, Docker, ArgoCD, Helm |  
-| 🚗 Automotive Tech | EV Charging, Digital Twin, Vehicle Big Loop |  
+| **Domain**                | **Tools & Methods**                           |
+| ------------------------- | --------------------------------------------- |
+| ☁️ Cloud Computing         | Azure, Terraform, Kubernetes, Cost Saving     |
+| 🧠 Artificial Intelligence | Agentic AI, Multimodal Systems                |
+| ⚡ DevOps                  | CI/CD Pipelines, GitOps, Docker, ArgoCD, Helm |
+| 🚗 Automotive Tech         | EV Charging, Digital Twin, Vehicle Big Loop   |
 
 ### 🎓 Education & Credentials  
 
@@ -26,11 +26,9 @@ With 12+ years at Volkswagen Group companies, he bridges cutting-edge tech with 
 
 ### 🔄 Leadership Standard
 
-| **Pillars** | **Values** |
-|-------------|------------|
-| **Transparency** | Courage    |
-| **Inspection**  | Focus      |
-| **Adaptation**  | Commitment |
+- **Transparency**: Operate with Courage, ensuring openness.
+- **Inspection**: Maintain Focus, ensure effectiveness.
+- **Adaptation**: Demonstrate Commitment, adapting to changes with resilience.
 
 ### 🏹 Personal Pursuits  
 
