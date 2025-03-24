@@ -17,8 +17,6 @@ With 12+ years at Volkswagen Group companies, he bridges cutting-edge tech with 
 | 🧠 AI, DataOps     | Agentic AI, Multimodal Systems                 |
 | ⚡ DevOps          | CI/CD Pipelines, GitOps, Docker, ArgoCD & Helm |
 | 🚗 Automotive Tech | EV Charging, Digital Twin, Vehicle Big Loop    |
-| 🫡⚔️🛡️ Tech          | C4ISR, CSPM, Autonomous OSINT                  |
-
 
 ### 🎓 Education & Credentials  
 
