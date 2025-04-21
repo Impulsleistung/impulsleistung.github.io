@@ -1,4 +1,4 @@
-**Kevin Ostheimer** is a German electrical engineer and tech leader specializing in cloud computing, AI, and automotive innovation.
+This is the personal website of Kevin Ostheimer, a German electrical engineer and tech leader specializing in cloud computing, AI, and automotive innovation.
 With 12+ years at Volkswagen Group companies, he bridges cutting-edge tech with sustainable mobility solutions.  
 
 ### 🚀 Professional Journey  
@@ -18,7 +18,7 @@ With 12+ years at Volkswagen Group companies, he bridges cutting-edge tech with 
 | ⚡ DevOps          | CI/CD Pipelines, GitOps, Docker, ArgoCD & Helm |
 | 🚗 Automotive Tech | EV Charging, Digital Twin, Vehicle Big Loop    |
 
-### 🎓 Education & Credentials  
+### 🎓 Education & Credentials
 
 - 🏫 **Dipl.-Ing. Electrical Engineering and Information Technology**: Pforzheim University
 - 📜 **Certifications**: Microsoft Azure, Terraform, GitHub Enterprise
@@ -30,7 +30,7 @@ With 12+ years at Volkswagen Group companies, he bridges cutting-edge tech with 
 - **Inspection**: Maintain Focus, ensure effectiveness.
 - **Adaptation**: Demonstrate Commitment, adapting to changes with resilience.
 
-### 🏹 Personal Pursuits  
+### 🏹 Personal Pursuits
 
 - 🧗 Adventure Sports: Hiking, Archery, Rock Climbing  
 - 📚 Literary Passion: English classics & Chinese philosophy  
