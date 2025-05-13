@@ -1,5 +1,4 @@
-This is the personal website of Kevin, a German electrical engineer and tech leader specializing in cloud computing, AI deployment, and automotive innovation.
-With 12+ years at Volkswagen Group companies, he bridges cutting-edge tech with sustainable mobility solutions.  
+This is the personal website of Kevin, a German engineer specializing in cloud computing, AI deployment, and automotive innovation. With 12+ years at Volkswagen Group companies, he bridges cutting-edge tech with sustainable mobility solutions.  
 
 ### 🚀 Professional Journey  
 
@@ -18,13 +17,13 @@ With 12+ years at Volkswagen Group companies, he bridges cutting-edge tech with 
 | ⚡ DevOps          | CI/CD Pipelines, GitOps, Docker, ArgoCD & Helm |
 | 🚗 Automotive Tech | EV Charging, Digital Twin, Vehicle Big Loop    |
 
-### 🔄 Leadership Standard
+### 🔄 Leadership Standard  
 
 - **Transparency**: Operate with Courage, ensuring openness.
 - **Inspection**: Maintain Focus, ensure effectiveness.
 - **Adaptation**: Demonstrate Commitment, adapting to changes with resilience.
 
-### 🏹 Personal Pursuits
+### 🏹 Personal Pursuits  
 
 - 🧗 Adventure Sports: Hiking, Archery, Rock Climbing  
 - 📚 Literary Passion: English classics & Chinese philosophy  
