@@ -1,6 +1,6 @@
-This is the personal website of Kevin, a German engineer specializing in cloud computing, AI deployment, and automotive innovation. With 12+ years at Volkswagen Group companies, he bridges cutting-edge tech with sustainable mobility solutions.  
+This is the personal website of a German engineer specializing in cloud computing, AI deployment, and automotive innovation. With 12+ years at Volkswagen Group companies, he bridges new technology with sustainable mobility solutions.  
 
-### 🚀 Professional Journey  
+### 🚀 [Professional Journey](https://www.linkedin.com/in/kevin-ostheimer/)  
 
 | **Role**              | **Key Contributions**                                                                                           |
 | --------------------- | --------------------------------------------------------------------------------------------------------------- |
