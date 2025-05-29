@@ -8,7 +8,7 @@ This is the personal website of a German engineer specializing in cloud computin
 | **Software Engineer** | Delivered China's first AUDI plugin-hybrid vehicle 🚗🇨🇳 <br> Pioneered vehicle charging systems 🔋⚙️                |
 | **Technical Expert**  | Spearheaded safety protocols for hybrid transmissions 🛡️🔍 <br> Established international GitOps collaboration 🌍🤖 |
 
-### 🔧 Technical Expertise  
+### 🔧 [Technical Expertise](https://github.com/Impulsleistung)  
 
 | **Domain**        | **Tools & Methods**                             |
 | ----------------- | ----------------------------------------------- |
@@ -19,7 +19,7 @@ This is the personal website of a German engineer specializing in cloud computin
 
 ### 🔄 Leadership Standard  
 
-- **People First, Team First**: Enable growth for all, protect and serve.
+- **One Team**: The needs of the many outweigh the needs of the few.
 - *Transparency*: Operate with Courage, ensuring openness.
 - *Inspection*: Maintain Focus, ensure effectiveness.
 - *Adaptation*: Demonstrate Commitment, adapting to changes with resilience.
