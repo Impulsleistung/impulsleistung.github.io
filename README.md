@@ -1,9 +1,6 @@
-# 🚀 Cloud, AI & Change
+# 🌐 *Bridging Cloud Technology & Change Management*  
 
-## 🌐 *Bridging Technology & Change Management*  
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/kevin-ostheimer/)  
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-lightgrey)](https://github.com/Impulsleistung)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/kevin-ostheimer/) [![GitHub](https://img.shields.io/badge/GitHub-Follow-lightgrey)](https://github.com/Impulsleistung)
 
 ---
 
