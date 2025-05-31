@@ -1,36 +1,52 @@
-This is the personal website of a German engineer specializing in cloud computing, AI deployment, and automotive innovation. With 12+ years at Volkswagen Group companies, he bridges new technology with sustainable mobility solutions.  
+# 🚀 Kevin Ostheimer | Cloud, AI & People Leadership
 
-### 🚀 [Professional Journey](https://www.linkedin.com/in/kevin-ostheimer/)  
+🌐 *Bridging Technology & Change Management*  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/kevin-ostheimer/) [![GitHub](https://img.shields.io/badge/GitHub-Follow-lightgrey)](https://github.com/Impulsleistung)
 
-| **Role**              | **Key Contributions**                                                                                           |
-| --------------------- | --------------------------------------------------------------------------------------------------------------- |
-| **Product Owner**     | Developed cloud-based infrastructure 💻⚡<br> Led migration to Kubernetes, GitHub-CI/CD and Terraform 🌐🔧          |
-| **Software Engineer** | Delivered China's first AUDI plugin-hybrid vehicle 🚗🇨🇳 <br> Pioneered vehicle charging systems 🔋⚙️                |
-| **Technical Expert**  | Spearheaded safety protocols for hybrid transmissions 🛡️🔍 <br> Established international GitOps collaboration 🌍🤖 |
+---
 
-### 🔧 [Technical Expertise](https://github.com/Impulsleistung)  
+## 🔧 **Technical Expertise**
 
-| **Domain**        | **Tools & Methods**                             |
-| ----------------- | ----------------------------------------------- |
-| ☁️ Cloud Computing | Infrastructure as Code, Kubernetes, Cost Saving |
-| 🧠 AI, DataOps     | Deployment of Agentic AI, Multimodal Systems    |
-| ⚡ DevOps          | CI/CD Pipelines, GitOps, Docker, ArgoCD & Helm  |
-| 🚗 Automotive Tech | EV Charging, Digital Twin, Vehicle Big Loop     |
+| Domain            | Tools & Methods                                        |
+| ----------------- | ------------------------------------------------------ |
+| ☁️ Cloud Computing | Kubernetes, Terraform, GitHub-CI/CD, Cost Optimization |
+| 🧠 AI & DataOps    | Agentic AI, Multimodal Systems, MLOps                  |
+| ⚡ DevOps          | Docker, ArgoCD, Helm, GitOps                           |
+| 🚗 Automotive      | EV Charging, Digital Twin, Vehicle Big Loop            |
 
-### 🔄 Leadership Standard  
+---
 
-- **One Team**: The needs of the many outweigh the needs of the few.
-- *Transparency*: Operate with Courage, ensuring openness.
-- *Inspection*: Maintain Focus, ensure effectiveness.
-- *Adaptation*: Demonstrate Commitment, adapting to changes with resilience.
+## 🏆 **Key Achievements**
 
+- **Product Owner**: Led cloud migration to Kubernetes & Terraform.  
+- **Software Engineer**: Delivered China's first AUDI plugin-hybrid vehicle.  
+- **Technical Expert**: Spearheaded GitOps collaboration across international teams.
 
-### 🏹 Personal Pursuits  
+---
 
-- 🧗 Adventure Sports: Hiking, Archery, Rock Climbing  
-- 📚 Literary Passion: English classics & Chinese philosophy  
-- 🌱 Sustainability Advocacy: EU clean city initiatives
+## 📜 **Leadership Principles**
 
-Key Patents: [EV-Blockchain, IC-Engine](https://patents.google.com/?q=(Kevin)&inventor=Ostheimer&oq=Kevin+Ostheimer)
+- **Transparency**: Operate with courage and openness.  
+- **Inspection**: Maintain focus for effectiveness.  
+- **Adaptation**: Commit to resilience and change.
 
-🌐 *Featured in Pforzheim University's alumni network as a cross-cultural tech bridgebuilder*
+---
+
+## 🔄 **Change Management & Transformational Leadership**
+
+- **Visionary Leadership**: Inspire and align teams with a clear, compelling vision for change.
+- **Empowerment**: Foster autonomy and innovation by empowering team members to take ownership.
+- **Continuous Improvement**: Drive iterative progress through feedback loops and adaptive strategies.
+
+---
+
+## 🌱 **Personal Pursuits**
+
+- 🧗 Adventure Sports: Hiking, Archery  
+- 📚 Literature: English classics & Chinese philosophy  
+- 🌍 Sustainability: Advocate for EU clean city initiatives
+
+---
+
+🔗 **Featured In**: [Pforzheim University Alumni](https://www.hs-pforzheim.de/news_detailansicht/news/it_kolloquium_am_15122022_agile_data_engineering)  
+📜 **Patents**: [EV-Blockchain](https://patents.google.com/?q=(Kevin)&inventor=Ostheimer)
