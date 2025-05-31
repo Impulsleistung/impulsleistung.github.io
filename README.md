@@ -1,7 +1,8 @@
-# 🚀 Kevin Ostheimer | Cloud, AI & People Leadership
+# 🚀 Kevin Ostheimer | Cloud, AI & Leadership
 
 🌐 *Bridging Technology & Change Management*  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/kevin-ostheimer/) [![GitHub](https://img.shields.io/badge/GitHub-Follow-lightgrey)](https://github.com/Impulsleistung)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/kevin-ostheimer/)  
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-lightgrey)](https://github.com/Impulsleistung)
 
 ---
 
@@ -18,25 +19,17 @@
 
 ## 🏆 **Key Achievements**
 
-- **Product Owner**: Led cloud migration to Kubernetes & Terraform.  
-- **Software Engineer**: Delivered China's first AUDI plugin-hybrid vehicle.  
-- **Technical Expert**: Spearheaded GitOps collaboration across international teams.
+- **Cloud Migration**: Led Kubernetes & Terraform adoption.  
+- **Automotive Innovation**: Delivered China's first AUDI plugin-hybrid.  
+- **Global Collaboration**: Spearheaded GitOps across international teams.
 
 ---
 
 ## 📜 **Leadership Principles**
 
-- **Transparency**: Operate with courage and openness.  
-- **Inspection**: Maintain focus for effectiveness.  
-- **Adaptation**: Commit to resilience and change.
-
----
-
-## 🔄 **Change Management & Transformational Leadership**
-
-- **Visionary Leadership**: Inspire and align teams with a clear, compelling vision for change.
-- **Empowerment**: Foster autonomy and innovation by empowering team members to take ownership.
-- **Continuous Improvement**: Drive iterative progress through feedback loops and adaptive strategies.
+- **Transparency**: Operate with openness.  
+- **Empowerment**: Foster autonomy and innovation.  
+- **Adaptation**: Drive iterative progress.
 
 ---
 
