@@ -1,4 +1,4 @@
-# 🚗 Kevin Ostheimer – Cloud Mobility Innovator
+# The Cloud Native
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/kevin-ostheimer/) [![GitHub](https://img.shields.io/badge/GitHub-Follow-lightgrey)](https://github.com/Impulsleistung)
 
