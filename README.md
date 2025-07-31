@@ -6,7 +6,9 @@
 
 ## 👨‍💻 About Me
 
-Cloud architect, product owner, and tech leader with 15+ years’ experience bridging mobility, automotive, and DevOps. I empower teams to deliver data-driven, scalable cloud platforms and drive digital transformation worldwide.
+As someone deeply engaged in personal growth and shaping my own life, I would like to share my experiences. I firmly believe that we have control over our well-being and success by focusing on what truly benefits us and letting go of what harms us.
+
+I have learned that true fulfillment does not lie in material possessions or in the recognition of others, but in cultivating inner strengths such as discipline, humility, and diligence. It is about knowing yourself, defining your goals clearly, and working relentlessly to achieve them – even when the path is challenging.
 
 ---
 
