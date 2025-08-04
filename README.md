@@ -16,7 +16,7 @@ I have learned that true fulfillment does not lie in material possessions or in 
 | ---------------- | ---------------------------------------------------------------- |
 | ☁️ Cloud & DevOps | Azure, Kubernetes, Terraform, GitHub CI/CD, Databricks, Docker   |
 | 🚗 Automotive     | EV Charging, ISO 15118, ASPICE, EE Architecture                  |
-| 🧠 Data & AI      | DataOps, Agentic AI, Multimodal Systems, GitOps                   |
+| 🧠 Data & AI      | DataOps, Agentic AI, Multimodal Systems, GitOps                  |
 | 🏢 Leadership     | Agile/SCRUM/SAFe, cross-functional teams, international projects |
 
 ---
@@ -27,7 +27,7 @@ I have learned that true fulfillment does not lie in material possessions or in 
 - Led central DevOps unit for Data Ecosystem, managing 7 engineers  
 - Architecture & cost optimization of Azure infrastructure  
 - GitHub Actions migration – boosting CI/CD efficiency  
-- Regulatory-compliant China rollout for CARIAD
+- Regulatory-compliant China rollout
 
 ### **Development Engineer – Intelligent Charging**  
 - Led V2G/ISO 15118 and cloud-based charging architecture  
@@ -35,25 +35,23 @@ I have learned that true fulfillment does not lie in material possessions or in 
 - Brought DevOps to automotive E/E development
 
 ### **Technical Project Lead – Plug-in Hybrid**  
-- Launched China’s first AUDI Plug-in Hybrid (A6 L e-tron)  
+- Launched China’s first Plug-in Hybrid (AUDI A6 L e-tron)  
 - Chaired cross-department engineering teams
 
 ---
 
 ## 🎓 Education
 
-- **Dipl.Ing.(FH) in Electrical Engineering**  
+- **Dipl.Ing.(FH) in Electrical Engineering and IT**  
   Pforzheim University of Applied Sciences, Germany
 - **Diploma Thesis:** Color Processing with HDRC Cameras
 - **Specialized Education:** Mechanic/Electronics
 
 ---
 
-## 🏆 Patents and Achievements
+## 🏆 Patents
 
-- DE 102013000759B3, WO 2022194658A1 ([Google Patents](https://patents.google.com/?inventor=Kevin+Ostheimer))
-- Led launch of China’s first AUDI PHEV 🚗🌏
-- Introduced big-data test integration, processing 10GB+/day
+DE 102013000759B3, WO 2022194658A1 ([Google Patents](https://patents.google.com/?inventor=Kevin+Ostheimer))
 
 ---
 
@@ -62,14 +60,6 @@ I have learned that true fulfillment does not lie in material possessions or in 
 - **Transparency** – Building open, trustful teams  
 - **Empowerment** – Driving innovation through autonomy  
 - **Adaptation** – Iterative progress, continuous learning
-
----
-
-## 🛠️ Skills Summary
-
-- **Technical:** Azure (IaaS/PaaS), Terraform, Kubernetes, CI/CD, DataOps, ASPICE, ISO 26262  
-- **Management:** Agile/SCRUM/SAFe, cross-cultural teams
-- **Languages:** English (Fluent), Mandarin (Business, HSK 3)  
 
 ---
 
