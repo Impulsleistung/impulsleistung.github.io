@@ -1,0 +1,51 @@
+# Site settings
+title: "Kevin Ostheimer - Tech Leader & Innovation Engineer"
+description: "German electrical engineer and tech leader specializing in cloud computing, AI deployment, and automotive innovation. 12+ years at Volkswagen Group companies."
+author: "Kevin Ostheimer"
+url: "https://impulsleistung.github.io"
+baseurl: ""
+
+# SEO settings
+lang: en
+timezone: Europe/Berlin
+
+# Social media and professional links
+github_username: Impulsleistung
+linkedin_profile: # Add LinkedIn profile if available
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - README-imp-hp.md
+  - LICENSE
+  - .gitignore
+
+# Include files
+include:
+  - _pages
+
+# Plugin settings
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# SEO tag settings
+seo:
+  type: Person
+  name: Kevin Ostheimer
+  links:
+    - https://patents.google.com/?q=(Kevin)&inventor=Ostheimer&oq=Kevin+Ostheimer
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      author: Kevin Ostheimer
