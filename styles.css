@@ -562,10 +562,22 @@ body {
 
 /* Footer */
 .footer {
-  background: var(--secondary-color);
-  color: var(--text-on-primary);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #2d2d2d 100%);
+  color: var(--text-primary);
   padding: var(--spacing-xl) 0;
   margin-top: var(--spacing-xxl);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
 }
 
 .footer-content {
