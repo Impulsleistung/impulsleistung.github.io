@@ -1,28 +1,42 @@
-/* Material Design CSS */
+/* Material Design Dark Theme CSS */
 :root {
-  /* Material Design Color Palette */
-  --primary-color: #1976d2;
-  --primary-light: #42a5f5;
-  --primary-dark: #1565c0;
-  --secondary-color: #424242;
-  --accent-color: #ff5722;
+  /* Material Design Dark Color Palette */
+  --primary-color: #bb86fc;
+  --primary-light: #d7b4ff;
+  --primary-dark: #985eff;
+  --secondary-color: #03dac6;
+  --accent-color: #cf6679;
+  --error-color: #cf6679;
   
-  /* Surface Colors */
-  --surface-color: #ffffff;
-  --background-color: #fafafa;
-  --card-color: #ffffff;
+  /* Modern Colors */
+  --neon-blue: #00d4ff;
+  --neon-purple: #b794f6;
+  --neon-green: #68d391;
+  --neon-orange: #ffa726;
   
-  /* Text Colors */
-  --text-primary: #212121;
-  --text-secondary: #757575;
-  --text-hint: #9e9e9e;
-  --text-on-primary: #ffffff;
+  /* Dark Surface Colors */
+  --surface-color: #1e1e1e;
+  --background-color: #121212;
+  --card-color: #1e1e1e;
+  --elevated-surface: #2d2d2d;
+  --elevated-surface-2: #383838;
   
-  /* Shadows */
-  --shadow-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  --shadow-2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  --shadow-3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  --shadow-4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  /* Text Colors for Dark Theme */
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-hint: #717171;
+  --text-on-primary: #000000;
+  --text-on-surface: #ffffff;
+  --text-disabled: #606060;
+  
+  /* Dark Theme Shadows with Glow */
+  --shadow-1: 0 2px 8px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
+  --shadow-2: 0 4px 16px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.08);
+  --shadow-3: 0 8px 32px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.1);
+  --shadow-4: 0 16px 64px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.12);
+  --glow-primary: 0 0 20px rgba(187, 134, 252, 0.4);
+  --glow-secondary: 0 0 20px rgba(3, 218, 198, 0.4);
+  --glow-accent: 0 0 20px rgba(207, 102, 121, 0.4);
   
   /* Spacing */
   --spacing-xs: 4px;
@@ -62,10 +76,10 @@ body {
 
 /* Header */
 .header {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-  color: var(--text-on-primary);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, var(--primary-color) 100%);
+  color: var(--text-primary);
   padding: var(--spacing-xxl) 0;
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--shadow-3), var(--glow-primary);
   position: relative;
   overflow: hidden;
 }
@@ -77,8 +91,21 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
-  opacity: 0.3;
+  background: radial-gradient(circle at 20% 50%, rgba(187, 134, 252, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(3, 218, 198, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 40% 80%, rgba(207, 102, 121, 0.1) 0%, transparent 50%);
+  opacity: 0.6;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+  opacity: 0.2;
 }
 
 .header-content {
@@ -92,18 +119,19 @@ body {
 .avatar {
   width: 80px;
   height: 80px;
-  background: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(187, 134, 252, 0.3), rgba(3, 218, 198, 0.3));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--shadow-2), var(--glow-primary);
   backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .avatar .material-icons {
   font-size: 40px;
-  color: var(--text-on-primary);
+  color: var(--text-primary);
 }
 
 .header-text h1.name {
@@ -246,13 +274,14 @@ body {
 
 .expertise-card {
   background: var(--card-color);
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-lg);
   padding: var(--spacing-xl);
   text-align: center;
   box-shadow: var(--shadow-1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .expertise-card::before {
@@ -261,29 +290,87 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+  height: 3px;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
 }
 
 .expertise-card:hover {
-  box-shadow: var(--shadow-3);
-  transform: translateY(-4px);
+  box-shadow: var(--shadow-3), var(--glow-primary);
+  transform: translateY(-6px);
+  border-color: rgba(187, 134, 252, 0.3);
+}
+
+/* Cloud Computing Card */
+.expertise-card:nth-child(1) .expertise-icon {
+  background: linear-gradient(135deg, var(--neon-blue), #0099cc);
+}
+
+.expertise-card:nth-child(1):hover {
+  box-shadow: var(--shadow-3), 0 0 30px rgba(0, 212, 255, 0.4);
+}
+
+.expertise-card:nth-child(1)::before {
+  background: linear-gradient(90deg, var(--neon-blue), #00aaff);
+}
+
+/* AI & DataOps Card */
+.expertise-card:nth-child(2) .expertise-icon {
+  background: linear-gradient(135deg, var(--neon-purple), var(--primary-color));
+}
+
+.expertise-card:nth-child(2):hover {
+  box-shadow: var(--shadow-3), var(--glow-primary);
+}
+
+.expertise-card:nth-child(2)::before {
+  background: linear-gradient(90deg, var(--neon-purple), var(--primary-color));
+}
+
+/* DevOps Card */
+.expertise-card:nth-child(3) .expertise-icon {
+  background: linear-gradient(135deg, var(--neon-green), #4ade80);
+}
+
+.expertise-card:nth-child(3):hover {
+  box-shadow: var(--shadow-3), 0 0 30px rgba(104, 211, 145, 0.4);
+}
+
+.expertise-card:nth-child(3)::before {
+  background: linear-gradient(90deg, var(--neon-green), #22c55e);
+}
+
+/* Automotive Tech Card */
+.expertise-card:nth-child(4) .expertise-icon {
+  background: linear-gradient(135deg, var(--neon-orange), #ff8500);
+}
+
+.expertise-card:nth-child(4):hover {
+  box-shadow: var(--shadow-3), 0 0 30px rgba(255, 167, 38, 0.4);
+}
+
+.expertise-card:nth-child(4)::before {
+  background: linear-gradient(90deg, var(--neon-orange), #ff9500);
 }
 
 .expertise-icon {
-  width: 64px;
-  height: 64px;
-  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto var(--spacing-md);
   box-shadow: var(--shadow-2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.expertise-card:hover .expertise-icon {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-3);
 }
 
 .expertise-icon .material-icons {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--text-on-primary);
 }
 
