@@ -152,6 +152,42 @@ body {
   font-size: 1rem;
   font-weight: 300;
   opacity: 0.8;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-1);
+}
+
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2), var(--glow-primary);
+}
+
+.social-link .material-icons {
+  font-size: 1.1rem;
 }
 
 /* Main Content */
@@ -177,18 +213,22 @@ body {
   color: var(--primary-color);
 }
 
-/* Cards */
+/* Cards with Glass Effect */
 .card {
-  background: var(--card-color);
-  border-radius: var(--border-radius);
+  background: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
 }
 
 .card:hover {
-  box-shadow: var(--shadow-2);
-  transform: translateY(-2px);
+  background: rgba(30, 30, 30, 0.8);
+  border-color: rgba(187, 134, 252, 0.3);
+  box-shadow: var(--shadow-2), var(--glow-primary);
+  transform: translateY(-3px);
 }
 
 .card-header {
@@ -273,7 +313,9 @@ body {
 }
 
 .expertise-card {
-  background: var(--card-color);
+  background: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-xl);
   text-align: center;
@@ -281,7 +323,6 @@ body {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .expertise-card::before {
@@ -399,18 +440,34 @@ body {
 }
 
 .leadership-item {
-  background: var(--card-color);
-  border-radius: var(--border-radius);
+  background: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
   padding: var(--spacing-xl);
   text-align: center;
   box-shadow: var(--shadow-1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-left: 4px solid var(--accent-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.leadership-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-color), #ff7043);
 }
 
 .leadership-item:hover {
-  box-shadow: var(--shadow-2);
-  transform: translateY(-2px);
+  background: rgba(30, 30, 30, 0.8);
+  border-color: rgba(207, 102, 121, 0.4);
+  box-shadow: var(--shadow-2), var(--glow-accent);
+  transform: translateY(-3px);
 }
 
 .leadership-icon {
@@ -454,17 +511,33 @@ body {
 }
 
 .personal-item {
-  background: var(--card-color);
-  border-radius: var(--border-radius);
+  background: rgba(30, 30, 30, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
   padding: var(--spacing-xl);
   text-align: center;
   box-shadow: var(--shadow-1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.personal-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
 }
 
 .personal-item:hover {
-  box-shadow: var(--shadow-2);
-  transform: translateY(-2px);
+  background: rgba(30, 30, 30, 0.8);
+  border-color: rgba(187, 134, 252, 0.3);
+  box-shadow: var(--shadow-2), var(--glow-primary);
+  transform: translateY(-3px);
 }
 
 .personal-item .material-icons {
