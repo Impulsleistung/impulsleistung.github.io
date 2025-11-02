@@ -1,48 +1,82 @@
-/* Material Design Light Theme CSS */
+/* Material Design 3 - Modern Expressive Theme */
 :root {
-  /* Material Design Light Color Palette */
-  --primary-color: #1976d2;
-  --primary-light: #63a4ff;
-  --primary-dark: #004ba0;
-  --secondary-color: #00897b;
-  --accent-color: #c2185b;
-  --error-color: #d32f2f;
+  /* Material Design 3 Color System */
+  --md-sys-color-primary: #6750A4;
+  --md-sys-color-on-primary: #FFFFFF;
+  --md-sys-color-primary-container: #EADDFF;
+  --md-sys-color-on-primary-container: #21005D;
   
-  /* Modern Colors */
-  --blue: #1976d2;
-  --teal: #00897b;
-  --green: #43a047;
-  --orange: #fb8c00;
+  --md-sys-color-secondary: #00BFA5;
+  --md-sys-color-on-secondary: #FFFFFF;
+  --md-sys-color-secondary-container: #B2F1E8;
+  --md-sys-color-on-secondary-container: #00201C;
   
-  /* Light Surface Colors */
-  --surface-color: #ffffff;
-  --background-color: #fafafa;
-  --card-color: #ffffff;
-  --elevated-surface: #f5f5f5;
+  --md-sys-color-tertiary: #FF6B9D;
+  --md-sys-color-on-tertiary: #FFFFFF;
   
-  /* Text Colors for Light Theme */
-  --text-primary: #212121;
-  --text-secondary: #757575;
-  --text-hint: #9e9e9e;
-  --text-on-primary: #ffffff;
-  --text-disabled: #bdbdbd;
+  /* Surface Colors */
+  --md-sys-color-surface: #FEF7FF;
+  --md-sys-color-surface-dim: #DED8E1;
+  --md-sys-color-surface-bright: #FEF7FF;
+  --md-sys-color-surface-container-lowest: #FFFFFF;
+  --md-sys-color-surface-container-low: #F7F2FA;
+  --md-sys-color-surface-container: #F3EDF7;
+  --md-sys-color-surface-container-high: #ECE6F0;
+  --md-sys-color-surface-container-highest: #E6E0E9;
   
-  /* Light Theme Shadows */
-  --shadow-1: 0 2px 4px rgba(0,0,0,0.1);
-  --shadow-2: 0 4px 8px rgba(0,0,0,0.12);
-  --shadow-3: 0 8px 16px rgba(0,0,0,0.14);
-  --shadow-4: 0 12px 24px rgba(0,0,0,0.16);
+  /* Text Colors */
+  --md-sys-color-on-surface: #1D1B20;
+  --md-sys-color-on-surface-variant: #49454F;
+  --md-sys-color-outline: #79747E;
+  --md-sys-color-outline-variant: #CAC4D0;
+  
+  /* Elevation - MD3 Style */
+  --md-sys-elevation-level0: none;
+  --md-sys-elevation-level1: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --md-sys-elevation-level2: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  --md-sys-elevation-level3: 0px 1px 3px 0px rgba(0, 0, 0, 0.3), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+  --md-sys-elevation-level4: 0px 2px 3px 0px rgba(0, 0, 0, 0.3), 0px 6px 10px 4px rgba(0, 0, 0, 0.15);
+  --md-sys-elevation-level5: 0px 4px 4px 0px rgba(0, 0, 0, 0.3), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
+  
+  /* Shape - MD3 Rounded Corners */
+  --md-sys-shape-corner-none: 0px;
+  --md-sys-shape-corner-extra-small: 4px;
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 16px;
+  --md-sys-shape-corner-extra-large: 28px;
+  --md-sys-shape-corner-full: 9999px;
+  
+  /* Typography Scale */
+  --md-sys-typescale-display-large-size: 57px;
+  --md-sys-typescale-display-medium-size: 45px;
+  --md-sys-typescale-display-small-size: 36px;
+  --md-sys-typescale-headline-large-size: 32px;
+  --md-sys-typescale-headline-medium-size: 28px;
+  --md-sys-typescale-headline-small-size: 24px;
+  --md-sys-typescale-title-large-size: 22px;
+  --md-sys-typescale-title-medium-size: 16px;
+  --md-sys-typescale-title-small-size: 14px;
+  --md-sys-typescale-body-large-size: 16px;
+  --md-sys-typescale-body-medium-size: 14px;
+  --md-sys-typescale-body-small-size: 12px;
+  --md-sys-typescale-label-large-size: 14px;
+  --md-sys-typescale-label-medium-size: 12px;
+  --md-sys-typescale-label-small-size: 11px;
   
   /* Spacing */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
-  --spacing-md: 12px;
-  --spacing-lg: 16px;
-  --spacing-xl: 24px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
   
-  /* Border Radius */
-  --border-radius: 4px;
-  --border-radius-lg: 8px;
+  /* State Layers */
+  --md-sys-state-hover-opacity: 0.08;
+  --md-sys-state-focus-opacity: 0.12;
+  --md-sys-state-pressed-opacity: 0.12;
+  --md-sys-state-dragged-opacity: 0.16;
 }
 
 /* Reset and Base Styles */
@@ -54,9 +88,10 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  font-size: var(--md-sys-typescale-body-medium-size);
   line-height: 1.6;
-  color: var(--text-primary);
-  background-color: var(--background-color);
+  color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-surface);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -65,63 +100,85 @@ body {
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 var(--spacing-lg);
+  padding: 0 var(--spacing-md);
 }
 
-/* Header */
+/* Header - MD3 Surface with Tonal Elevation */
 .header {
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
-  color: var(--text-on-primary);
+  background: linear-gradient(135deg, #5E35B1 0%, #6750A4 50%, #9A82DB 100%);
+  color: var(--md-sys-color-on-primary);
   padding: var(--spacing-xl) 0;
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--md-sys-elevation-level2);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .header-content {
   display: flex;
   align-items: center;
   gap: var(--spacing-lg);
+  position: relative;
+  z-index: 1;
 }
 
 .avatar {
-  width: 64px;
-  height: 64px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  background: var(--md-sys-color-primary-container);
+  border-radius: var(--md-sys-shape-corner-full);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--md-sys-elevation-level1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+  box-shadow: var(--md-sys-elevation-level2);
 }
 
 .avatar .material-icons {
-  font-size: 32px;
-  color: var(--text-on-primary);
+  font-size: 36px;
+  color: var(--md-sys-color-on-primary);
 }
 
 .header-text h1.name {
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: var(--md-sys-typescale-headline-large-size);
+  font-weight: 400;
   margin-bottom: var(--spacing-xs);
+  letter-spacing: 0;
 }
 
 .header-text .title {
-  font-size: 1.125rem;
-  font-weight: 400;
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-weight: 500;
   margin-bottom: var(--spacing-xs);
   opacity: 0.95;
 }
 
 .header-text .subtitle {
-  font-size: 0.95rem;
+  font-size: var(--md-sys-typescale-body-medium-size);
   font-weight: 400;
   opacity: 0.9;
   margin-bottom: var(--spacing-md);
 }
 
-/* Social Links */
+/* Social Links - MD3 Filled Tonal Buttons */
 .social-links {
   display: flex;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
   margin-top: var(--spacing-md);
   flex-wrap: wrap;
 }
@@ -130,24 +187,44 @@ body {
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
-  padding: var(--spacing-xs) var(--spacing-md);
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: var(--border-radius);
-  color: var(--text-on-primary);
+  padding: 10px 24px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--md-sys-shape-corner-full);
+  color: var(--md-sys-color-on-primary);
   text-decoration: none;
-  font-size: 0.875rem;
+  font-size: var(--md-sys-typescale-label-large-size);
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0);
+  transition: background 0.2s;
+}
+
+.social-link:hover::before {
+  background: rgba(255, 255, 255, var(--md-sys-state-hover-opacity));
+}
+
+.social-link:active::before {
+  background: rgba(255, 255, 255, var(--md-sys-state-pressed-opacity));
 }
 
 .social-link:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: var(--md-sys-elevation-level1);
 }
 
 .social-link .material-icons {
-  font-size: 1rem;
+  font-size: 18px;
 }
 
 /* Main Content */
@@ -155,66 +232,60 @@ body {
   padding: var(--spacing-xl) 0;
 }
 
-/* Section Titles */
+/* Section Titles - MD3 Typography */
 .section-title {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--text-primary);
+  font-size: var(--md-sys-typescale-headline-small-size);
+  font-weight: 400;
+  color: var(--md-sys-color-on-surface);
   margin-bottom: var(--spacing-lg);
   padding-bottom: var(--spacing-sm);
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
 }
 
 .section-title .material-icons {
-  font-size: 1.75rem;
-  color: var(--primary-color);
+  font-size: 28px;
+  color: var(--md-sys-color-primary);
 }
 
-/* Cards */
+/* Cards - MD3 Filled Cards with Elevated Surface */
 .card {
-  background: var(--card-color);
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-1);
-  transition: box-shadow 0.2s ease;
+  background: var(--md-sys-color-surface-container-low);
+  border-radius: var(--md-sys-shape-corner-large);
+  box-shadow: var(--md-sys-elevation-level0);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
   margin-bottom: var(--spacing-md);
+  border: 1px solid var(--md-sys-color-outline-variant);
 }
 
 .card:hover {
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--md-sys-elevation-level1);
+  transform: translateY(-2px);
+  background: var(--md-sys-color-surface-container);
 }
 
 .card-header {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
-  padding: var(--spacing-lg);
-  background: var(--primary-color);
-  color: var(--text-on-primary);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
 }
 
 .card-header .material-icons {
-  font-size: 1.25rem;
+  font-size: 24px;
+  color: var(--md-sys-color-primary);
 }
 
 .card-header h3 {
-  font-size: 1.125rem;
+  font-size: var(--md-sys-typescale-title-medium-size);
   font-weight: 500;
   margin: 0;
-}
-
-.card-header div h3 {
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.company {
-  font-size: 0.875rem;
-  opacity: 0.9;
-  font-weight: 400;
+  color: var(--md-sys-color-on-primary-container);
 }
 
 .card-content {
@@ -222,16 +293,17 @@ body {
 }
 
 .card-content h2 {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: var(--primary-color);
+  font-size: var(--md-sys-typescale-title-large-size);
+  font-weight: 400;
+  color: var(--md-sys-color-primary);
   margin-bottom: var(--spacing-md);
 }
 
 .card-content p {
-  color: var(--text-secondary);
+  color: var(--md-sys-color-on-surface-variant);
   line-height: 1.6;
   margin-bottom: var(--spacing-md);
+  font-size: var(--md-sys-typescale-body-medium-size);
 }
 
 .card-content p:last-child {
@@ -248,28 +320,29 @@ body {
   position: relative;
   padding-left: var(--spacing-lg);
   margin-bottom: var(--spacing-sm);
-  color: var(--text-secondary);
-  font-size: 0.95rem;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: var(--md-sys-typescale-body-medium-size);
 }
 
 .card-content li::before {
   content: '•';
   position: absolute;
   left: 0;
-  color: var(--primary-color);
+  color: var(--md-sys-color-primary);
   font-weight: bold;
+  font-size: 18px;
 }
 
 .card-content strong {
-  color: var(--text-primary);
+  color: var(--md-sys-color-on-surface);
+  font-weight: 500;
 }
 
 /* Section Layouts */
 .intro-section,
 .journey-section,
 .expertise-section,
-.education-section,
-.patents-section {
+.education-section {
   margin-bottom: var(--spacing-xl);
 }
 
@@ -279,7 +352,7 @@ body {
   gap: var(--spacing-md);
 }
 
-/* Expertise Section */
+/* Expertise Section - MD3 Outlined Cards */
 .expertise-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -287,108 +360,136 @@ body {
 }
 
 .skills-category {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
 }
 
 .skills-category h3 {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  font-size: 1.125rem;
+  font-size: var(--md-sys-typescale-title-medium-size);
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--md-sys-color-on-surface);
   margin-bottom: var(--spacing-md);
 }
 
 .skills-category h3 .material-icons {
-  font-size: 1.25rem;
-  color: var(--primary-color);
+  font-size: 24px;
+  color: var(--md-sys-color-primary);
 }
 
 .expertise-card {
-  background: var(--card-color);
-  border-radius: var(--border-radius-lg);
+  background: var(--md-sys-color-surface-container-lowest);
+  border-radius: var(--md-sys-shape-corner-extra-large);
   padding: var(--spacing-lg);
   text-align: center;
-  box-shadow: var(--shadow-1);
-  transition: all 0.2s ease;
-  border-top: 3px solid var(--primary-color);
+  box-shadow: var(--md-sys-elevation-level0);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  position: relative;
+  overflow: hidden;
+}
+
+.expertise-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--md-sys-color-primary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .expertise-card:hover {
-  box-shadow: var(--shadow-2);
-  transform: translateY(-2px);
+  box-shadow: var(--md-sys-elevation-level2);
+  transform: translateY(-4px);
+  border-color: var(--md-sys-color-primary);
+  background: var(--md-sys-color-surface-container-low);
 }
 
-.expertise-card:nth-child(1) {
-  border-top-color: var(--blue);
+.expertise-card:hover::before {
+  height: 6px;
 }
 
-.expertise-card:nth-child(2) {
-  border-top-color: var(--teal);
+/* Colorful Icons with Gradients */
+.expertise-card:nth-child(1)::before {
+  background: linear-gradient(90deg, #6750A4, #9A82DB);
 }
 
-.expertise-card:nth-child(3) {
-  border-top-color: var(--green);
+.expertise-card:nth-child(2)::before {
+  background: linear-gradient(90deg, #00BFA5, #1DE9B6);
 }
 
-.expertise-card:nth-child(4) {
-  border-top-color: var(--orange);
+.expertise-card:nth-child(3)::before {
+  background: linear-gradient(90deg, #5E35B1, #7E57C2);
+}
+
+.expertise-card:nth-child(4)::before {
+  background: linear-gradient(90deg, #FF6B9D, #FF8AB4);
 }
 
 .expertise-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--md-sys-shape-corner-full);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto var(--spacing-md);
-  background: var(--primary-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.expertise-card:hover .expertise-icon {
+  transform: scale(1.1) rotate(-5deg);
 }
 
 .expertise-card:nth-child(1) .expertise-icon {
-  background: var(--blue);
+  background: linear-gradient(135deg, #6750A4, #9A82DB);
+  box-shadow: 0 4px 12px rgba(103, 80, 164, 0.3);
 }
 
 .expertise-card:nth-child(2) .expertise-icon {
-  background: var(--teal);
+  background: linear-gradient(135deg, #00BFA5, #1DE9B6);
+  box-shadow: 0 4px 12px rgba(0, 191, 165, 0.3);
 }
 
 .expertise-card:nth-child(3) .expertise-icon {
-  background: var(--green);
+  background: linear-gradient(135deg, #5E35B1, #7E57C2);
+  box-shadow: 0 4px 12px rgba(94, 53, 177, 0.3);
 }
 
 .expertise-card:nth-child(4) .expertise-icon {
-  background: var(--orange);
+  background: linear-gradient(135deg, #FF6B9D, #FF8AB4);
+  box-shadow: 0 4px 12px rgba(255, 107, 157, 0.3);
 }
 
 .expertise-icon .material-icons {
-  font-size: 1.75rem;
-  color: var(--text-on-primary);
+  font-size: 32px;
+  color: var(--md-sys-color-on-primary);
 }
 
 .expertise-card h3,
 .expertise-card h4 {
-  font-size: 1rem;
+  font-size: var(--md-sys-typescale-title-small-size);
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--md-sys-color-on-surface);
   margin-bottom: var(--spacing-xs);
 }
 
 .expertise-card p {
-  color: var(--text-secondary);
-  font-size: 0.875rem;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: var(--md-sys-typescale-body-small-size);
   line-height: 1.5;
 }
 
-/* Footer */
+/* Footer - MD3 Surface */
 .footer {
-  background: var(--elevated-surface);
-  color: var(--text-primary);
+  background: var(--md-sys-color-surface-container);
+  color: var(--md-sys-color-on-surface);
   padding: var(--spacing-lg) 0;
-  margin-top: var(--spacing-xl);
-  border-top: 1px solid #e0e0e0;
+  margin-top: var(--spacing-xxl);
+  border-top: 1px solid var(--md-sys-color-outline-variant);
 }
 
 .footer-content {
@@ -403,28 +504,28 @@ body {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  font-size: 0.875rem;
+  font-size: var(--md-sys-typescale-body-small-size);
 }
 
 .footer-item .material-icons {
-  color: var(--primary-color);
-  font-size: 1.125rem;
+  color: var(--md-sys-color-primary);
+  font-size: 20px;
 }
 
 .footer-item a {
-  color: var(--primary-color);
+  color: var(--md-sys-color-primary);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.2s;
+  font-weight: 500;
 }
 
 .footer-item a:hover {
-  color: var(--primary-dark);
   text-decoration: underline;
 }
 
 .footer-item p {
   margin: 0;
-  color: var(--text-secondary);
+  color: var(--md-sys-color-on-surface-variant);
 }
 
 /* Responsive Design */
@@ -435,11 +536,11 @@ body {
   }
   
   .header-text h1.name {
-    font-size: 1.75rem;
+    font-size: var(--md-sys-typescale-headline-medium-size);
   }
   
   .section-title {
-    font-size: 1.25rem;
+    font-size: var(--md-sys-typescale-title-large-size);
   }
   
   .cards-grid,
@@ -462,17 +563,18 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Focus styles for accessibility */
-a:focus,
-button:focus {
-  outline: 2px solid var(--primary-color);
+/* Focus styles for accessibility - MD3 Style */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
   outline-offset: 2px;
+  border-radius: var(--md-sys-shape-corner-small);
 }
 
 /* Print styles */
 @media print {
   .header {
-    background: var(--primary-color) !important;
+    background: var(--md-sys-color-primary) !important;
     -webkit-print-color-adjust: exact;
   }
   
