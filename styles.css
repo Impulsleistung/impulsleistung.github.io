@@ -1,42 +1,50 @@
-/* Material Design 3 - Modern Expressive Theme */
+/* Material Design 3 - Simplified 3-Color Theme */
 :root {
-  /* Modern neutral palette - light mode */
-  --md-sys-color-primary: #2563EB; /* Indigo 600 - modern, crisp */
+  /* Core 3 Colors: Primary, Surface, On-Surface */
+  --color-primary: #2563EB; /* Blue 600 */
+  --color-surface: #F5F5F5; /* Light Gray Background */
+  --color-on-surface: #212121; /* Dark Text */
+
+  /* Derived MD3 Palette - Light Mode */
+  --md-sys-color-primary: var(--color-primary);
   --md-sys-color-on-primary: #FFFFFF;
+
+  /* Neutral/Surface Tones */
+  --md-sys-color-surface: var(--color-surface);
+  --md-sys-color-on-surface: var(--color-on-surface);
+  --md-sys-color-on-surface-variant: #616161; /* Secondary text/icons */
+
+  /* Containers and Backgrounds (using shades of surface) */
+  --md-sys-color-surface-container-lowest: #FFFFFF;
+  --md-sys-color-surface-container-low: #EEEEEE;
+  --md-sys-color-surface-container: #E0E0E0;
+  --md-sys-color-surface-container-high: #D4D4D4;
+  --md-sys-color-surface-container-highest: #C8C8C8;
+
+  /* Primary Container (light tint of primary) */
   --md-sys-color-primary-container: #E6EEFF;
-  --md-sys-color-on-primary-container: #0B1220;
+  --md-sys-color-on-primary-container: var(--color-on-surface);
 
-  --md-sys-color-secondary: #06B6D4; /* Cyan 500 */
-  --md-sys-color-on-secondary: #062024;
-  --md-sys-color-secondary-container: #E6F8FB;
-  --md-sys-color-on-secondary-container: #012026;
+  /* Secondary/Tertiary (set to primary or neutral to enforce 3-color rule) */
+  --md-sys-color-secondary: var(--color-primary);
+  --md-sys-color-on-secondary: #FFFFFF;
+  --md-sys-color-secondary-container: var(--md-sys-color-surface-container-low);
+  --md-sys-color-on-secondary-container: var(--color-on-surface);
 
-  --md-sys-color-tertiary: #EF476F; /* Warm accent */
+  --md-sys-color-tertiary: var(--color-primary);
   --md-sys-color-on-tertiary: #FFFFFF;
 
-  /* Surface Colors */
-  --md-sys-color-surface: #d3d3d3; /* lightgray background */
-  --md-sys-color-surface-dim: #c8c8c8;
-  --md-sys-color-surface-bright: #e9e9e9;
-  --md-sys-color-surface-container-lowest: #FFFFFF; /* cards stay white for contrast */
-  --md-sys-color-surface-container-low: #F8F8F8;
-  --md-sys-color-surface-container: #FFFFFF;
-  --md-sys-color-surface-container-high: #F2F2F2;
-  --md-sys-color-surface-container-highest: #EBEBEB;
-
-  /* Text Colors */
-  --md-sys-color-on-surface: #0F1724;
-  --md-sys-color-on-surface-variant: #334155;
-  --md-sys-color-outline: #94A3B8;
-  --md-sys-color-outline-variant: #BDBDBD;
+  /* Outline/Borders */
+  --md-sys-color-outline: #BDBDBD;
+  --md-sys-color-outline-variant: #E0E0E0;
 
   /* Elevation - MD3 Style */
   --md-sys-elevation-level0: none;
-  --md-sys-elevation-level1: 0px 1px 2px 0px rgba(2, 6, 23, 0.06), 0px 1px 3px 1px rgba(2, 6, 23, 0.04);
-  --md-sys-elevation-level2: 0px 1px 2px 0px rgba(2, 6, 23, 0.06), 0px 2px 6px 2px rgba(2, 6, 23, 0.06);
-  --md-sys-elevation-level3: 0px 1px 3px 0px rgba(2, 6, 23, 0.08), 0px 4px 8px 3px rgba(2, 6, 23, 0.06);
-  --md-sys-elevation-level4: 0px 2px 3px 0px rgba(2, 6, 23, 0.08), 0px 6px 10px 4px rgba(2, 6, 23, 0.06);
-  --md-sys-elevation-level5: 0px 4px 4px 0px rgba(2, 6, 23, 0.10), 0px 8px 12px 6px rgba(2, 6, 23, 0.06);
+  --md-sys-elevation-level1: 0px 1px 2px 0px rgba(0, 0, 0, 0.08), 0px 1px 3px 1px rgba(0, 0, 0, 0.04);
+  --md-sys-elevation-level2: 0px 1px 2px 0px rgba(0, 0, 0, 0.08), 0px 2px 6px 2px rgba(0, 0, 0, 0.06);
+  --md-sys-elevation-level3: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 4px 8px 3px rgba(0, 0, 0, 0.08);
+  --md-sys-elevation-level4: 0px 2px 3px 0px rgba(0, 0, 0, 0.12), 0px 6px 10px 4px rgba(0, 0, 0, 0.10);
+  --md-sys-elevation-level5: 0px 4px 4px 0px rgba(0, 0, 0, 0.14), 0px 8px 12px 6px rgba(0, 0, 0, 0.12);
 
   /* Shape - MD3 Rounded Corners */
   --md-sys-shape-corner-none: 0px;
@@ -79,35 +87,46 @@
   --md-sys-state-dragged-opacity: 0.16;
 }
 
+
 /* Dark mode overrides for a balanced light/dark experience */
 @media (prefers-color-scheme: dark) {
   :root {
-    --md-sys-color-primary: #8AB4FF;
-    --md-sys-color-on-primary: #0B1220;
+    /* Core 3 Colors: Primary, Surface, On-Surface */
+    --color-primary: #8AB4FF; /* Light Blue */
+    --color-surface: #121212; /* Dark Background */
+    --color-on-surface: #E0E0E0; /* Light Text */
+
+    --md-sys-color-primary: var(--color-primary);
+    --md-sys-color-on-primary: #121212;
+
+    /* Neutral/Surface Tones */
+    --md-sys-color-surface: var(--color-surface);
+    --md-sys-color-on-surface: var(--color-on-surface);
+    --md-sys-color-on-surface-variant: #B0B0B0; /* Secondary text/icons */
+
+    /* Containers and Backgrounds (using shades of surface) */
+    --md-sys-color-surface-container-lowest: #121212;
+    --md-sys-color-surface-container-low: #1E1E1E;
+    --md-sys-color-surface-container: #2C2C2C;
+    --md-sys-color-surface-container-high: #3A3A3A;
+    --md-sys-color-surface-container-highest: #484848;
+
+    /* Primary Container (dark tint of primary) */
     --md-sys-color-primary-container: #143B6A;
-    --md-sys-color-on-primary-container: #E6F0FF;
+    --md-sys-color-on-primary-container: var(--color-on-surface);
 
-    --md-sys-color-secondary: #67E8F9;
-    --md-sys-color-on-secondary: #062026;
-    --md-sys-color-secondary-container: #064E5D;
-    --md-sys-color-on-secondary-container: #E6FBFF;
+    /* Secondary/Tertiary (set to primary or neutral to enforce 3-color rule) */
+    --md-sys-color-secondary: var(--color-primary);
+    --md-sys-color-on-secondary: #121212;
+    --md-sys-color-secondary-container: var(--md-sys-color-surface-container-low);
+    --md-sys-color-on-secondary-container: var(--color-on-surface);
 
-    --md-sys-color-tertiary: #FF9AA2;
-    --md-sys-color-on-tertiary: #0B1220;
+    --md-sys-color-tertiary: var(--color-primary);
+    --md-sys-color-on-tertiary: #121212;
 
-    --md-sys-color-surface: #071022;
-    --md-sys-color-surface-dim: #0B1220;
-    --md-sys-color-surface-bright: #07182A;
-    --md-sys-color-surface-container-lowest: #071022;
-    --md-sys-color-surface-container-low: #0B1A2A;
-    --md-sys-color-surface-container: #0F2136;
-    --md-sys-color-surface-container-high: #12263C;
-    --md-sys-color-surface-container-highest: #163048;
-
-    --md-sys-color-on-surface: #E6EDF3;
-    --md-sys-color-on-surface-variant: #CBD5E1;
-    --md-sys-color-outline: #334155;
-    --md-sys-color-outline-variant: #1F2937;
+    /* Outline/Borders */
+    --md-sys-color-outline: #616161;
+    --md-sys-color-outline-variant: #3A3A3A;
   }
 }
 
@@ -123,7 +142,9 @@ body {
   font-size: var(--md-sys-typescale-body-medium-size);
   line-height: 1.6;
   color: var(--md-sys-color-on-surface);
-  background-color: var(--md-sys-color-surface);
+  /* Subtle gradient background for modern look */
+  background: linear-gradient(to bottom, var(--md-sys-color-surface), var(--md-sys-color-surface-container-low));
+  background-attachment: fixed; /* Ensures gradient covers the whole viewport */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -137,7 +158,8 @@ body {
 
 /* Header - MD3 Surface with Tonal Elevation */
 .header {
-  background: linear-gradient(135deg, #5E35B1 0%, #6750A4 50%, #9A82DB 100%);
+  /* Use a solid primary color for a clearer design language */
+  background-color: var(--md-sys-color-primary);
   color: var(--md-sys-color-on-primary);
   padding: var(--spacing-xl) 0;
   box-shadow: var(--md-sys-elevation-level2);
@@ -145,16 +167,7 @@ body {
   overflow: hidden;
 }
 
-.header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-  pointer-events: none;
-}
+/* Removed gradient overlay for cleaner look */
 
 .header-content {
   display: flex;
@@ -183,7 +196,8 @@ body {
 
 .avatar .material-icons {
   font-size: 36px;
-  color: var(--md-sys-color-on-primary);
+  /* Use on-primary-container for better contrast on the light primary container background */
+  color: var(--md-sys-color-on-primary-container);
 }
 
 .header-text h1.name {
@@ -444,21 +458,16 @@ body {
   height: 6px;
 }
 
-/* Colorful Icons with Gradients */
-.expertise-card:nth-child(1)::before {
-  background: linear-gradient(90deg, #6750A4, #9A82DB);
-}
-
-.expertise-card:nth-child(2)::before {
-  background: linear-gradient(90deg, #00BFA5, #1DE9B6);
-}
-
-.expertise-card:nth-child(3)::before {
-  background: linear-gradient(90deg, #5E35B1, #7E57C2);
-}
-
-.expertise-card:nth-child(4)::before {
-  background: linear-gradient(90deg, #FF6B9D, #FF8AB4);
+/* Use single primary color for all accents to enforce 3-color rule */
+.expertise-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--md-sys-color-primary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .expertise-icon {
@@ -476,24 +485,10 @@ body {
   transform: scale(1.1) rotate(-5deg);
 }
 
-.expertise-card:nth-child(1) .expertise-icon {
-  background: linear-gradient(135deg, #6750A4, #9A82DB);
-  box-shadow: 0 4px 12px rgba(103, 80, 164, 0.3);
-}
-
-.expertise-card:nth-child(2) .expertise-icon {
-  background: linear-gradient(135deg, #00BFA5, #1DE9B6);
-  box-shadow: 0 4px 12px rgba(0, 191, 165, 0.3);
-}
-
-.expertise-card:nth-child(3) .expertise-icon {
-  background: linear-gradient(135deg, #5E35B1, #7E57C2);
-  box-shadow: 0 4px 12px rgba(94, 53, 177, 0.3);
-}
-
-.expertise-card:nth-child(4) .expertise-icon {
-  background: linear-gradient(135deg, #FF6B9D, #FF8AB4);
-  box-shadow: 0 4px 12px rgba(255, 107, 157, 0.3);
+/* Use solid primary color for all expertise icons */
+.expertise-icon {
+  background-color: var(--md-sys-color-primary);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3); /* Use primary color shadow */
 }
 
 .expertise-icon .material-icons {
