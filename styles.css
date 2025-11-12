@@ -1,43 +1,43 @@
 /* Material Design 3 - Modern Expressive Theme */
 :root {
-  /* Material Design 3 Color System */
-  --md-sys-color-primary: #6750A4;
+  /* Modern neutral palette - light mode */
+  --md-sys-color-primary: #2563EB; /* Indigo 600 - modern, crisp */
   --md-sys-color-on-primary: #FFFFFF;
-  --md-sys-color-primary-container: #EADDFF;
-  --md-sys-color-on-primary-container: #21005D;
-  
-  --md-sys-color-secondary: #00BFA5;
-  --md-sys-color-on-secondary: #FFFFFF;
-  --md-sys-color-secondary-container: #B2F1E8;
-  --md-sys-color-on-secondary-container: #00201C;
-  
-  --md-sys-color-tertiary: #FF6B9D;
+  --md-sys-color-primary-container: #E6EEFF;
+  --md-sys-color-on-primary-container: #0B1220;
+
+  --md-sys-color-secondary: #06B6D4; /* Cyan 500 */
+  --md-sys-color-on-secondary: #062024;
+  --md-sys-color-secondary-container: #E6F8FB;
+  --md-sys-color-on-secondary-container: #012026;
+
+  --md-sys-color-tertiary: #EF476F; /* Warm accent */
   --md-sys-color-on-tertiary: #FFFFFF;
-  
+
   /* Surface Colors */
-  --md-sys-color-surface: #FEF7FF;
-  --md-sys-color-surface-dim: #DED8E1;
-  --md-sys-color-surface-bright: #FEF7FF;
-  --md-sys-color-surface-container-lowest: #FFFFFF;
-  --md-sys-color-surface-container-low: #F7F2FA;
-  --md-sys-color-surface-container: #F3EDF7;
-  --md-sys-color-surface-container-high: #ECE6F0;
-  --md-sys-color-surface-container-highest: #E6E0E9;
-  
+  --md-sys-color-surface: #d3d3d3; /* lightgray background */
+  --md-sys-color-surface-dim: #c8c8c8;
+  --md-sys-color-surface-bright: #e9e9e9;
+  --md-sys-color-surface-container-lowest: #FFFFFF; /* cards stay white for contrast */
+  --md-sys-color-surface-container-low: #F8F8F8;
+  --md-sys-color-surface-container: #FFFFFF;
+  --md-sys-color-surface-container-high: #F2F2F2;
+  --md-sys-color-surface-container-highest: #EBEBEB;
+
   /* Text Colors */
-  --md-sys-color-on-surface: #1D1B20;
-  --md-sys-color-on-surface-variant: #49454F;
-  --md-sys-color-outline: #79747E;
-  --md-sys-color-outline-variant: #CAC4D0;
-  
+  --md-sys-color-on-surface: #0F1724;
+  --md-sys-color-on-surface-variant: #334155;
+  --md-sys-color-outline: #94A3B8;
+  --md-sys-color-outline-variant: #BDBDBD;
+
   /* Elevation - MD3 Style */
   --md-sys-elevation-level0: none;
-  --md-sys-elevation-level1: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-  --md-sys-elevation-level2: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
-  --md-sys-elevation-level3: 0px 1px 3px 0px rgba(0, 0, 0, 0.3), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
-  --md-sys-elevation-level4: 0px 2px 3px 0px rgba(0, 0, 0, 0.3), 0px 6px 10px 4px rgba(0, 0, 0, 0.15);
-  --md-sys-elevation-level5: 0px 4px 4px 0px rgba(0, 0, 0, 0.3), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
-  
+  --md-sys-elevation-level1: 0px 1px 2px 0px rgba(2, 6, 23, 0.06), 0px 1px 3px 1px rgba(2, 6, 23, 0.04);
+  --md-sys-elevation-level2: 0px 1px 2px 0px rgba(2, 6, 23, 0.06), 0px 2px 6px 2px rgba(2, 6, 23, 0.06);
+  --md-sys-elevation-level3: 0px 1px 3px 0px rgba(2, 6, 23, 0.08), 0px 4px 8px 3px rgba(2, 6, 23, 0.06);
+  --md-sys-elevation-level4: 0px 2px 3px 0px rgba(2, 6, 23, 0.08), 0px 6px 10px 4px rgba(2, 6, 23, 0.06);
+  --md-sys-elevation-level5: 0px 4px 4px 0px rgba(2, 6, 23, 0.10), 0px 8px 12px 6px rgba(2, 6, 23, 0.06);
+
   /* Shape - MD3 Rounded Corners */
   --md-sys-shape-corner-none: 0px;
   --md-sys-shape-corner-extra-small: 4px;
@@ -46,7 +46,7 @@
   --md-sys-shape-corner-large: 16px;
   --md-sys-shape-corner-extra-large: 28px;
   --md-sys-shape-corner-full: 9999px;
-  
+
   /* Typography Scale */
   --md-sys-typescale-display-large-size: 57px;
   --md-sys-typescale-display-medium-size: 45px;
@@ -63,7 +63,7 @@
   --md-sys-typescale-label-large-size: 14px;
   --md-sys-typescale-label-medium-size: 12px;
   --md-sys-typescale-label-small-size: 11px;
-  
+
   /* Spacing */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
@@ -71,12 +71,44 @@
   --spacing-lg: 24px;
   --spacing-xl: 32px;
   --spacing-xxl: 48px;
-  
+
   /* State Layers */
   --md-sys-state-hover-opacity: 0.08;
   --md-sys-state-focus-opacity: 0.12;
   --md-sys-state-pressed-opacity: 0.12;
   --md-sys-state-dragged-opacity: 0.16;
+}
+
+/* Dark mode overrides for a balanced light/dark experience */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --md-sys-color-primary: #8AB4FF;
+    --md-sys-color-on-primary: #0B1220;
+    --md-sys-color-primary-container: #143B6A;
+    --md-sys-color-on-primary-container: #E6F0FF;
+
+    --md-sys-color-secondary: #67E8F9;
+    --md-sys-color-on-secondary: #062026;
+    --md-sys-color-secondary-container: #064E5D;
+    --md-sys-color-on-secondary-container: #E6FBFF;
+
+    --md-sys-color-tertiary: #FF9AA2;
+    --md-sys-color-on-tertiary: #0B1220;
+
+    --md-sys-color-surface: #071022;
+    --md-sys-color-surface-dim: #0B1220;
+    --md-sys-color-surface-bright: #07182A;
+    --md-sys-color-surface-container-lowest: #071022;
+    --md-sys-color-surface-container-low: #0B1A2A;
+    --md-sys-color-surface-container: #0F2136;
+    --md-sys-color-surface-container-high: #12263C;
+    --md-sys-color-surface-container-highest: #163048;
+
+    --md-sys-color-on-surface: #E6EDF3;
+    --md-sys-color-on-surface-variant: #CBD5E1;
+    --md-sys-color-outline: #334155;
+    --md-sys-color-outline-variant: #1F2937;
+  }
 }
 
 /* Reset and Base Styles */
