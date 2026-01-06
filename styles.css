@@ -1,62 +1,45 @@
-/* Material Design 3 - Modern Light Theme with Friendly Colors */
+/* Flutter Material 3 - Authentic Theme */
 :root {
-  /* Friendly Color Palette - Light Mode */
-  --color-primary: #4F8EF7; /* Friendly Blue */
-  --color-primary-light: #7BB3FF;
-  --color-primary-dark: #2B6CB0;
-  --color-secondary: #68D391; /* Friendly Green */
-  --color-accent: #F6AD55; /* Warm Orange */
-  --color-surface: #FAFAFA; /* Warm White */
-  --color-on-surface: #2D3748; /* Soft Dark Gray */
-  --color-on-surface-light: #718096;
+  /* Material 3 Color Scheme (Seed: #4F8EF7 - Flutter Blue) */
+  --md-sys-color-primary: #005fb0;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #d1e4ff;
+  --md-sys-color-on-primary-container: #001d36;
+  
+  --md-sys-color-secondary: #535f70;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #d7e3f7;
+  --md-sys-color-on-secondary-container: #101c2b;
+  
+  --md-sys-color-tertiary: #6b5778;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-tertiary-container: #f2daff;
+  --md-sys-color-on-tertiary-container: #251431;
 
-  /* MD3 Derived Palette */
-  --md-sys-color-primary: var(--color-primary);
-  --md-sys-color-on-primary: #FFFFFF;
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-error-container: #ffdad6;
+  --md-sys-color-on-error-container: #410002;
 
-  /* Surface Tones - Warm & Inviting */
-  --md-sys-color-surface: var(--color-surface);
-  --md-sys-color-on-surface: var(--color-on-surface);
-  --md-sys-color-on-surface-variant: var(--color-on-surface-light);
+  --md-sys-color-outline: #73777f;
+  --md-sys-color-background: #fdfcff;
+  --md-sys-color-on-background: #1a1c1e;
+  --md-sys-color-surface: #fdfcff;
+  --md-sys-color-on-surface: #1a1c1e;
+  --md-sys-color-surface-variant: #dfe2eb;
+  --md-sys-color-on-surface-variant: #43474e;
+  --md-sys-color-inverse-surface: #2f3033;
+  --md-sys-color-inverse-on-surface: #f1f0f4;
 
-  /* Container Colors - Soft & Friendly */
-  --md-sys-color-surface-container-lowest: #FFFFFF;
-  --md-sys-color-surface-container-low: #F0F4F8;
-  --md-sys-color-surface-container: #E8EEF4;
-  --md-sys-color-surface-container-high: #DDE5ED;
-  --md-sys-color-surface-container-highest: #D0D9E4;
-
-  /* Primary Container - Soft Blue Tint */
-  --md-sys-color-primary-container: #EBF4FF;
-  --md-sys-color-on-primary-container: var(--color-on-surface);
-
-  /* Secondary Container - Soft Green Tint */
-  --md-sys-color-secondary-container: #E6FFED;
-  --md-sys-color-on-secondary-container: var(--color-on-surface);
-
-  /* Tertiary Container - Warm Tint */
-  --md-sys-color-tertiary-container: #FFF4E6;
-  --md-sys-color-on-tertiary-container: var(--color-on-surface);
-
-  /* Outline */
-  --md-sys-color-outline: #C4D0DB;
-  --md-sys-color-outline-variant: #DCE3EA;
-
-  /* State Colors */
-  --md-sys-state-hover-opacity: 0.08;
-  --md-sys-state-focus-opacity: 0.12;
-  --md-sys-state-pressed-opacity: 0.12;
-  --md-sys-state-dragged-opacity: 0.16;
-
-  /* Elevation - MD3 Style */
+  /* Elevation - Flutter Style */
   --md-sys-elevation-level0: none;
-  --md-sys-elevation-level1: 0px 1px 3px 1px rgba(0, 0, 0, 0.06), 0px 1px 2px 0px rgba(0, 0, 0, 0.04);
-  --md-sys-elevation-level2: 0px 2px 6px 2px rgba(0, 0, 0, 0.06), 0px 1px 2px 0px rgba(0, 0, 0, 0.04);
-  --md-sys-elevation-level3: 0px 4px 8px 3px rgba(0, 0, 0, 0.08), 0px 1px 3px 0px rgba(0, 0, 0, 0.04);
-  --md-sys-elevation-level4: 0px 6px 10px 4px rgba(0, 0, 0, 0.10), 0px 2px 3px 0px rgba(0, 0, 0, 0.06);
-  --md-sys-elevation-level5: 0px 8px 12px 6px rgba(0, 0, 0, 0.12), 0px 4px 4px 0px rgba(0, 0, 0, 0.06);
+  --md-sys-elevation-level1: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --md-sys-elevation-level2: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  --md-sys-elevation-level3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+  --md-sys-elevation-level4: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+  --md-sys-elevation-level5: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
 
-  /* Shape - MD3 Rounded Corners */
+  /* Shape - Flutter M3 Defaults */
   --md-sys-shape-corner-none: 0px;
   --md-sys-shape-corner-extra-small: 4px;
   --md-sys-shape-corner-small: 8px;
@@ -65,7 +48,7 @@
   --md-sys-shape-corner-extra-large: 28px;
   --md-sys-shape-corner-full: 9999px;
 
-  /* Typography Scale */
+  /* Typography - Flutter default (Roboto) */
   --md-sys-typescale-display-large-size: 57px;
   --md-sys-typescale-display-medium-size: 45px;
   --md-sys-typescale-display-small-size: 36px;
@@ -75,12 +58,12 @@
   --md-sys-typescale-title-large-size: 22px;
   --md-sys-typescale-title-medium-size: 16px;
   --md-sys-typescale-title-small-size: 14px;
-  --md-sys-typescale-body-large-size: 16px;
-  --md-sys-typescale-body-medium-size: 14px;
-  --md-sys-typescale-body-small-size: 12px;
   --md-sys-typescale-label-large-size: 14px;
   --md-sys-typescale-label-medium-size: 12px;
   --md-sys-typescale-label-small-size: 11px;
+  --md-sys-typescale-body-large-size: 16px;
+  --md-sys-typescale-body-medium-size: 14px;
+  --md-sys-typescale-body-small-size: 12px;
 
   /* Spacing */
   --spacing-xs: 4px;
@@ -99,67 +82,45 @@
 }
 
 body {
-  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  font-family: 'Roboto Flex', sans-serif;
   font-size: var(--md-sys-typescale-body-medium-size);
-  line-height: 1.7;
-  color: var(--md-sys-color-on-surface);
-  background: linear-gradient(180deg, #F7FAFC 0%, var(--md-sys-color-surface) 100%);
+  line-height: 1.5;
+  color: var(--md-sys-color-on-background);
+  background-color: var(--md-sys-color-background);
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Container */
+/* Flutter-like Scaffold */
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--spacing-lg);
+  padding: 0 var(--spacing-md);
 }
 
-/* Header - Modern Gradient Design */
+/* Flutter AppBar / Header */
 .header {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  color: var(--md-sys-color-on-primary);
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
   padding: var(--spacing-xxl) 0;
-  position: relative;
-  overflow: hidden;
+  border-bottom: 1px solid var(--md-sys-color-surface-variant);
 }
 
 .header-wave {
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  right: 0;
-  height: 80px;
-  z-index: 0;
-}
-
-.header-wave svg {
-  width: 100%;
-  height: 100%;
+  display: none; /* Flutter apps usually don't have these web-style waves */
 }
 
 .header-content {
   display: flex;
   align-items: center;
   gap: var(--spacing-xl);
-  position: relative;
-  z-index: 1;
 }
 
 .avatar {
   width: 120px;
   height: 120px;
-  border-radius: var(--md-sys-shape-corner-extra-large);
+  border-radius: var(--md-sys-shape-corner-full); /* Flutter CircleAvatar */
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  flex-shrink: 0;
-}
-
-.avatar:hover {
-  transform: scale(1.05) rotate(2deg);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--md-sys-elevation-level1);
 }
 
 .avatar-image {
@@ -169,455 +130,228 @@ body {
 }
 
 .header-text h1.name {
-  font-size: var(--md-sys-typescale-headline-large-size);
+  font-size: var(--md-sys-typescale-display-small-size);
   font-weight: 400;
-  margin-bottom: var(--spacing-sm);
-  letter-spacing: -0.5px;
+  color: var(--md-sys-color-primary);
+  margin-bottom: var(--spacing-xs);
 }
 
 .header-text .title {
-  font-size: var(--md-sys-typescale-title-large-size);
-  font-weight: 500;
+  font-size: var(--md-sys-typescale-headline-small-size);
+  font-weight: 400;
+  color: var(--md-sys-color-on-surface-variant);
   margin-bottom: var(--spacing-xs);
-  opacity: 0.95;
 }
 
 .header-text .subtitle {
-  font-size: var(--md-sys-typescale-body-large-size);
-  font-weight: 400;
-  opacity: 0.9;
-  margin-bottom: var(--spacing-md);
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-weight: 500;
+  color: var(--md-sys-color-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
 }
 
-/* Social Links - Modern Pill Buttons */
+/* Flutter Buttons (ElevatedButton/FilledButton style) */
 .social-links {
   display: flex;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
   flex-wrap: wrap;
 }
 
 .social-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: var(--spacing-sm);
-  padding: 12px 28px;
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: var(--md-sys-shape-corner-full);
+  padding: 10px 24px;
+  background-color: var(--md-sys-color-primary);
   color: var(--md-sys-color-on-primary);
+  border-radius: var(--md-sys-shape-corner-full);
   text-decoration: none;
   font-size: var(--md-sys-typescale-label-large-size);
   font-weight: 500;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: box-shadow 0.2s, background-color 0.2s;
+  box-shadow: var(--md-sys-elevation-level1);
 }
 
 .social-link:hover {
-  background: rgba(255, 255, 255, 0.35);
-  transform: translateY(-3px) scale(1.02);
   box-shadow: var(--md-sys-elevation-level2);
-  backdrop-filter: blur(20px);
+  background-color: #0056a0; /* Slightly darker primary */
 }
 
-.social-link:active {
-  transform: translateY(-1px) scale(0.98);
-}
-
-.social-link .material-icons {
-  font-size: 20px;
-}
-
-/* Main Content */
-.main {
-  padding: var(--spacing-xxl) 0;
-  position: relative;
-}
-
-/* Section Titles */
-.section-title {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-md);
-  font-size: var(--md-sys-typescale-headline-small-size);
-  font-weight: 400;
-  color: var(--md-sys-color-on-surface);
-  margin-bottom: var(--spacing-xl);
-  padding-bottom: var(--spacing-md);
-  border-bottom: 2px solid var(--md-sys-color-outline-variant);
-}
-
-.section-title .material-icons {
-  font-size: 32px;
-  color: var(--color-primary);
-  background: var(--md-sys-color-primary-container);
-  padding: var(--spacing-sm);
-  border-radius: var(--md-sys-shape-corner-medium);
-}
-
-/* Cards - Modern Material Design */
+/* Flutter Cards */
 .card {
-  background: var(--md-sys-color-surface-container-lowest);
-  border-radius: var(--md-sys-shape-corner-extra-large);
-  box-shadow: var(--md-sys-elevation-level0);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
+  background-color: var(--md-sys-color-surface);
+  border-radius: var(--md-sys-shape-corner-medium);
+  box-shadow: var(--md-sys-elevation-level1);
   margin-bottom: var(--spacing-lg);
-  border: 1px solid var(--md-sys-color-outline-variant);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
 }
 
 .card:hover {
   box-shadow: var(--md-sys-elevation-level2);
-  transform: translateY(-4px);
 }
 
 .card-header {
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--md-sys-color-primary-container);
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
-  padding: var(--spacing-lg) var(--spacing-xl);
-  background: var(--md-sys-color-primary-container);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.card-header .material-icons {
-  font-size: 28px;
-  color: var(--color-primary);
-  background: rgba(79, 142, 247, 0.15);
-  padding: var(--spacing-sm);
-  border-radius: var(--md-sys-shape-corner-small);
 }
 
 .card-header h3 {
   font-size: var(--md-sys-typescale-title-medium-size);
   font-weight: 500;
-  margin: 0;
-  color: var(--md-sys-color-on-surface);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.card-header .material-symbols-rounded {
+  color: var(--md-sys-color-primary);
 }
 
 .card-content {
-  padding: var(--spacing-xl);
+  padding: var(--spacing-lg);
 }
 
 .card-content h2 {
   font-size: var(--md-sys-typescale-title-large-size);
-  font-weight: 400;
-  color: var(--color-primary);
+  color: var(--md-sys-color-primary);
   margin-bottom: var(--spacing-md);
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-}
-
-.card-content h2::before {
-  content: '';
-  width: 4px;
-  height: 24px;
-  background: var(--color-primary);
-  border-radius: var(--md-sys-shape-corner-full);
 }
 
 .card-content p {
-  color: var(--md-sys-color-on-surface-variant);
-  line-height: 1.8;
   margin-bottom: var(--spacing-md);
-  font-size: var(--md-sys-typescale-body-medium-size);
+  color: var(--md-sys-color-on-surface-variant);
 }
 
-.card-content p:last-child {
-  margin-bottom: 0;
-}
-
+/* Flutter ListItems / Bullets */
 .card-content ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .card-content li {
   position: relative;
   padding-left: var(--spacing-xl);
-  margin-bottom: var(--spacing-md);
-  color: var(--md-sys-color-on-surface-variant);
-  font-size: var(--md-sys-typescale-body-medium-size);
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: flex-start;
 }
 
 .card-content li::before {
-  content: '';
+  content: 'fiber_manual_record'; /* Icon name for Material Symbols */
+  font-family: 'Material Symbols Rounded';
   position: absolute;
   left: 0;
-  top: 10px;
-  width: 8px;
-  height: 8px;
-  background: var(--color-secondary);
-  border-radius: var(--md-sys-shape-corner-full);
-  box-shadow: 0 0 0 4px rgba(104, 211, 145, 0.2);
+  font-size: 18px;
+  color: var(--md-sys-color-secondary);
 }
 
-.card-content strong {
-  color: var(--md-sys-color-on-surface);
-  font-weight: 500;
-}
-
-/* Section Layouts */
-.intro-section,
-.journey-section,
-.expertise-section,
-.education-section {
-  margin-bottom: var(--spacing-xxl);
-}
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--spacing-lg);
-}
-
-/* Expertise Section */
-.expertise-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--spacing-lg);
-}
-
-.skills-category {
-  margin-bottom: var(--spacing-xl);
-}
-
-.skills-category h3 {
+/* Section Title (Flutter subheader style) */
+.section-title {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  font-size: var(--md-sys-typescale-title-medium-size);
+  gap: var(--spacing-md);
+  font-size: var(--md-sys-typescale-title-large-size);
   font-weight: 500;
+  margin: var(--spacing-xl) 0 var(--spacing-lg);
   color: var(--md-sys-color-on-surface);
-  margin-bottom: var(--spacing-lg);
-  padding-left: var(--spacing-sm);
 }
 
-.skills-category h3 .material-icons {
-  font-size: 26px;
-  color: var(--color-secondary);
+.section-title .material-symbols-rounded {
+  color: var(--md-sys-color-primary);
+}
+
+/* Expertise Grid (Flutter Wrap/GridView style) */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
 }
 
 .expertise-card {
-  background: var(--md-sys-color-surface-container-lowest);
-  border-radius: var(--md-sys-shape-corner-extra-large);
-  padding: var(--spacing-xl);
+  background-color: var(--md-sys-color-surface-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+  padding: var(--spacing-lg);
   text-align: center;
-  box-shadow: var(--md-sys-elevation-level0);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid var(--md-sys-color-outline-variant);
-  position: relative;
-  overflow: hidden;
-}
-
-.expertise-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: transform 0.2s;
 }
 
 .expertise-card:hover {
-  box-shadow: var(--md-sys-elevation-level3);
-  transform: translateY(-6px);
-  border-color: var(--color-primary-light);
-}
-
-.expertise-card:hover::before {
-  opacity: 1;
+  transform: translateY(-2px);
 }
 
 .expertise-icon {
-  width: 72px;
-  height: 72px;
-  border-radius: var(--md-sys-shape-corner-extra-large);
+  width: 48px;
+  height: 48px;
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  border-radius: var(--md-sys-shape-corner-medium);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto var(--spacing-lg);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-}
-
-.expertise-card:hover .expertise-icon {
-  transform: scale(1.1) rotate(-5deg);
-}
-
-.expertise-icon {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  box-shadow: 0 6px 20px rgba(79, 142, 247, 0.35);
-}
-
-.expertise-icon .material-icons {
-  font-size: 36px;
-  color: var(--md-sys-color-on-primary);
+  margin: 0 auto var(--spacing-md);
 }
 
 .expertise-card h4 {
-  font-size: var(--md-sys-typescale-title-medium-size);
+  font-size: var(--md-sys-typescale-title-small-size);
   font-weight: 500;
-  color: var(--md-sys-color-on-surface);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
 }
 
 .expertise-card p {
-  color: var(--md-sys-color-on-surface-variant);
   font-size: var(--md-sys-typescale-body-small-size);
-  line-height: 1.6;
+  margin: 0;
 }
 
-/* Footer */
+/* Footer / BottomNavigationBar style */
 .footer {
-  background: var(--md-sys-color-surface-container);
-  color: var(--md-sys-color-on-surface);
-  padding: var(--spacing-xl) 0;
+  background-color: var(--md-sys-color-surface);
+  border-top: 1px solid var(--md-sys-color-surface-variant);
+  padding: var(--spacing-lg) 0;
   margin-top: var(--spacing-xxl);
-  border-top: 1px solid var(--md-sys-color-outline-variant);
 }
 
 .footer-content {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--spacing-lg);
-  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .footer-item {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  font-size: var(--md-sys-typescale-body-small-size);
-}
-
-.footer-item .material-icons {
-  color: var(--color-primary);
-  font-size: 22px;
-}
-
-.footer-item a {
-  color: var(--color-primary);
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.2s;
-  padding: 2px 0;
-  border-bottom: 1px solid transparent;
-}
-
-.footer-item a:hover {
-  color: var(--color-primary-dark);
-  border-bottom-color: var(--color-primary-dark);
-}
-
-.footer-item p {
-  margin: 0;
   color: var(--md-sys-color-on-surface-variant);
 }
 
-/* Responsive Design */
-@media (max-width: 900px) {
+/* Custom indicator (Flutter Chip style) */
+.flag-icon, .flag-icon-large {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  padding: 2px 8px;
+  border-radius: var(--md-sys-shape-corner-small);
+  font-size: var(--md-sys-typescale-label-small-size);
+  font-weight: 500;
+  margin-left: var(--spacing-xs);
+}
+
+/* Selection and Print */
+::selection {
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+@media (max-width: 600px) {
   .header-content {
     flex-direction: column;
     text-align: center;
   }
-
-  .avatar {
-    width: 140px;
-    height: 140px;
-  }
-
-  .header-text h1.name {
-    font-size: var(--md-sys-typescale-headline-medium-size);
-  }
-
-  .social-links {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 600px) {
-  .container {
-    padding: 0 var(--spacing-md);
-  }
-
-  .header {
-    padding: var(--spacing-xl) 0;
-  }
-
-  .avatar {
-    width: 110px;
-    height: 110px;
-  }
-
-  .header-text h1.name {
-    font-size: var(--md-sys-typescale-headline-small-size);
-  }
-
-  .header-text .title {
-    font-size: var(--md-sys-typescale-title-large-size);
-  }
-
   .section-title {
-    font-size: var(--md-sys-typescale-title-large-size);
-  }
-
-  .cards-grid,
-  .expertise-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .social-links {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .social-link {
-    width: 100%;
-    max-width: 280px;
     justify-content: center;
-  }
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Focus styles for accessibility */
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid var(--md-sys-color-primary);
-  outline-offset: 2px;
-  border-radius: var(--md-sys-shape-corner-small);
-}
-
-/* Selection color */
-::selection {
-  background: var(--color-primary);
-  color: white;
-}
-
-/* Print styles */
-@media print {
-  .header {
-    background: var(--color-primary) !important;
-    -webkit-print-color-adjust: exact;
-  }
-
-  .card {
-    break-inside: avoid;
-    box-shadow: none !important;
-    border: 1px solid #ddd;
   }
 }
