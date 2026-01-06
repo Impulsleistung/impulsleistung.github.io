@@ -1,6 +1,6 @@
-/* Flutter Material 3 - Authentic Theme */
+/* Flutter Material 3 - Authentic Theme with Dark Mode Support */
 :root {
-  /* Material 3 Color Scheme (Seed: #4F8EF7 - Flutter Blue) */
+  /* Material 3 Light Color Scheme (Seed: #4F8EF7) */
   --md-sys-color-primary: #005fb0;
   --md-sys-color-on-primary: #ffffff;
   --md-sys-color-primary-container: #d1e4ff;
@@ -31,37 +31,19 @@
   --md-sys-color-inverse-surface: #2f3033;
   --md-sys-color-inverse-on-surface: #f1f0f4;
 
-  /* Elevation - Flutter Style */
-  --md-sys-elevation-level0: none;
+  /* Common Tokens */
   --md-sys-elevation-level1: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
   --md-sys-elevation-level2: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
-  --md-sys-elevation-level3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
-  --md-sys-elevation-level4: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
-  --md-sys-elevation-level5: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
-
-  /* Shape - Flutter M3 Defaults */
-  --md-sys-shape-corner-none: 0px;
-  --md-sys-shape-corner-extra-small: 4px;
-  --md-sys-shape-corner-small: 8px;
   --md-sys-shape-corner-medium: 12px;
-  --md-sys-shape-corner-large: 16px;
-  --md-sys-shape-corner-extra-large: 28px;
   --md-sys-shape-corner-full: 9999px;
-
-  /* Typography - Flutter default (Roboto) */
-  --md-sys-typescale-display-large-size: 57px;
-  --md-sys-typescale-display-medium-size: 45px;
+  
+  /* Typography Scale */
   --md-sys-typescale-display-small-size: 36px;
-  --md-sys-typescale-headline-large-size: 32px;
-  --md-sys-typescale-headline-medium-size: 28px;
   --md-sys-typescale-headline-small-size: 24px;
   --md-sys-typescale-title-large-size: 22px;
   --md-sys-typescale-title-medium-size: 16px;
   --md-sys-typescale-title-small-size: 14px;
   --md-sys-typescale-label-large-size: 14px;
-  --md-sys-typescale-label-medium-size: 12px;
-  --md-sys-typescale-label-small-size: 11px;
-  --md-sys-typescale-body-large-size: 16px;
   --md-sys-typescale-body-medium-size: 14px;
   --md-sys-typescale-body-small-size: 12px;
 
@@ -72,6 +54,44 @@
   --spacing-lg: 24px;
   --spacing-xl: 32px;
   --spacing-xxl: 48px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Material 3 Dark Color Scheme (Seed: #4F8EF7) */
+    --md-sys-color-primary: #9ecaff;
+    --md-sys-color-on-primary: #003258;
+    --md-sys-color-primary-container: #004883;
+    --md-sys-color-on-primary-container: #d1e4ff;
+
+    --md-sys-color-secondary: #bbc7db;
+    --md-sys-color-on-secondary: #253140;
+    --md-sys-color-secondary-container: #3b4858;
+    --md-sys-color-on-secondary-container: #d7e3f7;
+
+    --md-sys-color-tertiary: #d6bee4;
+    --md-sys-color-on-tertiary: #3b2948;
+    --md-sys-color-tertiary-container: #523f5f;
+    --md-sys-color-on-tertiary-container: #f2daff;
+
+    --md-sys-color-error: #ffb4ab;
+    --md-sys-color-on-error: #690005;
+    --md-sys-color-error-container: #93000a;
+    --md-sys-color-on-error-container: #ffdad6;
+
+    --md-sys-color-outline: #8d9199;
+    --md-sys-color-background: #1a1c1e;
+    --md-sys-color-on-background: #e2e2e6;
+    --md-sys-color-surface: #1a1c1e;
+    --md-sys-color-on-surface: #e2e2e6;
+    --md-sys-color-surface-variant: #43474e;
+    --md-sys-color-on-surface-variant: #c3c7cf;
+    --md-sys-color-inverse-surface: #e2e2e6;
+    --md-sys-color-inverse-on-surface: #2f3033;
+    
+    --md-sys-elevation-level1: 0px 1px 3px 1px rgba(0, 0, 0, 0.45);
+    --md-sys-elevation-level2: 0px 2px 6px 2px rgba(0, 0, 0, 0.5);
+  }
 }
 
 /* Reset and Base Styles */
@@ -88,6 +108,7 @@ body {
   color: var(--md-sys-color-on-background);
   background-color: var(--md-sys-color-background);
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Flutter-like Scaffold */
@@ -105,10 +126,6 @@ body {
   border-bottom: 1px solid var(--md-sys-color-surface-variant);
 }
 
-.header-wave {
-  display: none; /* Flutter apps usually don't have these web-style waves */
-}
-
 .header-content {
   display: flex;
   align-items: center;
@@ -118,7 +135,7 @@ body {
 .avatar {
   width: 120px;
   height: 120px;
-  border-radius: var(--md-sys-shape-corner-full); /* Flutter CircleAvatar */
+  border-radius: var(--md-sys-shape-corner-full);
   overflow: hidden;
   box-shadow: var(--md-sys-elevation-level1);
 }
@@ -152,7 +169,7 @@ body {
   gap: var(--spacing-xs);
 }
 
-/* Flutter Buttons (ElevatedButton/FilledButton style) */
+/* Flutter Buttons */
 .social-links {
   display: flex;
   gap: var(--spacing-sm);
@@ -171,13 +188,18 @@ body {
   text-decoration: none;
   font-size: var(--md-sys-typescale-label-large-size);
   font-weight: 500;
-  transition: box-shadow 0.2s, background-color 0.2s;
+  transition: box-shadow 0.2s, background-color 0.2s, transform 0.1s;
   box-shadow: var(--md-sys-elevation-level1);
 }
 
 .social-link:hover {
   box-shadow: var(--md-sys-elevation-level2);
-  background-color: #0056a0; /* Slightly darker primary */
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.social-link:active {
+  transform: translateY(0);
 }
 
 /* Flutter Cards */
@@ -187,11 +209,7 @@ body {
   box-shadow: var(--md-sys-elevation-level1);
   margin-bottom: var(--spacing-lg);
   overflow: hidden;
-  transition: box-shadow 0.2s;
-}
-
-.card:hover {
-  box-shadow: var(--md-sys-elevation-level2);
+  transition: box-shadow 0.2s, background-color 0.3s;
 }
 
 .card-header {
@@ -227,7 +245,7 @@ body {
   color: var(--md-sys-color-on-surface-variant);
 }
 
-/* Flutter ListItems / Bullets */
+/* Flutter ListItems */
 .card-content ul {
   list-style: none;
 }
@@ -238,10 +256,11 @@ body {
   margin-bottom: var(--spacing-sm);
   display: flex;
   align-items: flex-start;
+  color: var(--md-sys-color-on-surface-variant);
 }
 
 .card-content li::before {
-  content: 'fiber_manual_record'; /* Icon name for Material Symbols */
+  content: 'fiber_manual_record';
   font-family: 'Material Symbols Rounded';
   position: absolute;
   left: 0;
@@ -249,7 +268,7 @@ body {
   color: var(--md-sys-color-secondary);
 }
 
-/* Section Title (Flutter subheader style) */
+/* Section Title */
 .section-title {
   display: flex;
   align-items: center;
@@ -264,11 +283,23 @@ body {
   color: var(--md-sys-color-primary);
 }
 
-/* Expertise Grid (Flutter Wrap/GridView style) */
+/* Expertise Grid - Adjusted to 3 columns for better layout */
 .expertise-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-md);
+}
+
+@media (max-width: 900px) {
+  .expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .expertise-card {
@@ -276,7 +307,7 @@ body {
   border-radius: var(--md-sys-shape-corner-medium);
   padding: var(--spacing-lg);
   text-align: center;
-  transition: transform 0.2s;
+  transition: transform 0.2s, background-color 0.3s;
 }
 
 .expertise-card:hover {
@@ -299,14 +330,16 @@ body {
   font-size: var(--md-sys-typescale-title-small-size);
   font-weight: 500;
   margin-bottom: var(--spacing-xs);
+  color: var(--md-sys-color-on-surface);
 }
 
 .expertise-card p {
   font-size: var(--md-sys-typescale-body-small-size);
   margin: 0;
+  color: var(--md-sys-color-on-surface-variant);
 }
 
-/* Footer / BottomNavigationBar style */
+/* Footer */
 .footer {
   background-color: var(--md-sys-color-surface);
   border-top: 1px solid var(--md-sys-color-surface-variant);
@@ -327,20 +360,20 @@ body {
 }
 
 /* Custom indicator (Flutter Chip style) */
-.flag-icon, .flag-icon-large {
+.language-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background-color: var(--md-sys-color-secondary-container);
   color: var(--md-sys-color-on-secondary-container);
-  padding: 2px 8px;
-  border-radius: var(--md-sys-shape-corner-small);
-  font-size: var(--md-sys-typescale-label-small-size);
+  padding: 6px 16px;
+  border-radius: var(--md-sys-shape-corner-full);
+  font-size: var(--md-sys-typescale-label-large-size);
   font-weight: 500;
-  margin-left: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
 }
 
-/* Selection and Print */
+/* Selection */
 ::selection {
   background-color: var(--md-sys-color-primary-container);
   color: var(--md-sys-color-on-primary-container);
@@ -350,8 +383,5 @@ body {
   .header-content {
     flex-direction: column;
     text-align: center;
-  }
-  .section-title {
-    justify-content: center;
   }
 }
