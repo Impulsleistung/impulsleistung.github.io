@@ -118,6 +118,138 @@ body {
   padding: 0 var(--spacing-md);
 }
 
+/* Navigation Bar */
+.navbar {
+  background-color: var(--md-sys-color-surface);
+  border-bottom: 1px solid var(--md-sys-color-surface-variant);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--md-sys-elevation-level1);
+}
+
+.nav-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) 0;
+  position: relative;
+}
+
+.nav-brand {
+  font-size: var(--md-sys-typescale-title-large-size);
+  font-weight: 600;
+  color: var(--md-sys-color-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-brand:hover {
+  color: var(--md-sys-color-secondary);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--md-sys-color-on-surface-variant);
+  text-decoration: none;
+  font-size: var(--md-sys-typescale-body-medium-size);
+  font-weight: 500;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--md-sys-shape-corner-medium);
+  transition: background-color 0.2s, color 0.2s;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--md-sys-color-primary);
+  background-color: var(--md-sys-color-primary-container);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--md-sys-color-primary);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Mobile Menu Toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--md-sys-color-on-surface);
+  font-size: 28px;
+}
+
+.nav-toggle:hover {
+  color: var(--md-sys-color-primary);
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: var(--md-sys-color-surface);
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-bottom: 1px solid var(--md-sys-color-surface-variant);
+  }
+
+  .nav-menu.active {
+    max-height: 500px;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-link {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: 0;
+    border-bottom: 1px solid var(--md-sys-color-surface-variant);
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .nav-link:hover::after {
+    width: 0;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-content {
+    position: relative;
+  }
+}
+
 /* Flutter AppBar / Header */
 .header {
   background-color: var(--md-sys-color-surface);
