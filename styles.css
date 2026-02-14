@@ -150,6 +150,37 @@
   }
 }
 
+/* Backdrop filter fallback for older browsers */
+@supports not (backdrop-filter: saturate(180%) blur(20px)) {
+  .navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  
+  .navbar-scrolled {
+    background-color: rgba(255, 255, 255, 0.98);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .navbar {
+      background-color: rgba(28, 28, 30, 0.95);
+    }
+    
+    .navbar-scrolled {
+      background-color: rgba(28, 28, 30, 0.98);
+    }
+  }
+  
+  .social-dock {
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .social-dock {
+      background-color: rgba(40, 40, 42, 0.95);
+    }
+  }
+}
+
 /* ============================================
    RESET & BASE STYLES
    ============================================ */
