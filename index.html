@@ -9,348 +9,767 @@
     <meta name="keywords"
         content="Kevin Ostheimer, Product Owner, Cloud, AI, GenAI, Azure, Azure OpenAI, Azure AI Studio, AKS, DevOps, MLOps, RAG, LangChain, Terraform, Prompt Engineering">
     <meta name="author" content="Kevin Ostheimer">
+    <meta name="theme-color" content="#1D1D1F">
     <title>Kevin Ostheimer - Cloud, AI & GenAI Product Owner</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Preload critical fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Kevin Ostheimer",
+        "jobTitle": "Product Owner & Technical Lead",
+        "description": "Cloud, AI & GenAI Product Owner driving digital transformation in the automotive industry.",
+        "url": "https://impulsleistung.de",
+        "sameAs": [
+            "https://www.linkedin.com/in/kevin-ostheimer/",
+            "https://github.com/Impulsleistung",
+            "https://www.instagram.com/kevinostheimer/"
+        ]
+    }
+    </script>
 </head>
 
 <body>
-    <!-- Navigation Menu -->
-    <nav class="navbar">
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
             <div class="nav-content">
-                <a href="#" class="nav-brand">Kevin Ostheimer</a>
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span class="material-symbols-rounded">menu</span>
+                <a href="#" class="nav-brand" aria-label="Kevin Ostheimer - Home">
+                    <span class="brand-text">Kevin Ostheimer</span>
+                </a>
+                
+                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="material-symbols-rounded nav-icon-open">menu</span>
+                    <span class="material-symbols-rounded nav-icon-close">close</span>
                 </button>
-                <ul class="nav-menu">
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#ai-platform" class="nav-link">Cloud & AI Platform</a></li>
-                    <li><a href="#certifications" class="nav-link">Certifications</a></li>
-                    <li><a href="#expertise" class="nav-link">Languages</a></li>
+                
+                <ul class="nav-menu" id="nav-menu" role="menubar">
+                    <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+                    <li role="none"><a href="#impact" class="nav-link" role="menuitem">Impact</a></li>
+                    <li role="none"><a href="#approach" class="nav-link" role="menuitem">Approach</a></li>
+                    <li role="none"><a href="#expertise" class="nav-link" role="menuitem">Expertise</a></li>
+                    <li role="none"><a href="#certifications" class="nav-link" role="menuitem">Certifications</a></li>
+                    <li role="none"><a href="#contact" class="nav-link nav-cta" role="menuitem">Let's Talk</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Header -->
-    <header class="header">
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+        </div>
         <div class="container">
-            <div class="header-content">
-                <div class="avatar">
-                    <img src="kevin-ostheimer.png" alt="Kevin Ostheimer" class="avatar-image">
+            <div class="hero-content">
+                <div class="hero-avatar-wrapper" data-animate="fade-in-up">
+                    <img src="kevin-ostheimer.png" alt="Kevin Ostheimer" class="hero-avatar" width="160" height="160">
                 </div>
-                <div class="header-text">
-                    <p class="title">Product Owner & Technical Lead - Cloud, AI & GenAI</p>
-                    <p class="subtitle">Dipl.Ing.(FH) <span class="material-symbols-rounded">construction</span></p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/kevin-ostheimer/" target="_blank" rel="noopener"
-                            class="social-link">
-                            <span class="material-symbols-rounded">work</span>
-                            LinkedIn
+                
+                <div class="hero-text" data-animate="fade-in-up" data-delay="0.1">
+                    <p class="hero-greeting">Hello, I'm Kevin Ostheimer</p>
+                    <h1 class="hero-headline">I build <span class="text-gradient">AI systems</span> that transform automotive manufacturing</h1>
+                    <p class="hero-subtitle">Product Owner & Technical Lead driving Cloud, AI, and GenAI transformation for enterprise-scale platforms serving 50M+ users</p>
+                    
+                    <div class="hero-cta-group">
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Let's Talk</span>
+                            <span class="material-symbols-rounded">arrow_forward</span>
                         </a>
-                        <a href="https://github.com/Impulsleistung" target="_blank" rel="noopener" class="social-link">
-                            <span class="material-symbols-rounded">code</span>
-                            GitHub
-                        </a>
-                        <a href="https://www.instagram.com/kevinostheimer/" target="_blank" rel="noopener"
-                            class="social-link">
-                            <span class="material-symbols-rounded">photo_camera</span>
-                            Instagram
+                        <a href="#impact" class="btn btn-secondary">
+                            <span>See My Work</span>
                         </a>
                     </div>
                 </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator" aria-hidden="true">
+                <div class="scroll-indicator-mouse">
+                    <div class="scroll-indicator-wheel"></div>
+                </div>
+                <span class="scroll-indicator-text">Scroll to explore</span>
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="main">
+    <main class="main" id="main-content">
         <div class="container">
-            <!-- Introduction -->
-            <section class="intro-section" id="about">
-                <div class="card">
-                    <div class="card-content">
-                        <h2>About</h2>
-                        <p>Product Owner & Technical Lead driving <strong>Cloud, AI, and GenAI transformation</strong>
-                            in the automotive industry. Leading DevOps teams building enterprise-grade Azure
-                            infrastructure, AI platform enablement, and intelligent automation. Combining deep expertise
-                            in <strong>Azure OpenAI, RAG architectures, LangChain, and MLOps</strong> with hands-on
-                            experience in cloud architecture, Infrastructure as Code, and international team leadership
-                            across Germany and China.</p>
+            
+            <!-- About Section -->
+            <section class="section section-about" id="about" aria-labelledby="about-title">
+                <div class="section-content" data-animate="fade-in-up">
+                    <h2 class="section-label">About Me</h2>
+                    <p class="section-description">
+                        I'm a Product Owner & Technical Lead driving <strong>Cloud, AI, and GenAI transformation</strong>
+                        in the automotive industry. Leading DevOps teams building enterprise-grade Azure
+                        infrastructure, AI platform enablement, and intelligent automation. Combining deep expertise
+                        in <strong>Azure OpenAI, RAG architectures, LangChain, and MLOps</strong> with hands-on experience
+                        in cloud architecture, Infrastructure as Code, and international team leadership
+                        across Germany and China.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Impact Section - Numbers & Achievements -->
+            <section class="section section-impact" id="impact" aria-labelledby="impact-title">
+                <div class="section-header" data-animate="fade-in-up">
+                    <h2 class="section-label" id="impact-title">The Impact</h2>
+                    <p class="section-subtitle">What I've achieved leading AI initiatives</p>
+                </div>
+                
+                <div class="impact-grid" data-animate="fade-in-up" data-delay="0.2">
+                    <div class="impact-card">
+                        <div class="impact-number" data-count="60">60<span class="impact-unit">%</span></div>
+                        <p class="impact-description">Reduction in deployment time for automotive AI platform</p>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-number" data-count="50">50M<span class="impact-unit">+</span></div>
+                        <p class="impact-description">Users served by enterprise platforms I've built</p>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-number" data-count="8">8<span class="impact-unit">+</span></div>
+                        <p class="impact-description">Professional certifications in Cloud, AI & DevOps</p>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-number" data-count="10">10<span class="impact-unit">+</span></div>
+                        <p class="impact-description">Years of experience in software engineering</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Cloud, AI & Technical Expertise -->
-            <section class="journey-section" id="ai-platform">
-                <h2 class="section-title">
-                    <span class="material-symbols-rounded">smart_toy</span>
-                    Cloud, AI & Technical Expertise
-                </h2>
-
-                <div class="cards-grid">
-                    <div class="card highlight-card">
-                        <div class="card-header">
-                            <span class="material-symbols-rounded">psychology</span>
-                            <h3>GenAI & Azure OpenAI</h3>
+            <!-- Approach Section - Process Flow -->
+            <section class="section section-approach" id="approach" aria-labelledby="approach-title">
+                <div class="section-header" data-animate="fade-in-up">
+                    <h2 class="section-label" id="approach-title">How I Work</h2>
+                    <p class="section-subtitle">From concept to cloud — my proven process</p>
+                </div>
+                
+                <div class="process-flow" data-animate="fade-in-up" data-delay="0.2">
+                    <div class="process-step" tabindex="0">
+                        <div class="process-icon">
+                            <span class="material-symbols-rounded">lightbulb</span>
                         </div>
-                        <div class="card-content">
-                            <ul>
-                                <li>Azure OpenAI integration with RAG architectures and prompt engineering</li>
-                                <li>LangChain-based application development for enterprise AI solutions</li>
-                                <li>Azure AI Studio enablement and fine-tuning workflows</li>
-                            </ul>
+                        <div class="process-content">
+                            <h3 class="process-title">Discover</h3>
+                            <p class="process-description">Understand business goals, user needs, and technical constraints through collaborative workshops</p>
                         </div>
                     </div>
-
-                    <div class="card highlight-card">
-                        <div class="card-header">
-                            <span class="material-symbols-rounded">cloud</span>
-                            <h3>Azure Cloud Architecture</h3>
+                    
+                    <div class="process-connector" aria-hidden="true">
+                        <div class="process-connector-line"></div>
+                        <span class="material-symbols-rounded">arrow_forward</span>
+                    </div>
+                    
+                    <div class="process-step" tabindex="0">
+                        <div class="process-icon">
+                            <span class="material-symbols-rounded">design_services</span>
                         </div>
-                        <div class="card-content">
-                            <ul>
-                                <li>Azure IaaS/PaaS design with AKS orchestration and container platforms</li>
-                                <li>Cost optimization and multi-region deployments with compliance</li>
-                                <li>Terraform Infrastructure as Code for repeatable deployments</li>
-                            </ul>
+                        <div class="process-content">
+                            <h3 class="process-title">Design</h3>
+                            <p class="process-description">Architect scalable cloud solutions and AI pipelines with security and compliance built-in</p>
                         </div>
                     </div>
-
-                    <div class="card highlight-card">
-                        <div class="card-header">
-                            <span class="material-symbols-rounded">hub</span>
-                            <h3>MLOps & Data Platforms</h3>
+                    
+                    <div class="process-connector" aria-hidden="true">
+                        <div class="process-connector-line"></div>
+                        <span class="material-symbols-rounded">arrow_forward</span>
+                    </div>
+                    
+                    <div class="process-step" tabindex="0">
+                        <div class="process-icon">
+                            <span class="material-symbols-rounded">rocket_launch</span>
                         </div>
-                        <div class="card-content">
-                            <ul>
-                                <li>ML pipeline automation, model monitoring, and feature store design</li>
-                                <li>Databricks integration for analytics and ML workloads</li>
-                                <li>Data governance and end-to-end MLOps workflows</li>
-                            </ul>
+                        <div class="process-content">
+                            <h3 class="process-title">Deploy</h3>
+                            <p class="process-description">Execute with CI/CD automation, Infrastructure as Code, and robust monitoring</p>
                         </div>
                     </div>
-
-                    <div class="card highlight-card">
-                        <div class="card-header">
-                            <span class="material-symbols-rounded">deployed_code</span>
-                            <h3>DevOps & Automation</h3>
-                        </div>
-                        <div class="card-content">
-                            <ul>
-                                <li>GitHub Enterprise CI/CD pipelines and GitOps workflows</li>
-                                <li>Kubernetes automation and platform engineering</li>
-                                <li>Docker containerization and automated rollouts</li>
-                            </ul>
-                        </div>
+                    
+                    <div class="process-connector" aria-hidden="true">
+                        <div class="process-connector-line"></div>
+                        <span class="material-symbols-rounded">arrow_forward</span>
                     </div>
-
-                    <div class="card highlight-card">
-                        <div class="card-header">
-                            <span class="material-symbols-rounded">group</span>
-                            <h3>Agile AI Delivery</h3>
+                    
+                    <div class="process-step" tabindex="0">
+                        <div class="process-icon">
+                            <span class="material-symbols-rounded">trending_up</span>
                         </div>
-                        <div class="card-content">
-                            <ul>
-                                <li>SCRUM, SAFe, and agile product strategy</li>
-                                <li>MVP/PoC steering and roadmap development</li>
-                                <li>Stakeholder management and team leadership</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="card highlight-card">
-                        <div class="card-header">
-                            <span class="material-symbols-rounded">shield</span>
-                            <h3>Security & Governance</h3>
-                        </div>
-                        <div class="card-content">
-                            <ul>
-                                <li>Compliance, data protection, and access control</li>
-                                <li>Policy as code and secure AI adoption</li>
-                                <li>Risk management and regulatory alignment</li>
-                            </ul>
+                        <div class="process-content">
+                            <h3 class="process-title">Optimize</h3>
+                            <p class="process-description">Continuously improve performance, reduce costs, and evolve with emerging technologies</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Certifications -->
-            <section class="journey-section" id="certifications">
-                <h2 class="section-title">
-                    <span class="material-symbols-rounded">workspace_premium</span>
-                    Certifications & Licenses
-                </h2>
-
-                <table class="certificates-table">
-                    <thead>
-                        <tr>
-                            <th>Certification Name</th>
-                            <th>Organization</th>
-                            <th class="cert-date">Issue Date</th>
-                            <th>Link</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="cert-name">LFD121: Developing Secure Software</td>
-                            <td class="cert-organization">The Linux Foundation</td>
-                            <td class="cert-date">Jan 2026</td>
-                            <td class="cert-link"><a
-                                    href="https://www.credly.com/badges/d515e4d5-b642-44e7-9abf-36ae9e48760d/linked_in_profile"
-                                    target="_blank" rel="noopener">View <span
-                                        class="material-symbols-rounded">open_in_new</span></a></td>
-                        </tr>
-                        <tr>
-                            <td class="cert-name">LFEL1012: Secure AI/ML-Driven Software Development</td>
-                            <td class="cert-organization">The Linux Foundation</td>
-                            <td class="cert-date">Jan 2026</td>
-                            <td class="cert-link"><a
-                                    href="https://www.credly.com/badges/7bf0ab75-9b20-4352-8f00-03cdc8cc0aa5/linked_in_profile"
-                                    target="_blank" rel="noopener">View <span
-                                        class="material-symbols-rounded">open_in_new</span></a></td>
-                        </tr>
-                        <tr>
-                            <td class="cert-name">LFS120: Conversational AI: Ensuring Compliance and Mitigating Risks
-                            </td>
-                            <td class="cert-organization">The Linux Foundation</td>
-                            <td class="cert-date">Jan 2026</td>
-                            <td class="cert-link"><a
-                                    href="https://www.credly.com/badges/d91e5533-0e96-4595-beb8-8cc29d5c70c8/linked_in_profile"
-                                    target="_blank" rel="noopener">View <span
-                                        class="material-symbols-rounded">open_in_new</span></a></td>
-                        </tr>
-                        <tr>
-                            <td class="cert-name">LFS158: Introduction to Kubernetes</td>
-                            <td class="cert-organization">The Linux Foundation</td>
-                            <td class="cert-date">Jan 2026</td>
-                            <td class="cert-link"><a
-                                    href="https://www.credly.com/badges/90b710d2-d4ea-4295-bc30-2f029e65990c/linked_in_profile"
-                                    target="_blank" rel="noopener">View <span
-                                        class="material-symbols-rounded">open_in_new</span></a></td>
-                        </tr>
-                        <tr>
-                            <td class="cert-name">Agile Methodologies - Software Project Management</td>
-                            <td class="cert-organization">LinkedIn</td>
-                            <td class="cert-date">Oct 2023</td>
-                            <td class="cert-link"><a href="https://1drv.ms/b/s!ApKvQtOfWvDGgZ9IaqPO_cEvbhi1Qg?e=Rb5pff"
-                                    target="_blank" rel="noopener">View <span
-                                        class="material-symbols-rounded">open_in_new</span></a></td>
-                        </tr>
-                        <tr>
-                            <td class="cert-name">Agile Data Engineering</td>
-                            <td class="cert-organization">Pforzheim University</td>
-                            <td class="cert-date">Dec 2022</td>
-                            <td class="cert-link"><a
-                                    href="https://engineeringpf.hs-pforzheim.de/detailansicht/news/it_kolloquium_am_15122022_agile_data_engineering"
-                                    target="_blank" rel="noopener">View <span
-                                        class="material-symbols-rounded">open_in_new</span></a></td>
-                        </tr>
-                        <tr>
-                            <td class="cert-name">AWS Partner: Accreditation (Technical)</td>
-                            <td class="cert-organization">Amazon</td>
-                            <td class="cert-date">Jan 2021</td>
-                            <td class="cert-link"><a
-                                    href="https://www.credly.com/badges/20f98e30-37e8-4aec-9dd9-87ab85350360/public_url"
-                                    target="_blank" rel="noopener">View <span
-                                        class="material-symbols-rounded">open_in_new</span></a></td>
-                        </tr>
-                        <tr>
-                            <td class="cert-name">Microsoft AZURE (online)</td>
-                            <td class="cert-organization">Microsoft</td>
-                            <td class="cert-date">Jan 2021</td>
-                            <td class="cert-link"><a
-                                    href="https://docs.microsoft.com/de-de/users/kevinostheimer/achievements"
-                                    target="_blank" rel="noopener">View <span
-                                        class="material-symbols-rounded">open_in_new</span></a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <!-- Languages -->
-            <section class="expertise-section" id="expertise">
-                <h2 class="section-title">
-                    <span class="material-symbols-rounded">translate</span>
-                    Languages
-                </h2>
-                <div class="expertise-grid">
-                    <div class="expertise-card">
-                        <div class="expertise-icon">
-                            <span class="material-symbols-rounded">chat_bubble</span>
+            <!-- Expertise Section - Restructured Pillars -->
+            <section class="section section-expertise" id="expertise" aria-labelledby="expertise-title">
+                <div class="section-header" data-animate="fade-in-up">
+                    <h2 class="section-label" id="expertise-title">Technical Capabilities</h2>
+                    <p class="section-subtitle">Deep expertise across three core pillars</p>
+                </div>
+                
+                <div class="expertise-pillars" data-animate="fade-in-up" data-delay="0.2">
+                    <!-- Pillar 1: AI & GenAI -->
+                    <article class="pillar-card" tabindex="0">
+                        <div class="pillar-header">
+                            <div class="pillar-icon pillar-icon-ai">
+                                <span class="material-symbols-rounded">psychology</span>
+                            </div>
+                            <h3 class="pillar-title">AI & Generative AI</h3>
                         </div>
-                        <h4>German</h4>
-                        <div class="language-badge">Native</div>
+                        <div class="pillar-content">
+                            <p class="pillar-description">Building intelligent systems that transform business processes and user experiences</p>
+                            <ul class="pillar-skills">
+                                <li><span class="skill-badge">Azure OpenAI</span></li>
+                                <li><span class="skill-badge">RAG Architectures</span></li>
+                                <li><span class="skill-badge">LangChain</span></li>
+                                <li><span class="skill-badge">Azure AI Studio</span></li>
+                                <li><span class="skill-badge">Prompt Engineering</span></li>
+                                <li><span class="skill-badge">Fine-tuning</span></li>
+                            </ul>
+                        </div>
+                        <div class="pillar-expand">
+                            <span class="material-symbols-rounded">expand_more</span>
+                        </div>
+                    </article>
+                    
+                    <!-- Pillar 2: Cloud Architecture -->
+                    <article class="pillar-card" tabindex="0">
+                        <div class="pillar-header">
+                            <div class="pillar-icon pillar-icon-cloud">
+                                <span class="material-symbols-rounded">cloud</span>
+                            </div>
+                            <h3 class="pillar-title">Cloud Architecture</h3>
+                        </div>
+                        <div class="pillar-content">
+                            <p class="pillar-description">Designing and deploying enterprise-grade infrastructure at scale</p>
+                            <ul class="pillar-skills">
+                                <li><span class="skill-badge">Azure IaaS/PaaS</span></li>
+                                <li><span class="skill-badge">AKS</span></li>
+                                <li><span class="skill-badge">Terraform</span></li>
+                                <li><span class="skill-badge">Multi-region</span></li>
+                                <li><span class="skill-badge">Cost Optimization</span></li>
+                                <li><span class="skill-badge">Compliance</span></li>
+                            </ul>
+                        </div>
+                        <div class="pillar-expand">
+                            <span class="material-symbols-rounded">expand_more</span>
+                        </div>
+                    </article>
+                    
+                    <!-- Pillar 3: DevOps & MLOps -->
+                    <article class="pillar-card" tabindex="0">
+                        <div class="pillar-header">
+                            <div class="pillar-icon pillar-icon-devops">
+                                <span class="material-symbols-rounded">hub</span>
+                            </div>
+                            <h3 class="pillar-title">DevOps & MLOps</h3>
+                        </div>
+                        <div class="pillar-content">
+                            <p class="pillar-description">Automating pipelines and enabling continuous delivery for ML systems</p>
+                            <ul class="pillar-skills">
+                                <li><span class="skill-badge">GitHub Enterprise</span></li>
+                                <li><span class="skill-badge">CI/CD</span></li>
+                                <li><span class="skill-badge">Kubernetes</span></li>
+                                <li><span class="skill-badge">ML Pipelines</span></li>
+                                <li><span class="skill-badge">Docker</span></li>
+                                <li><span class="skill-badge">GitOps</span></li>
+                            </ul>
+                        </div>
+                        <div class="pillar-expand">
+                            <span class="material-symbols-rounded">expand_more</span>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Additional Expertise Grid -->
+                <div class="expertise-additional" data-animate="fade-in-up" data-delay="0.3">
+                    <div class="expertise-item">
+                        <span class="material-symbols-rounded">group</span>
+                        <span>Agile Leadership</span>
                     </div>
-                    <div class="expertise-card">
-                        <div class="expertise-icon">
-                            <span class="material-symbols-rounded">chat_bubble</span>
-                        </div>
-                        <h4>English</h4>
-                        <div class="language-badge">Fluent (C1)</div>
+                    <div class="expertise-item">
+                        <span class="material-symbols-rounded">shield</span>
+                        <span>Security & Governance</span>
                     </div>
-                    <div class="expertise-card">
-                        <div class="expertise-icon">
-                            <span class="material-symbols-rounded">chat_bubble</span>
-                        </div>
-                        <h4>Mandarin</h4>
-                        <div class="language-badge">Intermediate (HSK 3)</div>
+                    <div class="expertise-item">
+                        <span class="material-symbols-rounded">storage</span>
+                        <span>Data Platforms</span>
+                    </div>
+                    <div class="expertise-item">
+                        <span class="material-symbols-rounded">analytics</span>
+                        <span>Databricks</span>
                     </div>
                 </div>
             </section>
 
+            <!-- Certifications Section - Visual Cards -->
+            <section class="section section-certifications" id="certifications" aria-labelledby="certifications-title">
+                <div class="section-header" data-animate="fade-in-up">
+                    <h2 class="section-label" id="certifications-title">Certifications</h2>
+                    <p class="section-subtitle">Verified expertise through industry-recognized credentials</p>
+                </div>
+                
+                <div class="certifications-grid" data-animate="fade-in-up" data-delay="0.2">
+                    <!-- 2026 Certifications -->
+                    <div class="cert-group">
+                        <h3 class="cert-year">2026</h3>
+                        <div class="cert-cards">
+                            <article class="cert-card" tabindex="0">
+                                <div class="cert-badge">
+                                    <span class="material-symbols-rounded">verified</span>
+                                </div>
+                                <div class="cert-info">
+                                    <h4 class="cert-name">LFD121: Developing Secure Software</h4>
+                                    <p class="cert-issuer">The Linux Foundation</p>
+                                </div>
+                                <a href="https://www.credly.com/badges/d515e4d5-b642-44e7-9abf-36ae9e48760d/linked_in_profile" 
+                                   target="_blank" rel="noopener" class="cert-link" aria-label="View LFD121 certification">
+                                    <span class="material-symbols-rounded">open_in_new</span>
+                                </a>
+                            </article>
+                            
+                            <article class="cert-card" tabindex="0">
+                                <div class="cert-badge">
+                                    <span class="material-symbols-rounded">verified</span>
+                                </div>
+                                <div class="cert-info">
+                                    <h4 class="cert-name">LFEL1012: Secure AI/ML Development</h4>
+                                    <p class="cert-issuer">The Linux Foundation</p>
+                                </div>
+                                <a href="https://www.credly.com/badges/7bf0ab75-9b20-4352-8f00-03cdc8cc0aa5/linked_in_profile" 
+                                   target="_blank" rel="noopener" class="cert-link" aria-label="View LFEL1012 certification">
+                                    <span class="material-symbols-rounded">open_in_new</span>
+                                </a>
+                            </article>
+                            
+                            <article class="cert-card" tabindex="0">
+                                <div class="cert-badge">
+                                    <span class="material-symbols-rounded">verified</span>
+                                </div>
+                                <div class="cert-info">
+                                    <h4 class="cert-name">LFS120: Conversational AI Compliance</h4>
+                                    <p class="cert-issuer">The Linux Foundation</p>
+                                </div>
+                                <a href="https://www.credly.com/badges/d91e5533-0e96-4595-beb8-8cc29d5c70c8/linked_in_profile" 
+                                   target="_blank" rel="noopener" class="cert-link" aria-label="View LFS120 certification">
+                                    <span class="material-symbols-rounded">open_in_new</span>
+                                </a>
+                            </article>
+                            
+                            <article class="cert-card" tabindex="0">
+                                <div class="cert-badge">
+                                    <span class="material-symbols-rounded">verified</span>
+                                </div>
+                                <div class="cert-info">
+                                    <h4 class="cert-name">LFS158: Introduction to Kubernetes</h4>
+                                    <p class="cert-issuer">The Linux Foundation</p>
+                                </div>
+                                <a href="https://www.credly.com/badges/90b710d2-d4ea-4295-bc30-2f029e65990c/linked_in_profile" 
+                                   target="_blank" rel="noopener" class="cert-link" aria-label="View LFS158 certification">
+                                    <span class="material-symbols-rounded">open_in_new</span>
+                                </a>
+                            </article>
+                        </div>
+                    </div>
+                    
+                    <!-- 2022-2023 Certifications -->
+                    <div class="cert-group">
+                        <h3 class="cert-year">2022-2023</h3>
+                        <div class="cert-cards">
+                            <article class="cert-card" tabindex="0">
+                                <div class="cert-badge">
+                                    <span class="material-symbols-rounded">verified</span>
+                                </div>
+                                <div class="cert-info">
+                                    <h4 class="cert-name">Agile Methodologies - Software Project Management</h4>
+                                    <p class="cert-issuer">LinkedIn</p>
+                                </div>
+                                <a href="https://1drv.ms/b/s!ApKvQtOfWvDGgZ9IaqPO_cEvbhi1Qg?e=Rb5pff" 
+                                   target="_blank" rel="noopener" class="cert-link" aria-label="View Agile certification">
+                                    <span class="material-symbols-rounded">open_in_new</span>
+                                </a>
+                            </article>
+                            
+                            <article class="cert-card" tabindex="0">
+                                <div class="cert-badge">
+                                    <span class="material-symbols-rounded">verified</span>
+                                </div>
+                                <div class="cert-info">
+                                    <h4 class="cert-name">Agile Data Engineering</h4>
+                                    <p class="cert-issuer">Pforzheim University</p>
+                                </div>
+                                <a href="https://engineeringpf.hs-pforzheim.de/detailansicht/news/it_kolloquium_am_15122022_agile_data_engineering" 
+                                   target="_blank" rel="noopener" class="cert-link" aria-label="View Agile Data Engineering certification">
+                                    <span class="material-symbols-rounded">open_in_new</span>
+                                </a>
+                            </article>
+                        </div>
+                    </div>
+                    
+                    <!-- 2021 Certifications -->
+                    <div class="cert-group">
+                        <h3 class="cert-year">2021</h3>
+                        <div class="cert-cards">
+                            <article class="cert-card" tabindex="0">
+                                <div class="cert-badge">
+                                    <span class="material-symbols-rounded">verified</span>
+                                </div>
+                                <div class="cert-info">
+                                    <h4 class="cert-name">AWS Partner: Accreditation (Technical)</h4>
+                                    <p class="cert-issuer">Amazon</p>
+                                </div>
+                                <a href="https://www.credly.com/badges/20f98e30-37e8-4aec-9dd9-87ab85350360/public_url" 
+                                   target="_blank" rel="noopener" class="cert-link" aria-label="View AWS certification">
+                                    <span class="material-symbols-rounded">open_in_new</span>
+                                </a>
+                            </article>
+                            
+                            <article class="cert-card" tabindex="0">
+                                <div class="cert-badge">
+                                    <span class="material-symbols-rounded">verified</span>
+                                </div>
+                                <div class="cert-info">
+                                    <h4 class="cert-name">Microsoft AZURE</h4>
+                                    <p class="cert-issuer">Microsoft</p>
+                                </div>
+                                <a href="https://docs.microsoft.com/de-de/users/kevinostheimer/achievements" 
+                                   target="_blank" rel="noopener" class="cert-link" aria-label="View Azure certification">
+                                    <span class="material-symbols-rounded">open_in_new</span>
+                                </a>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Languages Section -->
+            <section class="section section-languages" id="languages" aria-labelledby="languages-title">
+                <div class="section-header" data-animate="fade-in-up">
+                    <h2 class="section-label" id="languages-title">Languages</h2>
+                    <p class="section-subtitle">International experience across cultures</p>
+                </div>
+                
+                <div class="languages-grid" data-animate="fade-in-up" data-delay="0.2">
+                    <div class="language-card">
+                        <div class="language-flag" aria-hidden="true">🇩🇪</div>
+                        <div class="language-info">
+                            <h4 class="language-name">German</h4>
+                            <span class="language-level">Native</span>
+                        </div>
+                    </div>
+                    <div class="language-card">
+                        <div class="language-flag" aria-hidden="true">🇬🇧</div>
+                        <div class="language-info">
+                            <h4 class="language-name">English</h4>
+                            <span class="language-level">Fluent (C1)</span>
+                        </div>
+                    </div>
+                    <div class="language-card">
+                        <div class="language-flag" aria-hidden="true">🇨🇳</div>
+                        <div class="language-info">
+                            <h4 class="language-name">Mandarin</h4>
+                            <span class="language-level">Intermediate (HSK 3)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="section section-contact" id="contact" aria-labelledby="contact-title">
+                <div class="contact-wrapper" data-animate="fade-in-up">
+                    <div class="contact-content">
+                        <h2 class="contact-headline" id="contact-title">Let's build something amazing together</h2>
+                        <p class="contact-subtitle">Have a project in mind? I'd love to hear about it.</p>
+                        
+                        <div class="contact-methods">
+                            <a href="https://www.linkedin.com/in/kevin-ostheimer/" target="_blank" rel="noopener" class="contact-method">
+                                <span class="material-symbols-rounded">work</span>
+                                <span>Connect on LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/Impulsleistung" target="_blank" rel="noopener" class="contact-method">
+                                <span class="material-symbols-rounded">code</span>
+                                <span>View GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Footer -->
-            <footer class="footer">
+            <footer class="footer" role="contentinfo">
                 <div class="footer-content">
-                    <div class="footer-item">
-                        <span class="material-symbols-rounded">copyright</span>
-                        <p>2026 Kevin Ostheimer, Dipl.-Ing. (FH) | <a href="https://www.hs-pforzheim.de/news_detailansicht/news/fuenf_fragen_an_3" target="_blank" rel="noopener" style="font-size: 0.9em; color: #888; text-decoration: none;">Public Relations</a></p>
+                    <div class="footer-info">
+                        <p class="footer-copyright">© 2026 Kevin Ostheimer, Dipl.-Ing. (FH)</p>
+                        <a href="https://www.hs-pforzheim.de/news_detailansicht/news/fuenf_fragen_an_3" target="_blank" rel="noopener" class="footer-link">
+                            Public Relations Interview
+                        </a>
                     </div>
                 </div>
             </footer>
         </div>
     </main>
 
+    <!-- Floating Social Dock (macOS-style) -->
+    <aside class="social-dock" aria-label="Social media links">
+        <a href="https://www.linkedin.com/in/kevin-ostheimer/" target="_blank" rel="noopener" class="dock-item" aria-label="LinkedIn Profile">
+            <svg class="dock-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            <span class="dock-tooltip">LinkedIn</span>
+        </a>
+        <a href="https://github.com/Impulsleistung" target="_blank" rel="noopener" class="dock-item" aria-label="GitHub Profile">
+            <svg class="dock-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            <span class="dock-tooltip">GitHub</span>
+        </a>
+        <a href="https://www.instagram.com/kevinostheimer/" target="_blank" rel="noopener" class="dock-item" aria-label="Instagram Profile">
+            <svg class="dock-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            <span class="dock-tooltip">Instagram</span>
+        </a>
+    </aside>
+
     <script>
-        // Mobile menu toggle functionality
+        // ============================================
+        // Navigation & Mobile Menu
+        // ============================================
         const navToggle = document.querySelector('.nav-toggle');
         const navMenu = document.querySelector('.nav-menu');
         const navLinks = document.querySelectorAll('.nav-link');
+        const navbar = document.querySelector('.navbar');
 
+        // Mobile menu toggle
         if (navToggle) {
             navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
+                const isOpen = navMenu.classList.toggle('active');
+                navToggle.setAttribute('aria-expanded', isOpen);
+                document.body.style.overflow = isOpen ? 'hidden' : '';
             });
         }
 
-        // Close menu when a link is clicked
+        // Close menu on link click
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
             });
         });
 
-        // Smooth scroll behavior for anchor links
+        // Navbar scroll behavior
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // ============================================
+        // Smooth Scroll with Offset
+        // ============================================
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 if (href !== '#') {
                     e.preventDefault();
                     const target = document.querySelector(href);
                     if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
+                        const offset = 80; // Account for fixed navbar
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
                         });
+                        
+                        // Update URL without triggering scroll
+                        history.pushState(null, null, href);
                     }
                 }
             });
+        });
+
+        // ============================================
+        // Scroll-Triggered Animations
+        // ============================================
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const animateOnScroll = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.dataset.delay || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('animate-in');
+                    }, delay * 1000);
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        const scrollObserver = new IntersectionObserver(animateOnScroll, observerOptions);
+
+        document.querySelectorAll('[data-animate]').forEach(el => {
+            scrollObserver.observe(el);
+        });
+
+        // ============================================
+        // Active Section Highlighting
+        // ============================================
+        const sections = document.querySelectorAll('section[id]');
+        
+        const highlightNav = () => {
+            const scrollY = window.pageYOffset;
+            
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active');
+                    }
+                }
+            });
+        };
+
+        window.addEventListener('scroll', highlightNav);
+
+        // ============================================
+        // Counter Animation for Impact Numbers
+        // ============================================
+        const counters = document.querySelectorAll('.impact-number');
+        let countersAnimated = false;
+
+        const animateCounters = () => {
+            if (countersAnimated) return;
+            
+            counters.forEach(counter => {
+                const text = counter.textContent;
+                const hasPercent = text.includes('%');
+                const hasM = text.includes('M');
+                const hasPlus = text.includes('+');
+                
+                let target;
+                if (hasM) {
+                    target = parseInt(text.replace('M', '').replace('+', ''));
+                } else {
+                    target = parseInt(text.replace('%', '').replace('+', ''));
+                }
+                
+                let current = 0;
+                const increment = target / 50;
+                const duration = 1500;
+                const stepTime = duration / 50;
+                
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        if (hasM) {
+                            counter.innerHTML = Math.floor(current) + 'M<span class="impact-unit">+</span>';
+                        } else if (hasPercent) {
+                            counter.innerHTML = Math.floor(current) + '<span class="impact-unit">%</span>';
+                        } else if (hasPlus) {
+                            counter.innerHTML = Math.floor(current) + '<span class="impact-unit">+</span>';
+                        } else {
+                            counter.innerHTML = Math.floor(current);
+                        }
+                        setTimeout(updateCounter, stepTime);
+                    } else {
+                        counter.innerHTML = text;
+                    }
+                };
+                
+                updateCounter();
+            });
+            
+            countersAnimated = true;
+        };
+
+        // Trigger counter animation when impact section is visible
+        const impactSection = document.querySelector('#impact');
+        if (impactSection) {
+            const impactObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        impactObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            impactObserver.observe(impactSection);
+        }
+
+        // ============================================
+        // Keyboard Navigation for Cards
+        // ============================================
+        document.querySelectorAll('.pillar-card, .cert-card, .process-step').forEach(card => {
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const link = card.querySelector('a');
+                    if (link) {
+                        link.click();
+                    }
+                }
+            });
+        });
+
+        // ============================================
+        // Reduced Motion Support
+        // ============================================
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        
+        if (prefersReducedMotion.matches) {
+            document.querySelectorAll('[data-animate]').forEach(el => {
+                el.classList.add('animate-in');
+            });
+        }
+
+        // ============================================
+        // Focus Visible for Keyboard Users
+        // ============================================
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-nav');
+            }
+        });
+
+        document.addEventListener('mousedown', () => {
+            document.body.classList.remove('keyboard-nav');
         });
     </script>
 </body>
