@@ -35,7 +35,8 @@
 
     <noscript>
         <style>
-            [data-animate] { opacity: 1; transform: none; }
+            [data-animate],
+            [data-animate-stagger] > * { opacity: 1; transform: none; transition: none; }
         </style>
     </noscript>
 
@@ -102,11 +103,12 @@
     <main id="main-content">
 
         <!-- Selected Impact -->
-        <section class="section section-impact" id="impact">
+        <section class="section section-impact" id="impact" data-animate>
             <div class="container">
+                <span class="section-label">Results</span>
                 <h2 class="section-title">Selected Impact</h2>
 
-                <div class="impact-grid">
+                <div class="impact-grid" data-animate-stagger>
                     <article class="impact-card">
                         <div class="impact-metric">60%</div>
                         <div class="impact-label">faster deployments</div>
@@ -126,7 +128,7 @@
                     </article>
 
                     <article class="impact-card">
-                        <div class="impact-metric">8+</div>
+                        <div class="impact-metric">12+</div>
                         <div class="impact-label">certifications</div>
                         <p class="impact-detail">in Cloud, AI & DevOps</p>
                     </article>
@@ -135,12 +137,13 @@
         </section>
 
         <!-- Services / How I Help -->
-        <section class="section section-services" id="services">
+        <section class="section section-services" id="services" data-animate>
             <div class="container">
+                <span class="section-label">Expertise</span>
                 <h2 class="section-title">How I Help</h2>
                 <p class="section-subtitle">Three areas where I deliver results</p>
 
-                <div class="services-grid">
+                <div class="services-grid" data-animate-stagger>
                     <!-- Service 1 -->
                     <article class="service-card">
                         <div class="service-icon service-icon-ai">
@@ -190,11 +193,12 @@
         </section>
 
         <!-- Skills & Certifications Combined -->
-        <section class="section section-skills" id="skills">
+        <section class="section section-skills" id="skills" data-animate>
             <div class="container">
+                <span class="section-label">Credentials</span>
                 <h2 class="section-title">Certifications</h2>
 
-                <div class="skills-grid-compact">
+                <div class="skills-grid-compact" data-animate-stagger>
                     <div class="cert-compact">
                         <div class="cert-header">
                             <span class="cert-badge cert-badge-uni">UNI</span>
@@ -244,6 +248,17 @@
                         <h3 class="cert-title">Introduction to Kubernetes</h3>
                         <p class="cert-org">The Linux Foundation</p>
                         <a href="https://www.credly.com/badges/90b710d2-d4ea-4295-bc30-2f029e65990c/linked_in_profile" target="_blank" rel="noopener" class="cert-link">View Credential →</a>
+                    </div>
+
+                    <!-- GenAI Certificate -->
+                    <div class="cert-compact">
+                        <div class="cert-header">
+                            <span class="cert-badge cert-badge-genai">AI</span>
+                            <span class="cert-year">2026</span>
+                        </div>
+                        <h3 class="cert-title">GenAI in Software Development processes</h3>
+                        <p class="cert-org">GenAI Learning Program</p>
+                        <a href="https://1drv.ms/b/c/c6f05a9fd342af92/IQCpUHXbBQAIR6jxcd1kgiP7AXabzBua_9jZALyyZ5RbGns?e=tfcfJ7" target="_blank" rel="noopener" class="cert-link">View Credential →</a>
                     </div>
 
                     <!-- PMI & LinkedIn Certifications -->
@@ -401,13 +416,14 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('[data-animate]').forEach(function(el) {
+        // Observe section containers and stagger groups
+        document.querySelectorAll('[data-animate], [data-animate-stagger]').forEach(function(el) {
             animateOnScroll.observe(el);
         });
 
         // Reduced motion
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            document.querySelectorAll('[data-animate]').forEach(function(el) {
+            document.querySelectorAll('[data-animate], [data-animate-stagger]').forEach(function(el) {
                 el.classList.add('animate-in');
             });
         }
