@@ -87,7 +87,7 @@
     <!-- Navigation -->
     <nav class="navbar" aria-label="Main navigation">
         <div class="container nav-container">
-            <a href="#home" class="nav-brand">Kevin Ostheimer</a>
+            <a href="#home" class="nav-brand"><span class="brand-mark" aria-hidden="true">KO</span>Kevin Ostheimer</a>
 
             <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
                 <span class="material-symbols-rounded" aria-hidden="true">menu</span>
@@ -106,7 +106,7 @@
     <header class="hero" id="home">
         <div class="container hero-container">
             <div class="hero-content">
-                <p class="hero-greeting">Hello, I'm Kevin</p>
+                <p class="hero-greeting"><span class="status-dot" aria-hidden="true"></span>Cloud &amp; AI Product Owner</p>
                 <h1 class="hero-headline">I build AI platforms that drive digital transformation</h1>
                 <p class="hero-subtitle">I help companies deploy faster, scale reliably, and reduce costs with cloud-native AI solutions.</p>
 
@@ -114,10 +114,27 @@
                     <a href="#contact" class="btn btn-primary">Let's Talk</a>
                     <a href="https://www.linkedin.com/in/kevin-ostheimer/" target="_blank" rel="noopener" class="btn-link">View LinkedIn →</a>
                 </div>
+
+                <div class="hero-proof" aria-label="Key professional focus areas">
+                    <span>AI strategy</span><i aria-hidden="true"></i><span>Cloud platforms</span><i aria-hidden="true"></i><span>Product leadership</span>
+                </div>
             </div>
 
-            <div class="hero-image">
-                <img src="kevin-ostheimer.png" alt="Portrait of Kevin Ostheimer" width="200" height="200" loading="eager" fetchpriority="high">
+            <div class="hero-visual" aria-label="Illustration of an AI platform operating reliably at scale">
+                <div class="visual-orbit orbit-one" aria-hidden="true"></div>
+                <div class="visual-orbit orbit-two" aria-hidden="true"></div>
+                <div class="hero-image">
+                    <img src="kevin-ostheimer.png" alt="Portrait of Kevin Ostheimer" width="200" height="200" loading="eager" fetchpriority="high">
+                </div>
+                <div class="platform-card">
+                    <div class="platform-topline"><span class="platform-indicator"></span><span>Platform health</span><strong>99.98%</strong></div>
+                    <div class="platform-chart" aria-hidden="true">
+                        <svg viewBox="0 0 260 70" preserveAspectRatio="none"><defs><linearGradient id="chart-fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#0A84FF" stop-opacity=".28"/><stop offset="100%" stop-color="#0A84FF" stop-opacity="0"/></linearGradient></defs><path d="M0 60 C18 57 25 39 43 44 S68 50 84 27 S111 45 128 33 S150 11 168 22 S192 35 210 16 S239 23 260 5 V70 H0Z" fill="url(#chart-fill)"/><path d="M0 60 C18 57 25 39 43 44 S68 50 84 27 S111 45 128 33 S150 11 168 22 S192 35 210 16 S239 23 260 5" fill="none" stroke="#0A84FF" stroke-width="2.5" vector-effect="non-scaling-stroke"/></svg>
+                    </div>
+                    <div class="platform-stats"><span><b>60%</b> faster delivery</span><span><b>50M+</b> users served</span></div>
+                </div>
+                <div class="visual-label visual-label-top"><span class="label-icon material-symbols-rounded" aria-hidden="true">neurology</span> AI systems</div>
+                <div class="visual-label visual-label-bottom"><span class="label-icon material-symbols-rounded" aria-hidden="true">shield</span> Built to scale</div>
             </div>
         </div>
     </header>
