@@ -1527,4 +1527,29 @@ button:focus-visible {
   .visual-label-top { right: 0; top: 38px; }
   .visual-label-bottom { left: 0; top: 293px; }
   .hero-proof { margin-top: var(--space-8); line-height: 1.8; }
+
+  /* Keep the visual stories balanced when cards stack on smaller screens. */
+  .section-impact > .container,
+  .section-services > .container {
+    text-align: center;
+  }
+
+  .impact-card,
+  .service-card {
+    text-align: center;
+  }
+
+  .impact-card::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .impact-visual-scale {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .impact-visual-tenure {
+    justify-content: center;
+  }
 }
