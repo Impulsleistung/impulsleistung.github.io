@@ -14,8 +14,8 @@
   --color-bg-subtle: #FAFAFA;
   --color-text: #1D1D1F;
   --color-text-secondary: #6E6E73;
-  --color-text-tertiary: #86868B;
-  --color-text-muted: #AEAEB2;
+  --color-text-tertiary: #6E6E73;
+  --color-text-muted: #76767C;
 
   /* Accent — Deep Apple-style blue */
   --color-accent: #0066CC;
@@ -44,16 +44,16 @@
   /* Typography — SF-style proportions */
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
 
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.8125rem;
-  --font-size-base: 0.9375rem;
-  --font-size-lg: 1.0625rem;
-  --font-size-xl: 1.25rem;
-  --font-size-2xl: 1.5rem;
-  --font-size-3xl: 2rem;
-  --font-size-4xl: 2.75rem;
-  --font-size-5xl: 3.5rem;
-  --font-size-hero: 3.75rem;
+  --font-size-xs: 0.875rem;
+  --font-size-sm: 0.9375rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.375rem;
+  --font-size-2xl: 1.625rem;
+  --font-size-3xl: 2.125rem;
+  --font-size-4xl: 2.875rem;
+  --font-size-5xl: 3.625rem;
+  --font-size-hero: 4rem;
 
   --font-weight-normal: 400;
   --font-weight-medium: 500;
@@ -62,11 +62,11 @@
 
   --line-height-tight: 1.15;
   --line-height-snug: 1.3;
-  --line-height-normal: 1.6;
-  --line-height-relaxed: 1.75;
+  --line-height-normal: 1.65;
+  --line-height-relaxed: 1.7;
 
   --letter-spacing-tight: -0.02em;
-  --letter-spacing-normal: -0.005em;
+  --letter-spacing-normal: 0;
   --letter-spacing-wide: 0.02em;
   --letter-spacing-wider: 0.06em;
 
@@ -118,6 +118,8 @@
 
 html {
   font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -955,7 +957,7 @@ button:focus-visible {
   align-items: center;
   min-height: 24px;
   padding: 3px 9px;
-  font-size: 0.625rem;
+  font-size: 0.8125rem;
   font-weight: var(--font-weight-bold);
   border-radius: var(--radius-full);
   color: white;
@@ -1251,8 +1253,8 @@ button:focus-visible {
     --color-bg-subtle: #2C2C2E;
     --color-text: #F5F5F7;
     --color-text-secondary: #A1A1A6;
-    --color-text-tertiary: #98989D;
-    --color-text-muted: #48484A;
+    --color-text-tertiary: #A1A1A6;
+    --color-text-muted: #8E8E93;
     --color-accent: #2997FF;
     --color-accent-hover: #40A9FF;
     --color-accent-glow: rgba(41, 151, 255, 0.2);
@@ -1350,7 +1352,7 @@ button:focus-visible {
   background: linear-gradient(145deg, #111827, #334155);
   box-shadow: 0 3px 9px rgba(15, 23, 42, 0.18);
   color: #fff;
-  font-size: 0.56rem;
+  font-size: 0.625rem;
   font-weight: 700;
   letter-spacing: .03em;
 }
@@ -1456,13 +1458,13 @@ button:focus-visible {
   -webkit-backdrop-filter: blur(18px) saturate(140%);
   z-index: 4;
 }
-.platform-topline { display: flex; align-items: center; gap: 8px; color: #657085; font-size: .67rem; font-weight: 600; letter-spacing: .02em; }
-.platform-topline strong { margin-left: auto; color: #137333; font-size: .72rem; }
+.platform-topline { display: flex; align-items: center; gap: 8px; color: #657085; font-size: .8125rem; font-weight: 600; letter-spacing: .02em; }
+.platform-topline strong { margin-left: auto; color: #137333; font-size: .875rem; }
 .platform-chart { height: 68px; margin: 8px -1px 3px; }
 .platform-chart svg { display: block; width: 100%; height: 100%; overflow: visible; }
-.platform-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding-top: 10px; border-top: 1px solid rgba(15,23,42,.07); color: #798395; font-size: .62rem; }
+.platform-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding-top: 10px; border-top: 1px solid rgba(15,23,42,.07); color: #657085; font-size: .8125rem; line-height: var(--line-height-snug); }
 .platform-stats span:last-child { border-left: 1px solid rgba(15,23,42,.07); padding-left: 10px; }
-.platform-stats b { display: block; margin-bottom: 2px; color: #1d2939; font-size: .82rem; letter-spacing: -.02em; }
+.platform-stats b { display: block; margin-bottom: 2px; color: #1d2939; font-size: .9375rem; letter-spacing: -.02em; }
 
 .visual-label {
   position: absolute;
@@ -1475,7 +1477,7 @@ button:focus-visible {
   border-radius: var(--radius-full);
   box-shadow: 0 9px 25px rgba(35, 63, 100, .11);
   color: #536176;
-  font-size: .67rem;
+  font-size: .8125rem;
   font-weight: 600;
   backdrop-filter: blur(10px);
   z-index: 5;
