@@ -7,8 +7,8 @@
     <meta name="description" content="Kevin Ostheimer - Cloud & AI Product Owner helping companies build faster, more reliable AI platforms.">
     <meta name="keywords" content="Kevin Ostheimer, Product Owner, Cloud, AI, Azure, DevOps">
     <meta name="author" content="Kevin Ostheimer">
-    <meta name="theme-color" content="#0066CC">
-    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#000000">
+    <meta name="color-scheme" content="dark">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -27,7 +27,7 @@
     <meta name="twitter:image" content="https://impulsleistung.de/kevin-ostheimer.png">
     <meta name="twitter:image:alt" content="Portrait of Kevin Ostheimer">
 
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230066CC%22/><text x=%2250%22 y=%2268%22 text-anchor=%22middle%22 font-family=%22Arial,sans-serif%22 font-size=%2252%22 font-weight=%22700%22 fill=%22white%22>KO</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%232997FF%22/><text x=%2250%22 y=%2268%22 text-anchor=%22middle%22 font-family=%22Arial,sans-serif%22 font-size=%2252%22 font-weight=%22700%22 fill=%22white%22>KO</text></svg>">
     <link rel="canonical" href="https://impulsleistung.de">
 
     <title>Kevin Ostheimer - Cloud & AI Product Owner</title>
@@ -89,19 +89,12 @@
 
     <!-- Navigation -->
     <nav class="navbar" aria-label="Main navigation">
-        <div class="container nav-container nav-scope">
+        <div class="container nav-container">
             <a href="#home" class="nav-brand"><span class="brand-mark" aria-hidden="true">KO</span>Kevin Ostheimer</a>
 
-            <div class="nav-actions">
-                <button class="theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
-                    <span class="material-symbols-rounded" aria-hidden="true">dark_mode</span>
-                </button>
-
-                <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
-                    <span class="material-symbols-rounded" aria-hidden="true">menu</span>
-                </button>
-            </div>
-
+            <!-- No hamburger: the link list below is shown inline on desktop and
+                 hidden on phones, where the hero CTA and the contact section
+                 already provide the route to the same destinations. -->
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#impact" class="nav-link">Expertise &amp; Impact</a></li>
                 <li><a href="#skills" class="nav-link">Skills &amp; Certs</a></li>
@@ -109,7 +102,6 @@
             </ul>
         </div>
     </nav>
-    <div class="nav-backdrop" aria-hidden="true"></div>
 
     <!-- Hero Section -->
     <header class="hero" id="home">
@@ -422,7 +414,7 @@
 
     <!-- Explorer HUD — achievement progress -->
     <div class="explorer-hud">
-        <button class="hud-toggle" type="button" aria-expanded="false" aria-controls="hud-panel" aria-label="Explorer progress: 0 of 7 badges unlocked. Show achievements.">
+        <button class="hud-toggle" type="button" aria-expanded="false" aria-controls="hud-panel" aria-label="Explorer progress: 0 of 6 badges unlocked. Show achievements.">
             <svg class="hud-ring" viewBox="0 0 40 40" aria-hidden="true">
                 <circle class="hud-ring-track" cx="20" cy="20" r="16"></circle>
                 <circle class="hud-ring-bar" cx="20" cy="20" r="16" transform="rotate(-90 20 20)"></circle>
@@ -434,7 +426,7 @@
             <div class="hud-panel-header">
                 <div>
                     <span class="hud-panel-title">Explorer progress</span>
-                    <span class="hud-count">0 of 7 unlocked</span>
+                    <span class="hud-count">0 of 6 unlocked</span>
                 </div>
                 <button class="hud-reset" type="button">Reset</button>
             </div>

@@ -55,9 +55,8 @@
   /* ==========================================================
      1. GAMIFICATION — explorer badges
      ========================================================== */
-  var BADGES_KEY = 'ko-badges-v1';
+  var BADGES_KEY = 'ko-badges-v2';
   var CRED_KEY = 'ko-credential-openings-v1';
-  var THEME_KEY = 'ko-theme-v1';
   var RING_RADIUS = 16;
   var RING_LENGTH = 2 * Math.PI * RING_RADIUS;
 
@@ -67,8 +66,7 @@
     { id: 'deep-dive', icon: 'trending_up', title: 'Deep dive', hint: 'Scroll to the very end.' },
     { id: 'credential-collector', icon: 'workspace_premium', title: 'Credential collector', hint: 'Open three credentials.' },
     { id: 'network-node', icon: 'hub', title: 'Network node', hint: 'Visit LinkedIn or GitHub.' },
-    { id: 'direct-line', icon: 'mark_email_unread', title: 'Direct line', hint: 'Start an email conversation.' },
-    { id: 'night-owl', icon: 'dark_mode', title: 'Night owl', hint: 'Switch to the dark theme.' }
+    { id: 'direct-line', icon: 'mark_email_unread', title: 'Direct line', hint: 'Start an email conversation.' }
   ];
 
   var hud = $('.explorer-hud');
@@ -279,7 +277,9 @@
     canvas.hidden = false;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-    var colors = ['#0066CC', '#7C3AED', '#2563EB', '#EA580C', '#34C759', '#FF9F0A'];
+    /* Confetti is drawn on a black ground, so the blue leads with the dark
+       accent; the light-theme #0066CC read as a dull grey-navy there. */
+    var colors = ['#2997FF', '#7C3AED', '#2563EB', '#EA580C', '#34C759', '#FF9F0A'];
     var pieces = [];
     var i;
 
@@ -340,134 +340,27 @@
   }
 
   /* ==========================================================
-     2. THEME — light / dark / system, persisted
+     2. THEME — dark only.
+     The page ships a single dark palette, so there is no toggle, no
+     persisted preference and no system-preference listener: nothing here
+     can change, so nothing needs to be observed.
+
+     data-theme="dark" is still written on <html>. Nothing in this file or
+     in styles.css reads it back — no CSS selector keys off it — but it
+     remains a cheap, stable hook: it makes the active theme visible in
+     devtools, and it gives any future theme work an attribute to target
+     without having to reintroduce the plumbing.
      ========================================================== */
-  var systemDark = window.matchMedia('(prefers-color-scheme: dark)');
-  var themeButtons = $$('.theme-toggle');
-  var themeValue = store.read(THEME_KEY, 'auto');
-  if (['light', 'dark', 'auto'].indexOf(themeValue) === -1) themeValue = 'auto';
-
-  function applyTheme() {
-    var resolved = themeValue === 'auto'
-      ? (systemDark.matches ? 'dark' : 'light')
-      : themeValue;
-
-    root.setAttribute('data-theme', resolved);
-    root.setAttribute('data-theme-choice', themeValue);
-
-    themeButtons.forEach(function (button) {
-      var icon = $('.material-symbols-rounded', button);
-      if (icon) icon.textContent = resolved === 'dark' ? 'dark_mode' : 'light_mode';
-      button.setAttribute('aria-label',
-        'Theme: ' + themeValue + '. Switch to ' + (resolved === 'dark' ? 'light' : 'dark') + '.');
-      button.setAttribute('aria-pressed', String(themeValue === 'dark'));
-    });
-
-    /* applyTheme() runs during boot, which is BEFORE the FX engine (section
-       11) has been assigned — `var fx` is hoisted but still undefined here.
-       The guard is required, not defensive padding: without it the very
-       first theme application would throw and break every later section. */
-    if (fx) fx.onThemeChange();
-  }
-
-  themeButtons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      var resolved = root.getAttribute('data-theme');
-      themeValue = resolved === 'dark' ? 'light' : 'dark';
-      store.write(THEME_KEY, themeValue);
-      applyTheme();
-      unlock('night-owl');
-    });
-  });
-
-  onMediaChange(systemDark, function () {
-    if (themeValue === 'auto') applyTheme();
-  });
-
-  applyTheme();
+  root.setAttribute('data-theme', 'dark');
   /* ==========================================================
-     3. NAVIGATION — sheet, focus management, scrollspy
+     3. NAVIGATION — smooth scrolling + scrollspy
+     The link list is a plain inline row on desktop and is hidden on
+     phones, so there is no sheet to open, no backdrop, no focus trap and
+     no scroll lock. The hero CTA and the contact section already reach
+     the same destinations on a phone.
      ========================================================== */
-  var navToggle = $('.nav-toggle');
-  var navMenu = $('.nav-menu');
-  var navBackdrop = $('.nav-backdrop');
   var navbar = $('.navbar');
-  var navToggleIcon = navToggle ? $('.material-symbols-rounded', navToggle) : null;
-  var menuOpen = false;
-  var lastFocused = null;
 
-  function setMenuState(isOpen) {
-    if (!navToggle || !navMenu) return;
-    if (isOpen === menuOpen) return;
-
-    menuOpen = isOpen;
-    navMenu.classList.toggle('active', isOpen);
-    navToggle.classList.toggle('is-open', isOpen);
-    if (navBackdrop) navBackdrop.classList.toggle('active', isOpen);
-    if (navToggleIcon) navToggleIcon.textContent = isOpen ? 'close' : 'menu';
-
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-    navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-    doc.body.classList.toggle('menu-open', isOpen);
-
-    if (isOpen) {
-      lastFocused = doc.activeElement;
-      window.setTimeout(function () {
-        var first = $('.nav-link', navMenu);
-        if (first && menuOpen) first.focus({ preventScroll: true });
-      }, 60);
-    } else if (lastFocused && typeof lastFocused.focus === 'function') {
-      lastFocused.focus({ preventScroll: true });
-      lastFocused = null;
-    }
-  }
-
-  if (navToggle) {
-    navToggle.addEventListener('click', function () {
-      setMenuState(!menuOpen);
-    });
-  }
-
-  if (navBackdrop) {
-    navBackdrop.addEventListener('click', function () { setMenuState(false); });
-  }
-
-  /* Keep focus inside the sheet while it is open. */
-  doc.addEventListener('keydown', function (event) {
-    if (!menuOpen) return;
-
-    if (event.key === 'Escape' || event.key === 'Esc') {
-      event.preventDefault();
-      setMenuState(false);
-      return;
-    }
-
-    if (event.key !== 'Tab') return;
-
-    var focusables = $$('.nav-scope a[href], .nav-scope button:not([disabled])')
-      .filter(function (el) { return el.offsetWidth > 0 || el.offsetHeight > 0; });
-    if (!focusables.length) return;
-
-    var firstEl = focusables[0];
-    var lastEl = focusables[focusables.length - 1];
-
-    if (event.shiftKey && doc.activeElement === firstEl) {
-      event.preventDefault();
-      lastEl.focus();
-    } else if (!event.shiftKey && doc.activeElement === lastEl) {
-      event.preventDefault();
-      firstEl.focus();
-    }
-  });
-
-  /* Rotating the device or resizing past the breakpoint must not leave the
-     sheet open with the page locked behind it. Must match the CSS breakpoint. */
-  var mobileQuery = window.matchMedia('(max-width: 768px)');
-  function syncMenuWithViewport() {
-    if (!mobileQuery.matches && menuOpen) setMenuState(false);
-  }
-  onMediaChange(mobileQuery, syncMenuWithViewport);
-  window.addEventListener('resize', syncMenuWithViewport);
   /* ---------- smooth scrolling with navbar offset ---------- */
   function navOffset() {
     return navbar ? navbar.offsetHeight + 12 : 70;
@@ -482,17 +375,9 @@
       if (!target) return;
 
       event.preventDefault();
-      var wasOpen = menuOpen;
-      setMenuState(false);
 
       var top = target.getBoundingClientRect().top + window.pageYOffset - navOffset();
-      var go = function () {
-        window.scrollTo({ top: Math.max(top, 0), behavior: reducedMotion ? 'auto' : 'smooth' });
-      };
-
-      /* Let the sheet finish closing before scrolling on mobile. */
-      if (wasOpen && !reducedMotion) window.setTimeout(go, 180);
-      else go();
+      window.scrollTo({ top: Math.max(top, 0), behavior: reducedMotion ? 'auto' : 'smooth' });
 
       if (history.replaceState) history.replaceState(null, '', href);
     });
@@ -901,10 +786,9 @@
          canvas mistake there is; each colour is baked into an offscreen
          canvas once and blitted with drawImage instead.
 
-       • THEME-AWARE BLENDING. Dark mode uses 'lighter' compositing so
-         overlapping glows accumulate like real light; light mode falls
-         back to normal compositing, because additive blending against a
-         white ground just washes every glow out.
+       • ADDITIVE BLENDING. The page is dark-only, so every glow composites
+         with 'lighter' and overlapping light accumulates the way real
+         light does instead of washing each other out.
 
        • IDLE MEANS NO rAF AT ALL. The loop stops itself when nothing is
          left to draw and is woken on demand. A page at rest costs zero
@@ -932,35 +816,24 @@
     var tierIndex = 0;
     var tier = TIERS[0];
 
-    /* ---------- theme palettes ----------
+    /* ---------- palette ----------
        Stored as RGB triples so rgba() strings are cheap to build and the
-       sprite cache can key on them without string parsing. */
-    var PALETTES = {
-      light: {
-        star: [16, 72, 140],
-        dust: [0, 102, 204],
-        accent: [0, 102, 204],
-        ai: [124, 58, 237],
-        cloud: [37, 99, 235],
-        starAlpha: 0.42,
-        dustAlpha: 0.20,
-        /* Additive blending only works on a dark ground. On a white page
-           'lighter' adds to an already-saturated background and every glow
-           simply vanishes, so light mode composites normally instead. */
-        blend: 'source-over'
-      },
-      dark: {
-        star: [206, 224, 255],
-        dust: [122, 176, 255],
-        accent: [41, 151, 255],
-        ai: [167, 139, 250],
-        cloud: [96, 165, 250],
-        starAlpha: 0.62,
-        dustAlpha: 0.26,
-        blend: 'lighter'
-      }
+       sprite cache can key on them without string parsing.
+
+       The page is dark-only, so there is exactly one palette and no theme
+       flip to react to. 'lighter' compositing is correct here precisely
+       because the ground is black: overlapping glows accumulate like real
+       light instead of muddying each other. */
+    var palette = {
+      star: [206, 224, 255],
+      dust: [122, 176, 255],
+      accent: [41, 151, 255],
+      ai: [167, 139, 250],
+      cloud: [96, 165, 250],
+      starAlpha: 0.62,
+      dustAlpha: 0.26,
+      blend: 'lighter'
     };
-    var palette = PALETTES.light;
 
     function rgba(c, a) {
       return 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' +
@@ -993,10 +866,6 @@
       spriteCache[key] = c;
       return c;
     }
-
-    /* A cache keyed on colour must be dropped when the theme flips,
-       otherwise dark mode would keep blitting light-mode bitmaps. */
-    function clearSprites() { spriteCache = {}; }
 
     /* ---------- generic object pool ----------
        Live items always occupy indices [0, active). Releasing swaps the
@@ -2049,25 +1918,6 @@
       }
     }
 
-    /* ---------- theme wiring ----------
-       The palettes are baked into the sprite bitmaps and into every particle
-       created so far, so a theme flip needs a full rebuild: drop the sprite
-       cache, adopt the new palette, and reseed the field so existing stars
-       and dust pick up the new colours instead of keeping the old ones. */
-    function applyThemePalette() {
-      var resolved = root.getAttribute('data-theme');
-      palette = resolved === 'dark' ? PALETTES.dark : PALETTES.light;
-
-      if (!supported) return;
-
-      clearSprites();
-      seedField();
-
-      /* Force a redraw on the next frame even if nothing else is animating. */
-      backdrop.clear();
-      overlay.clear();
-      wake();
-    }
     /* ---------- initialisation ----------
        Deferred until first use rather than running at parse time, so a page
        that never scrolls and never moves the mouse never pays for any of it. */
@@ -2077,7 +1927,6 @@
       if (initialised || !supported) return;
       initialised = true;
 
-      applyThemePalette();
       measureHero();
       resizeSurfaces();
 
@@ -2143,12 +1992,6 @@
       onScroll: function (scrollY) {
         if (!initialised || !supported) return;
         updateHeroVisibility(scrollY);
-      },
-
-      /* Called from applyTheme() after data-theme is set. */
-      onThemeChange: function () {
-        if (!initialised) return;
-        applyThemePalette();
       }
     };
   })();

@@ -7,39 +7,44 @@
 /* ============================================
    CSS CUSTOM PROPERTIES
    ============================================ */
+/* Single dark palette. There is deliberately no light counterpart and no
+   prefers-color-scheme block anywhere in this file: the page is dark-only,
+   so every component below can read these tokens unconditionally. */
 :root {
-  /* Colors — Warm, refined palette */
-  --color-bg: #F5F5F7;
-  --color-bg-elevated: #FFFFFF;
-  --color-bg-subtle: #FAFAFA;
-  --color-text: #1D1D1F;
-  --color-text-secondary: #6E6E73;
-  --color-text-tertiary: #6E6E73;
-  --color-text-muted: #76767C;
+  color-scheme: dark;
 
-  /* Accent — Deep Apple-style blue */
-  --color-accent: #0066CC;
-  --color-accent-hover: #0077ED;
-  --color-accent-glow: rgba(0, 102, 204, 0.12);
+  /* Colors — deep, refined palette */
+  --color-bg: #000000;
+  --color-bg-elevated: #1C1C1E;
+  --color-bg-subtle: #2C2C2E;
+  --color-text: #F5F5F7;
+  --color-text-secondary: #A1A1A6;
+  --color-text-tertiary: #A1A1A6;
+  --color-text-muted: #8E8E93;
+
+  /* Accent — bright enough to hold contrast on black */
+  --color-accent: #2997FF;
+  --color-accent-hover: #40A9FF;
+  --color-accent-glow: rgba(41, 151, 255, 0.2);
 
   /* Pillar Colors — saturated but refined */
   --color-ai: #7C3AED;
-  --color-ai-soft: rgba(124, 58, 237, 0.08);
+  --color-ai-soft: rgba(167, 139, 250, 0.12);
   --color-cloud: #2563EB;
-  --color-cloud-soft: rgba(37, 99, 235, 0.08);
+  --color-cloud-soft: rgba(96, 165, 250, 0.12);
   --color-devops: #EA580C;
-  --color-devops-soft: rgba(234, 88, 12, 0.08);
+  --color-devops-soft: rgba(251, 146, 60, 0.12);
 
-  /* Borders — hairline, refined */
-  --border-subtle: rgba(0, 0, 0, 0.06);
-  --border-strong: rgba(0, 0, 0, 0.10);
+  /* Borders — hairline, refined. White-based so they read on black. */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
 
   /* Shadows — layered depth, never harsh */
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.10);
-  --shadow-xl: 0 32px 96px rgba(0, 0, 0, 0.12);
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 32px 96px rgba(0, 0, 0, 0.6);
 
   /* Typography — SF-style proportions */
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
@@ -106,24 +111,22 @@
   --transition-slow: 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
   --transition-spring: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* Surfaces & overlays — theme-aware so light/dark stay in sync */
-  --navbar-bg: rgba(245, 245, 247, 0.72);
-  --navbar-bg-scrolled: rgba(245, 245, 247, 0.88);
-  --sheet-bg: rgba(255, 255, 255, 0.92);
-  --backdrop-bg: rgba(0, 0, 0, 0.24);
-  --hover-soft: rgba(0, 0, 0, 0.04);
-  --glass-card: rgba(255, 255, 255, 0.62);
-  --glass-strong: rgba(255, 255, 255, 0.80);
-  --grid-line: rgba(15, 23, 42, 0.035);
-  --hero-glow-a: rgba(10, 132, 255, 0.13);
-  --hero-glow-b: rgba(129, 140, 248, 0.09);
-  --hero-radial: rgba(0, 102, 204, 0.04);
-  --brand-gradient: linear-gradient(145deg, #111827, #334155);
-  --hero-gradient-from: #1D1D1F;
-  --hero-gradient-to: rgba(29, 29, 31, 0.75);
-  --hero-img-border: rgba(255, 255, 255, 0.78);
-  --contact-gradient-to: #F4F8FF;
-  --metric-positive: #248A3D;
+  /* Surfaces & overlays */
+  --navbar-bg: rgba(0, 0, 0, 0.72);
+  --navbar-bg-scrolled: rgba(0, 0, 0, 0.88);
+  --hover-soft: rgba(255, 255, 255, 0.08);
+  --glass-card: rgba(34, 34, 38, 0.74);
+  --glass-strong: rgba(34, 34, 38, 0.82);
+  --grid-line: rgba(255, 255, 255, 0.04);
+  --hero-glow-a: rgba(10, 132, 255, 0.16);
+  --hero-glow-b: rgba(94, 92, 230, 0.1);
+  --hero-radial: rgba(41, 151, 255, 0.06);
+  --brand-gradient: linear-gradient(145deg, #2997FF, #5E5CE6);
+  --hero-gradient-from: #F5F5F7;
+  --hero-gradient-to: rgba(245, 245, 247, 0.7);
+  --hero-img-border: rgba(255, 255, 255, 0.2);
+  --contact-gradient-to: #182538;
+  --metric-positive: #54D36D;
 
   /* Safe-area insets for notched devices */
   --safe-top: env(safe-area-inset-top, 0px);
@@ -160,10 +163,6 @@ body {
   background-color: var(--color-bg);
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
-}
-
-body.menu-open {
-  overflow: hidden;
 }
 
 a {
@@ -369,125 +368,22 @@ button:focus-visible {
   box-shadow: 0 2px 12px var(--color-accent-glow);
 }
 
-/* Nav actions — theme toggle + hamburger */
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-1);
-}
-
-.theme-toggle {
-  display: flex;
-}
-
-.nav-toggle {
-  display: none;
-}
-
-.theme-toggle,
-.nav-toggle {
-  width: 40px;
-  height: 40px;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text);
-  border-radius: var(--radius-full);
-  transition: background var(--transition-fast), transform var(--transition-fast);
-}
-
-.theme-toggle:hover,
-.nav-toggle:hover {
-  background: var(--hover-soft);
-}
-
-.theme-toggle:active,
-.nav-toggle:active {
-  transform: scale(0.94);
-}
-
-/* Open state — JS swaps the icon glyph (menu <-> close) and toggles
-   .is-open; this adds a persistent soft fill so the hamburger still
-   reads as "active" while the sheet is open, matching the other nav
-   open states (.nav-menu.active / .nav-backdrop.active / body.menu-open). */
-.nav-toggle.is-open {
-  background: var(--hover-soft);
-}
-
-/* ============================================
-   MOBILE NAVIGATION — compact sheet + backdrop
-   ============================================ */
-/* Backdrop sits below the navbar/sheet but above page content */
-.nav-backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 99;
-  background: var(--backdrop-bg);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity var(--transition-base), visibility var(--transition-base);
-}
-
-.nav-backdrop.active {
-  opacity: 1;
-  visibility: visible;
-}
-
+/* Phones get no navigation row at all: there is no room for three labels
+   beside the brand, and this page ships dark-only with no toggle button to
+   fill that space either. The hero CTA ("Let's Talk") and the contact
+   section below reach the same destinations, so nothing is unreachable.
+   display:none (not visibility or opacity) is deliberate — it also removes
+   the links from the tab order, so a keyboard user on a phone cannot focus
+   something they cannot see. */
 @media (max-width: 768px) {
-  .theme-toggle,
-  .nav-toggle {
-    display: flex;
-  }
-
-  /* Compact sheet — hugs the navbar instead of filling the viewport */
   .nav-menu {
-    position: fixed;
-    top: calc(var(--navbar-height) + var(--safe-top));
-    left: 0;
-    right: 0;
-    flex-direction: column;
+    display: none;
+  }
+
+  /* The brand no longer needs to share the row, so let it sit flush left
+     without the flex spacer pushing it around. */
+  .nav-container {
     justify-content: flex-start;
-    padding: var(--space-6) var(--space-5);
-    padding-bottom: calc(var(--space-6) + var(--safe-bottom));
-    background: var(--sheet-bg);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    border-bottom: 1px solid var(--border-subtle);
-    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-    gap: var(--space-1);
-    transform: translateY(calc(-100% - var(--safe-top)));
-    opacity: 0;
-    visibility: hidden;
-    transition: transform var(--transition-spring), opacity var(--transition-base), visibility var(--transition-base);
-    pointer-events: none;
-  }
-
-  .nav-menu.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-  }
-
-  .nav-link {
-    font-size: var(--font-size-xl);
-    padding: var(--space-4) var(--space-5);
-    width: 100%;
-    border-radius: var(--radius-md);
-    font-weight: var(--font-weight-semibold);
-    min-height: 48px;
-  }
-
-  .nav-cta {
-    margin-left: 0;
-    margin-top: var(--space-3);
-    padding: var(--space-4) var(--space-6);
-    font-size: var(--font-size-lg);
-    width: 100%;
-    text-align: center;
-    justify-content: center;
   }
 }
 
@@ -512,7 +408,7 @@ button:focus-visible {
   transform: translateX(-50%);
   width: 900px;
   height: 900px;
-  background: radial-gradient(ellipse at center, rgba(0, 102, 204, 0.04) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, var(--hero-radial) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -547,10 +443,11 @@ button:focus-visible {
   margin-bottom: var(--space-6);
 }
 
-/* Subtle text gradient for the headline on large screens */
+/* Subtle text gradient for the headline on large screens. The gradient
+   tokens are already dark-tuned, so this needs no theme override. */
 @media (min-width: 769px) {
   .hero-headline {
-    background: linear-gradient(180deg, var(--color-text) 0%, rgba(29, 29, 31, 0.75) 100%);
+    background: linear-gradient(180deg, var(--hero-gradient-from) 0%, var(--hero-gradient-to) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1201,7 +1098,7 @@ button:focus-visible {
   transform: translateX(-50%);
   width: 400px;
   height: 400px;
-  background: radial-gradient(ellipse at center, rgba(0, 102, 204, 0.04) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, var(--hero-radial) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -1358,118 +1255,6 @@ button:focus-visible {
 }
 
 /* ============================================
-   DARK MODE — Rich, refined, Apple-style
-   ============================================ */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #000000;
-    --color-bg-elevated: #1C1C1E;
-    --color-bg-subtle: #2C2C2E;
-    --color-text: #F5F5F7;
-    --color-text-secondary: #A1A1A6;
-    --color-text-tertiary: #A1A1A6;
-    --color-text-muted: #8E8E93;
-    --color-accent: #2997FF;
-    --color-accent-hover: #40A9FF;
-    --color-accent-glow: rgba(41, 151, 255, 0.2);
-
-    --color-ai-soft: rgba(167, 139, 250, 0.12);
-    --color-cloud-soft: rgba(96, 165, 250, 0.12);
-    --color-devops-soft: rgba(251, 146, 60, 0.12);
-
-    --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-strong: rgba(255, 255, 255, 0.14);
-
-    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
-    --shadow-xl: 0 32px 96px rgba(0, 0, 0, 0.6);
-
-    /* Hero gradient text override for dark */
-    --hero-gradient-from: #F5F5F7;
-    --hero-gradient-to: rgba(245, 245, 247, 0.7);
-
-    /* Surfaces & overlays — keep system dark in sync with manual dark.
-       Without these the mobile sheet, backdrop, scrollspy pill and the
-       floating HUD/toast/back-to-top surfaces would stay light.
-       [data-theme="light"] has higher specificity than a bare :root, so
-       an explicit light choice still wins over a dark system preference. */
-    --navbar-bg: rgba(0, 0, 0, 0.72);
-    --navbar-bg-scrolled: rgba(0, 0, 0, 0.88);
-    --sheet-bg: rgba(18, 18, 20, 0.94);
-    --backdrop-bg: rgba(0, 0, 0, 0.5);
-    --hover-soft: rgba(255, 255, 255, 0.08);
-    --glass-card: rgba(34, 34, 38, 0.74);
-    --glass-strong: rgba(34, 34, 38, 0.82);
-    --grid-line: rgba(255, 255, 255, 0.04);
-    --hero-glow-a: rgba(10, 132, 255, 0.16);
-    --hero-glow-b: rgba(94, 92, 230, 0.1);
-    --hero-radial: rgba(41, 151, 255, 0.06);
-    --brand-gradient: linear-gradient(145deg, #2997FF, #5E5CE6);
-    --hero-img-border: rgba(255, 255, 255, 0.2);
-    --contact-gradient-to: #182538;
-    --metric-positive: #54D36D;
-  }
-
-  .navbar {
-    background: rgba(0, 0, 0, 0.72);
-  }
-
-  .navbar.scrolled {
-    background: rgba(0, 0, 0, 0.88);
-  }
-
-  .nav-link:hover {
-    background: rgba(255, 255, 255, 0.08);
-  }
-
-  .nav-toggle:hover {
-    background: rgba(255, 255, 255, 0.08);
-  }
-
-  .btn-outline {
-    border-color: var(--border-strong);
-    color: var(--color-text);
-  }
-
-  .btn-outline:hover {
-    border-color: var(--color-text);
-    color: var(--color-text);
-  }
-
-  .hero::before {
-    background: radial-gradient(ellipse at center, rgba(41, 151, 255, 0.06) 0%, transparent 70%);
-  }
-
-  .hero-headline {
-    background: linear-gradient(180deg, var(--color-text) 0%, var(--color-text-secondary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  @media (max-width: 768px) {
-    .hero-headline {
-      -webkit-text-fill-color: var(--color-text);
-    }
-  }
-
-  .contact-box::before {
-    background: radial-gradient(ellipse at center, rgba(41, 151, 255, 0.06) 0%, transparent 70%);
-  }
-
-  .footer {
-    border-top-color: var(--border-subtle);
-  }
-
-  ::selection {
-    background: var(--color-accent);
-    color: white;
-  }
-}
-
-/* ============================================
    VISUAL REFINEMENT — Executive platform story
    ============================================ */
 .nav-brand {
@@ -1484,8 +1269,8 @@ button:focus-visible {
   width: 25px;
   height: 25px;
   border-radius: 8px;
-  background: linear-gradient(145deg, #111827, #334155);
-  box-shadow: 0 3px 9px rgba(15, 23, 42, 0.18);
+  background: var(--brand-gradient);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.45);
   color: #fff;
   font-size: 0.625rem;
   font-weight: 700;
@@ -1495,15 +1280,16 @@ button:focus-visible {
 .hero {
   min-height: min(840px, 100vh);
   background:
-    radial-gradient(circle at 78% 42%, rgba(10, 132, 255, 0.13), transparent 21rem),
-    radial-gradient(circle at 70% 30%, rgba(129, 140, 248, 0.09), transparent 28rem);
+    radial-gradient(circle at 78% 42%, var(--hero-glow-a), transparent 24rem),
+    radial-gradient(circle at 70% 30%, var(--hero-glow-b), transparent 28rem),
+    var(--color-bg);
 }
 
 .hero::after {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(rgba(15, 23, 42, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, .035) 1px, transparent 1px);
+  background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 42px 42px;
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.3) 45%, transparent 95%);
   mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.3) 45%, transparent 95%);
@@ -1519,8 +1305,8 @@ button:focus-visible {
   gap: var(--space-2);
   padding: 6px 11px;
   margin-bottom: var(--space-5);
-  background: rgba(255, 255, 255, .62);
-  border: 1px solid rgba(0, 102, 204, .12);
+  background: var(--glass-card);
+  border: 1px solid rgba(255, 255, 255, .12);
   border-radius: var(--radius-full);
   box-shadow: var(--shadow-xs);
   font-size: var(--font-size-sm);
@@ -1564,19 +1350,22 @@ button:focus-visible {
 
 .hero-image { position: absolute; top: 78px; left: 50%; transform: translateX(-50%); z-index: 3; }
 .hero-image::before { inset: -14px; opacity: .45; filter: blur(1px); }
-.hero-image img { width: 180px; height: 180px; border: 5px solid rgba(255,255,255,.78); box-shadow: 0 20px 45px rgba(24, 53, 82, .18); }
+.hero-image img { width: 180px; height: 180px; border: 5px solid var(--hero-img-border); box-shadow: 0 20px 45px rgba(0, 0, 0, .5); }
 
+/* Orbit rings are hairlines, so their alpha has to be much higher than it was
+   on the light palette: a dark blue at .18 simply disappears against black.
+   The hues follow the dark accent and the dark AI tint. */
 .visual-orbit {
   position: absolute;
   top: 23px;
   left: 50%;
-  border: 1px solid rgba(0, 102, 204, .18);
+  border: 1px solid rgba(41, 151, 255, .22);
   border-radius: 50%;
   transform: translateX(-50%) rotate(-24deg);
   z-index: 1;
 }
 .orbit-one { width: 360px; height: 242px; }
-.orbit-two { top: 3px; width: 278px; height: 285px; border-color: rgba(91, 44, 131, .13); transform: translateX(-50%) rotate(36deg); }
+.orbit-two { top: 3px; width: 278px; height: 285px; border-color: rgba(167, 139, 250, .20); transform: translateX(-50%) rotate(36deg); }
 
 .platform-card {
   position: absolute;
@@ -1585,21 +1374,21 @@ button:focus-visible {
   width: min(100%, 330px);
   padding: 17px 18px 15px;
   transform: translateX(-50%);
-  background: rgba(255,255,255,.80);
-  border: 1px solid rgba(255,255,255,.88);
+  background: var(--glass-card);
+  border: 1px solid rgba(255,255,255,.12);
   border-radius: 19px;
-  box-shadow: 0 18px 50px rgba(35, 63, 100, .14), inset 0 1px rgba(255,255,255,.85);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .45), inset 0 1px rgba(255,255,255,.08);
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
   z-index: 4;
 }
-.platform-topline { display: flex; align-items: center; gap: 8px; color: #657085; font-size: .8125rem; font-weight: 600; letter-spacing: .02em; }
-.platform-topline strong { margin-left: auto; color: #137333; font-size: .875rem; }
+.platform-topline { display: flex; align-items: center; gap: 8px; color: #a1a1a6; font-size: .8125rem; font-weight: 600; letter-spacing: .02em; }
+.platform-topline strong { margin-left: auto; color: var(--metric-positive); font-size: .875rem; }
 .platform-chart { height: 68px; margin: 8px -1px 3px; }
 .platform-chart svg { display: block; width: 100%; height: 100%; overflow: visible; }
-.platform-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding-top: 10px; border-top: 1px solid rgba(15,23,42,.07); color: #657085; font-size: .8125rem; line-height: var(--line-height-snug); }
-.platform-stats span:last-child { border-left: 1px solid rgba(15,23,42,.07); padding-left: 10px; }
-.platform-stats b { display: block; margin-bottom: 2px; color: #1d2939; font-size: .9375rem; letter-spacing: -.02em; }
+.platform-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.08); color: #a1a1a6; font-size: .8125rem; line-height: var(--line-height-snug); }
+.platform-stats span:last-child { border-left: 1px solid rgba(255,255,255,.08); padding-left: 10px; }
+.platform-stats b { display: block; margin-bottom: 2px; color: #f5f5f7; font-size: .9375rem; letter-spacing: -.02em; }
 
 .visual-label {
   position: absolute;
@@ -1607,11 +1396,11 @@ button:focus-visible {
   align-items: center;
   gap: 6px;
   padding: 8px 10px;
-  background: rgba(255,255,255,.82);
-  border: 1px solid rgba(255,255,255,.9);
+  background: var(--glass-card);
+  border: 1px solid rgba(255,255,255,.12);
   border-radius: var(--radius-full);
-  box-shadow: 0 9px 25px rgba(35, 63, 100, .11);
-  color: #536176;
+  box-shadow: 0 9px 25px rgba(0, 0, 0, .4);
+  color: #a1a1a6;
   font-size: .8125rem;
   font-weight: 600;
   backdrop-filter: blur(10px);
@@ -1621,25 +1410,13 @@ button:focus-visible {
 .visual-label-top { top: 47px; right: -6px; }
 .visual-label-bottom { top: 336px; left: -16px; }
 
-.contact-box { background: linear-gradient(145deg, var(--color-bg-elevated), #f4f8ff); }
+.contact-box { background: linear-gradient(145deg, var(--color-bg-elevated), var(--contact-gradient-to)); }
 
 .contact-visual { position: absolute; top: 0; left: 50%; width: 400px; height: 210px; transform: translateX(-50%); pointer-events: none; opacity: .8; }
-.contact-orbit { position: absolute; border: 1px solid rgba(0,102,204,.15); border-radius: 50%; left: 50%; top: -112px; transform: translateX(-50%); }.orbit-a { width: 310px; height: 205px; }.orbit-b { width: 200px; height: 250px; border-color: rgba(94,92,230,.15); transform: translateX(-50%) rotate(38deg); }
-.contact-dot { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: var(--color-accent); box-shadow: 0 0 0 5px rgba(0,102,204,.09); }.dot-a { top: 48px; left: 76px; }.dot-b { top: 7px; right: 96px; background: #5e5ce6; }.dot-c { top: 92px; right: 54px; background: #34c759; }
+.contact-orbit { position: absolute; border: 1px solid rgba(41,151,255,.20); border-radius: 50%; left: 50%; top: -112px; transform: translateX(-50%); }.orbit-a { width: 310px; height: 205px; }.orbit-b { width: 200px; height: 250px; border-color: rgba(94,92,230,.22); transform: translateX(-50%) rotate(38deg); }
+.contact-dot { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: var(--color-accent); box-shadow: 0 0 0 5px rgba(41,151,255,.18); }.dot-a { top: 48px; left: 76px; }.dot-b { top: 7px; right: 96px; background: #5e5ce6; }.dot-c { top: 92px; right: 54px; background: #34c759; }
 .contact-spark { position: absolute; top: 58px; left: calc(50% - 9px); color: #5e5ce6; font-size: 30px; line-height: 1; }
 .contact-title, .contact-text, .contact-buttons { z-index: 1; }
-
-@media (prefers-color-scheme: dark) {
-  .hero { background: radial-gradient(circle at 78% 42%, rgba(10,132,255,.16), transparent 24rem), var(--color-bg); }
-  .hero::after { background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); }
-  .brand-mark { background: linear-gradient(145deg, #2997ff, #5e5ce6); }
-  .hero-greeting, .platform-card, .visual-label { background: rgba(34, 34, 38, .74); border-color: rgba(255,255,255,.12); }
-  .hero-image img { border-color: rgba(255,255,255,.2); }
-  .platform-topline, .platform-stats { color: #a1a1a6; }
-  .platform-topline strong { color: #54d36d; }
-  .platform-stats b { color: #f5f5f7; }
-  .contact-box { background: linear-gradient(145deg, var(--color-bg-elevated), #182538); }
-}
 
 @media (max-width: 900px) {
   .hero-container { grid-template-columns: 1fr; gap: var(--space-12); }
@@ -1690,151 +1467,6 @@ button:focus-visible {
 }
 
 /* ==========================================================
-   THEME ENGINE — data-theme mirrors prefers-color-scheme.
-   The dark surface overrides below are written so they can be
-   mirrored onto [data-theme="dark"] (manual dark) and reversed
-   by [data-theme="light"] (manual light). System preference
-   keeps working untouched via the @media block above.
-   ========================================================== */
-:root[data-theme="dark"] {
-  --color-bg: #000000;
-  --color-bg-elevated: #1C1C1E;
-  --color-bg-subtle: #2C2C2E;
-  --color-text: #F5F5F7;
-  --color-text-secondary: #A1A1A6;
-  --color-text-tertiary: #A1A1A6;
-  --color-text-muted: #8E8E93;
-  --color-accent: #2997FF;
-  --color-accent-hover: #40A9FF;
-  --color-accent-glow: rgba(41, 151, 255, 0.2);
-
-  --color-ai-soft: rgba(167, 139, 250, 0.12);
-  --color-cloud-soft: rgba(96, 165, 250, 0.12);
-  --color-devops-soft: rgba(251, 146, 60, 0.12);
-
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.14);
-
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
-  --shadow-xl: 0 32px 96px rgba(0, 0, 0, 0.6);
-
-  /* Surfaces & overlays */
-  --navbar-bg: rgba(0, 0, 0, 0.72);
-  --navbar-bg-scrolled: rgba(0, 0, 0, 0.88);
-  --sheet-bg: rgba(18, 18, 20, 0.94);
-  --backdrop-bg: rgba(0, 0, 0, 0.5);
-  --hover-soft: rgba(255, 255, 255, 0.08);
-  --glass-card: rgba(34, 34, 38, 0.74);
-  --glass-strong: rgba(34, 34, 38, 0.82);
-  --grid-line: rgba(255, 255, 255, 0.04);
-  --hero-glow-a: rgba(10, 132, 255, 0.16);
-  --hero-glow-b: rgba(94, 92, 230, 0.1);
-  --hero-radial: rgba(41, 151, 255, 0.06);
-  --brand-gradient: linear-gradient(145deg, #2997FF, #5E5CE6);
-  --hero-gradient-from: #F5F5F7;
-  --hero-gradient-to: rgba(245, 245, 247, 0.7);
-  --hero-img-border: rgba(255, 255, 255, 0.2);
-  --contact-gradient-to: #182538;
-  --metric-positive: #54D36D;
-}
-
-/* Dark component overrides — applied for system dark OR manual dark */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .btn-outline { border-color: var(--border-strong); color: var(--color-text); }
-  :root:not([data-theme="light"]) .btn-outline:hover { border-color: var(--color-text); color: var(--color-text); }
-  :root:not([data-theme="light"]) .hero-headline { -webkit-text-fill-color: var(--color-text); }
-}
-
-@media (prefers-color-scheme: dark) and (max-width: 768px) {
-  :root:not([data-theme="light"]) .hero-headline { -webkit-text-fill-color: var(--color-text); }
-}
-
-:root[data-theme="dark"] .btn-outline { border-color: var(--border-strong); color: var(--color-text); }
-:root[data-theme="dark"] .btn-outline:hover { border-color: var(--color-text); color: var(--color-text); }
-
-:root[data-theme="dark"] .hero-headline {
-  background: linear-gradient(180deg, var(--hero-gradient-from) 0%, var(--hero-gradient-to) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-@media (max-width: 768px) {
-  :root[data-theme="dark"] .hero-headline { -webkit-text-fill-color: var(--color-text); }
-}
-
-/* Mirror the system-dark hero overrides onto the manual-dark path */
-:root[data-theme="dark"] .hero { background: radial-gradient(circle at 78% 42%, var(--hero-glow-a), transparent 24rem), var(--color-bg); }
-:root[data-theme="dark"] .hero::after { background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px); }
-:root[data-theme="dark"] .brand-mark { background: var(--brand-gradient); }
-:root[data-theme="dark"] .hero-greeting,
-:root[data-theme="dark"] .platform-card,
-:root[data-theme="dark"] .visual-label { background: var(--glass-card); border-color: rgba(255, 255, 255, .12); }
-:root[data-theme="dark"] .hero-image img { border-color: var(--hero-img-border); }
-:root[data-theme="dark"] .platform-topline,
-:root[data-theme="dark"] .platform-stats { color: #a1a1a6; }
-:root[data-theme="dark"] .platform-topline strong { color: #54d36d; }
-:root[data-theme="dark"] .platform-stats b { color: #f5f5f7; }
-:root[data-theme="dark"] .contact-box { background: linear-gradient(145deg, var(--color-bg-elevated), var(--contact-gradient-to)); }
-
-/* Manual light must win over a dark system preference */
-:root[data-theme="light"] {
-  --color-bg: #F5F5F7;
-  --color-bg-elevated: #FFFFFF;
-  --color-bg-subtle: #FAFAFA;
-  --color-text: #1D1D1F;
-  --color-text-secondary: #6E6E73;
-  --color-text-tertiary: #6E6E73;
-  --color-text-muted: #76767C;
-  --color-accent: #0066CC;
-  --color-accent-hover: #0077ED;
-  --color-accent-glow: rgba(0, 102, 204, 0.12);
-
-  --color-ai-soft: rgba(124, 58, 237, 0.08);
-  --color-cloud-soft: rgba(37, 99, 235, 0.08);
-  --color-devops-soft: rgba(234, 88, 12, 0.08);
-
-  --border-subtle: rgba(0, 0, 0, 0.06);
-  --border-strong: rgba(0, 0, 0, 0.10);
-
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.10);
-  --shadow-xl: 0 32px 96px rgba(0, 0, 0, 0.12);
-
-  --navbar-bg: rgba(245, 245, 247, 0.72);
-  --navbar-bg-scrolled: rgba(245, 245, 247, 0.88);
-  --sheet-bg: rgba(255, 255, 255, 0.92);
-  --backdrop-bg: rgba(0, 0, 0, 0.24);
-  --hover-soft: rgba(0, 0, 0, 0.04);
-  --glass-card: rgba(255, 255, 255, 0.62);
-  --glass-strong: rgba(255, 255, 255, 0.80);
-  --grid-line: rgba(15, 23, 42, 0.035);
-  --hero-glow-a: rgba(10, 132, 255, 0.13);
-  --hero-glow-b: rgba(129, 140, 248, 0.09);
-  --hero-radial: rgba(0, 102, 204, 0.04);
-  --brand-gradient: linear-gradient(145deg, #111827, #334155);
-  --hero-gradient-from: #1D1D1F;
-  --hero-gradient-to: rgba(29, 29, 31, 0.75);
-  --hero-img-border: rgba(255, 255, 255, 0.78);
-  --contact-gradient-to: #F4F8FF;
-  --metric-positive: #248A3D;
-}
-
-:root[data-theme="light"] .btn-outline { border-color: var(--border-strong); color: var(--color-text); }
-:root[data-theme="light"] .btn-outline:hover { border-color: var(--color-text); color: var(--color-text); }
-:root[data-theme="light"] .hero-headline {
-  background: linear-gradient(180deg, var(--hero-gradient-from) 0%, var(--hero-gradient-to) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ==========================================================
    INTERACTION LAYER — glow, tilt, ripple
    JS adds .is-interactive to fine-pointer devices and writes
    --glow-x/--glow-y/--tilt-x/--tilt-y on pointermove.
@@ -1869,11 +1501,13 @@ button:focus-visible {
   border-color: var(--border-strong);
 }
 
-/* The platform card is centred with translateX(-50%) — keep it. */
+/* The platform card is centred with translateX(-50%) — keep it.
+   The inset highlight is kept faint: on a dark glass surface an 0.85 white
+   inner edge would read as a hard bright line rather than a lit rim. */
 .platform-card.is-interactive.is-hovered {
   background-image: radial-gradient(220px circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(255, 255, 255, 0.14), transparent 65%);
   transform: translateX(-50%) perspective(800px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
-  box-shadow: 0 26px 60px rgba(35, 63, 100, 0.2), inset 0 1px rgba(255, 255, 255, 0.85);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.55), inset 0 1px rgba(255, 255, 255, 0.12);
 }
 
 /* Ripple — a span positioned by JS at the pointer coordinates.
@@ -1924,7 +1558,10 @@ button:focus-visible {
 .explorer-hud {
   position: fixed;
   left: 20px;
-  bottom: 20px;
+  /* --safe-bottom keeps the ring clear of the iPhone home-indicator
+     gesture area; it resolves to 0px everywhere else, so this is a no-op
+     on desktop and on Android without an inset. */
+  bottom: calc(20px + var(--safe-bottom));
   z-index: 60;
   display: flex;
   flex-direction: column;
@@ -2260,7 +1897,7 @@ button:focus-visible {
 .back-to-top {
   position: fixed;
   right: 20px;
-  bottom: 20px;
+  bottom: calc(20px + var(--safe-bottom));
   z-index: 80;
   display: grid;
   place-items: center;
@@ -2320,7 +1957,7 @@ button:focus-visible {
 @media (max-width: 768px) {
   .explorer-hud {
     left: 14px;
-    bottom: 14px;
+    bottom: calc(14px + var(--safe-bottom));
   }
 
   .hud-toggle {
@@ -2335,15 +1972,17 @@ button:focus-visible {
     overflow-y: auto;
   }
 
+  /* Sits above the 46px ring plus its own offset, and lifts with the
+     home-indicator inset so it never overlaps the HUD. */
   .toast-region {
     right: 14px;
-    bottom: 72px;
+    bottom: calc(72px + var(--safe-bottom));
     max-width: calc(100vw - 28px);
   }
 
   .back-to-top {
     right: 14px;
-    bottom: 14px;
+    bottom: calc(14px + var(--safe-bottom));
   }
 }
 
@@ -2454,11 +2093,14 @@ button:focus-visible {
   will-change: transform;
 }
 
+/* The mid stop must share --color-accent's hue, otherwise the blob fades from
+   the dark accent into the retired light accent and the gradient reads muddy
+   rather than as one continuous glow. */
 .blob-a {
   top: -12%;
   left: -6%;
   background: radial-gradient(circle at 35% 35%,
-      var(--color-accent) 0%, rgba(0, 102, 204, 0.34) 22%, transparent 68%);
+      var(--color-accent) 0%, rgba(41, 151, 255, 0.34) 22%, transparent 68%);
   opacity: 0.34;
   animation: aurora-drift-a 26s ease-in-out infinite alternate;
 }
