@@ -84,22 +84,32 @@
     <!-- Skip Link -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
+    <!-- Scroll progress -->
+    <div class="scroll-progress" aria-hidden="true"><span class="scroll-progress-bar"></span></div>
+
     <!-- Navigation -->
     <nav class="navbar" aria-label="Main navigation">
-        <div class="container nav-container">
+        <div class="container nav-container nav-scope">
             <a href="#home" class="nav-brand"><span class="brand-mark" aria-hidden="true">KO</span>Kevin Ostheimer</a>
 
-            <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
-                <span class="material-symbols-rounded" aria-hidden="true">menu</span>
-            </button>
+            <div class="nav-actions">
+                <button class="theme-toggle" type="button" aria-label="Switch theme" aria-pressed="false">
+                    <span class="material-symbols-rounded" aria-hidden="true">dark_mode</span>
+                </button>
+
+                <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+                </button>
+            </div>
 
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#impact" class="nav-link">Expertise &amp; Impact</a></li>
-                <li><a href="#skills" class="nav-link">Skills & Certs</a></li>
+                <li><a href="#skills" class="nav-link">Skills &amp; Certs</a></li>
                 <li><a href="#contact" class="nav-link nav-cta">Let's Talk</a></li>
             </ul>
         </div>
     </nav>
+    <div class="nav-backdrop" aria-hidden="true"></div>
 
     <!-- Hero Section -->
     <header class="hero" id="home">
@@ -123,7 +133,17 @@
                 <div class="visual-orbit orbit-one" aria-hidden="true"></div>
                 <div class="visual-orbit orbit-two" aria-hidden="true"></div>
                 <div class="hero-image">
-                    <img src="kevin-ostheimer.png" alt="Portrait of Kevin Ostheimer" width="200" height="200" loading="eager" fetchpriority="high">
+                    <picture>
+                        <source type="image/webp"
+                                srcset="assets/kevin-ostheimer-360.webp 360w, assets/kevin-ostheimer-720.webp 720w"
+                                sizes="(max-width: 768px) 145px, 200px">
+                        <img src="assets/kevin-ostheimer-360.jpg"
+                             srcset="assets/kevin-ostheimer-360.jpg 360w, assets/kevin-ostheimer-720.jpg 720w"
+                             sizes="(max-width: 768px) 145px, 200px"
+                             alt="Portrait of Kevin Ostheimer"
+                             width="200" height="200"
+                             loading="eager" fetchpriority="high" decoding="async">
+                    </picture>
                 </div>
                 <div class="platform-card">
                     <div class="platform-topline"><span class="platform-indicator"></span><span>Platform health</span><strong>99.98%</strong></div>
@@ -395,89 +415,44 @@
         </footer>
     </main>
 
-    <script>
-        // Navigation
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        const navIcon = navToggle ? navToggle.querySelector('.material-symbols-rounded') : null;
+    <!-- Explorer HUD — achievement progress -->
+    <div class="explorer-hud">
+        <button class="hud-toggle" type="button" aria-expanded="false" aria-controls="hud-panel" aria-label="Explorer progress: 0 of 7 badges unlocked. Show achievements.">
+            <svg class="hud-ring" viewBox="0 0 40 40" aria-hidden="true">
+                <circle class="hud-ring-track" cx="20" cy="20" r="16"></circle>
+                <circle class="hud-ring-bar" cx="20" cy="20" r="16" transform="rotate(-90 20 20)"></circle>
+            </svg>
+            <span class="hud-ring-label" aria-hidden="true">0%</span>
+        </button>
 
-        function setMenuState(isOpen) {
-            if (!navToggle || !navMenu) return;
+        <div class="hud-panel" id="hud-panel" aria-hidden="true">
+            <div class="hud-panel-header">
+                <div>
+                    <span class="hud-panel-title">Explorer progress</span>
+                    <span class="hud-count">0 of 7 unlocked</span>
+                </div>
+                <button class="hud-reset" type="button">Reset</button>
+            </div>
 
-            navMenu.classList.toggle('active', isOpen);
-            navToggle.setAttribute('aria-expanded', String(isOpen));
-            navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-            document.body.classList.toggle('menu-open', isOpen);
+            <div class="hud-progress" aria-hidden="true"><span class="hud-progress-bar"></span></div>
+            <ul class="hud-list"></ul>
+        </div>
+    </div>
 
-            if (navIcon) navIcon.textContent = isOpen ? 'close' : 'menu';
-        }
+    <!-- Badge toasts -->
+    <div class="toast-region" role="status" aria-live="polite"></div>
 
-        if (navToggle && navMenu) {
-            navToggle.addEventListener('click', function() {
-                setMenuState(!navMenu.classList.contains('active'));
-            });
-        }
+    <!-- Back to top -->
+    <button class="back-to-top" type="button" aria-label="Back to top">
+        <svg class="back-to-top-progress" viewBox="0 0 44 44" aria-hidden="true">
+            <circle class="back-to-top-ring" cx="22" cy="22" r="18" transform="rotate(-90 22 22)"></circle>
+        </svg>
+        <span class="material-symbols-rounded" aria-hidden="true">arrow_upward</span>
+    </button>
 
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (navMenu && navToggle && navMenu.classList.contains('active') && !navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-                setMenuState(false);
-            }
-        });
+    <canvas id="confetti-canvas" aria-hidden="true" hidden></canvas>
 
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && navMenu && navMenu.classList.contains('active')) {
-                setMenuState(false);
-                navToggle.focus();
-            }
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        const offset = 70;
-                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-                        setMenuState(false);
-                    }
-                }
-            });
-        });
-
-        // Navbar scroll effect
-        const navbar = document.querySelector('.navbar');
-        window.addEventListener('scroll', function() {
-            if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
-        }, { passive: true });
-
-        // Scroll animations
-        const animatedElements = document.querySelectorAll('[data-animate], [data-animate-stagger]');
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-            animatedElements.forEach(function(el) {
-                el.classList.add('animate-in');
-            });
-        } else {
-            const animateOnScroll = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-in');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            animatedElements.forEach(function(el) {
-                animateOnScroll.observe(el);
-            });
-        }
-    </script>
+    <script src="main.js" defer></script>
 </body>
 
 </html>
