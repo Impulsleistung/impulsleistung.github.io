@@ -565,37 +565,14 @@
   }
 
   /* ==========================================================
-     7. POINTER GLOW + TILT — fine pointers only
-     ========================================================== */
-  if (finePointer && !reducedMotion) {
-    $$('.expertise-card, .cert-compact, .platform-card').forEach(function (card) {
-      card.classList.add('is-interactive');
-
-      card.addEventListener('pointermove', function (event) {
-        var rect = card.getBoundingClientRect();
-        var x = (event.clientX - rect.left) / rect.width;
-        var y = (event.clientY - rect.top) / rect.height;
-
-        card.style.setProperty('--glow-x', (x * 100).toFixed(2) + '%');
-        card.style.setProperty('--glow-y', (y * 100).toFixed(2) + '%');
-        card.style.setProperty('--tilt-x', ((0.5 - y) * 5).toFixed(2) + 'deg');
-        card.style.setProperty('--tilt-y', ((x - 0.5) * 5).toFixed(2) + 'deg');
-      });
-
-      card.addEventListener('pointerenter', function () {
-        card.classList.add('is-hovered');
-      });
-
-      card.addEventListener('pointerleave', function () {
-        card.classList.remove('is-hovered');
-        card.style.setProperty('--tilt-x', '0deg');
-        card.style.setProperty('--tilt-y', '0deg');
-      });
-    });
-  }
-
-  /* ==========================================================
-     8. RIPPLE — tactile feedback on buttons
+     7. RIPPLE — tactile feedback on buttons
+     ----------------------------------------------------------
+     There is deliberately no pointer-tracked card lighting here.
+     The cards used to paint a white radial spotlight that chased
+     the cursor inside the tile and tilted in 3D as it moved; the
+     sweeping lamp read as heavier than the content it framed.
+     Hover feedback now comes entirely from CSS (:hover lift +
+     shadow), so no pointermove work happens over the cards at all.
      ========================================================== */
   if (!reducedMotion) {
     doc.addEventListener('pointerdown', function (event) {
@@ -633,7 +610,7 @@
   }
 
   /* ==========================================================
-     8b. MAGNETIC BUTTONS — the button eases toward the cursor
+     7b. MAGNETIC BUTTONS — the button eases toward the cursor
      ----------------------------------------------------------
      Deliberately DOM/CSS rather than canvas: the effect is a transform on a
      real element, so it stays on the compositor and needs no per-frame
@@ -707,7 +684,7 @@
     });
   }
   /* ==========================================================
-     9. HUD — panel toggle, reset, dismiss
+     8. HUD — panel toggle, reset, dismiss
      ========================================================== */
   function setHudOpen(isOpen) {
     if (!hudPanel) return;
@@ -743,7 +720,7 @@
   renderHud();
 
   /* ==========================================================
-     10. BADGE TRACKING — network / email
+     9. BADGE TRACKING — network / email
      ========================================================== */
   /* Network + email links */
   doc.addEventListener('click', function (event) {
@@ -760,7 +737,7 @@
   });
 
   /* ==========================================================
-     11. FX ENGINE — fixed-timestep render loop
+     10. FX ENGINE — fixed-timestep render loop
      ----------------------------------------------------------
      Every decision here is a deliberate performance choice:
 
@@ -1989,7 +1966,7 @@
     };
   })();
   /* ==========================================================
-     12. BOOT — first signal + initial scroll read
+     11. BOOT — first signal + initial scroll read
      ========================================================== */
   fx.init();
   requestScrollRead();

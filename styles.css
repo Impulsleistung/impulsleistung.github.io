@@ -1467,48 +1467,13 @@ button:focus-visible {
 }
 
 /* ==========================================================
-   INTERACTION LAYER — glow, tilt, ripple
-   JS adds .is-interactive to fine-pointer devices and writes
-   --glow-x/--glow-y/--tilt-x/--tilt-y on pointermove.
+   INTERACTION LAYER — ripple
+   The cards deliberately keep no pointer-tracked lighting: the
+   resting :hover rules above (lift + shadow + border) are the
+   whole hover state. A cursor-chasing white spotlight on top of
+   them read as a lamp sweeping across the tile and outweighed
+   the content it was meant to highlight.
    ========================================================== */
-.expertise-card.is-interactive,
-.cert-compact.is-interactive,
-.platform-card.is-interactive {
-  transform-style: preserve-3d;
-  will-change: transform;
-  /* Slightly faster return than the resting transition so the
-     card tracks the pointer instead of lagging behind it. */
-  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow var(--transition-base), border-color var(--transition-base);
-}
-
-/* The base gradient is restated so the pointer glow can be composited
-   on top of it without dropping the card's own background. */
-.expertise-card.is-interactive.is-hovered {
-  background-image:
-    radial-gradient(280px circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(255, 255, 255, 0.10), transparent 65%),
-    linear-gradient(155deg, var(--color-bg-elevated) 28%, var(--pillar-soft) 140%);
-  transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  border-color: color-mix(in srgb, var(--pillar-color) 26%, transparent);
-}
-
-.cert-compact.is-interactive.is-hovered {
-  background-image:
-    radial-gradient(240px circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(255, 255, 255, 0.09), transparent 65%),
-    linear-gradient(155deg, var(--color-bg-elevated), var(--color-bg-subtle));
-  transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--border-strong);
-}
-
-/* The platform card is centred with translateX(-50%) — keep it.
-   The inset highlight is kept faint: on a dark glass surface an 0.85 white
-   inner edge would read as a hard bright line rather than a lit rim. */
-.platform-card.is-interactive.is-hovered {
-  background-image: radial-gradient(220px circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(255, 255, 255, 0.14), transparent 65%);
-  transform: translateX(-50%) perspective(800px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.55), inset 0 1px rgba(255, 255, 255, 0.12);
-}
 
 /* Ripple — a span positioned by JS at the pointer coordinates.
    z-index: -1 keeps it above the host's own background but below its
@@ -1995,23 +1960,6 @@ button:focus-visible {
   .ripple {
     animation: none;
     opacity: 0;
-  }
-
-  .expertise-card.is-interactive,
-  .cert-compact.is-interactive,
-  .platform-card.is-interactive {
-    transition: box-shadow var(--transition-base), border-color var(--transition-base);
-    will-change: auto;
-  }
-
-  .expertise-card.is-interactive.is-hovered,
-  .cert-compact.is-interactive.is-hovered {
-    transform: none;
-  }
-
-  .platform-card.is-interactive.is-hovered {
-    /* keep the layout-critical centring transform, drop the tilt */
-    transform: translateX(-50%);
   }
 
   .hud-panel,
