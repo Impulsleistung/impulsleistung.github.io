@@ -56,7 +56,6 @@
      1. GAMIFICATION — explorer badges
      ========================================================== */
   var BADGES_KEY = 'ko-badges-v2';
-  var CRED_KEY = 'ko-credential-openings-v1';
   var RING_RADIUS = 16;
   var RING_LENGTH = 2 * Math.PI * RING_RADIUS;
 
@@ -64,7 +63,6 @@
     { id: 'first-signal', icon: 'sensors', title: 'First signal', hint: 'Open the platform.' },
     { id: 'full-tour', icon: 'travel_explore', title: 'Full platform tour', hint: 'Visit every section.' },
     { id: 'deep-dive', icon: 'trending_up', title: 'Deep dive', hint: 'Scroll to the very end.' },
-    { id: 'credential-collector', icon: 'workspace_premium', title: 'Credential collector', hint: 'Open three credentials.' },
     { id: 'network-node', icon: 'hub', title: 'Network node', hint: 'Visit LinkedIn or GitHub.' },
     { id: 'direct-line', icon: 'mark_email_unread', title: 'Direct line', hint: 'Start an email conversation.' }
   ];
@@ -83,6 +81,20 @@
   var badgeState = store.read(BADGES_KEY, []);
   if (Object.prototype.toString.call(badgeState) !== '[object Array]') {
     badgeState = [];
+  }
+  /* Prune any id that is no longer in the roster. A returning visitor may
+     still have a retired badge (e.g. the former credential-collector) in
+     localStorage; left in place it would inflate the unlocked count past the
+     new total and drive the progress bar beyond 100%.
+
+     The cleaned array has to be written straight back, not just held in
+     memory. unlock() is the only other place that persists, so without this
+     write-back a visitor who never unlocks anything new would carry the
+     retired id in storage indefinitely. */
+  var prunedCount = badgeState.length;
+  badgeState = badgeState.filter(function (id) { return badgeById(id) !== null; });
+  if (badgeState.length !== prunedCount) {
+    store.write(BADGES_KEY, badgeState);
   }
   var sectionsSeen = {};
   var sectionTotal = 0;
@@ -731,27 +743,8 @@
   renderHud();
 
   /* ==========================================================
-     10. BADGE TRACKING — credential / network / email
+     10. BADGE TRACKING — network / email
      ========================================================== */
-  var credentialOpenings = store.read(CRED_KEY, []);
-  if (Object.prototype.toString.call(credentialOpenings) !== '[object Array]') {
-    credentialOpenings = [];
-  }
-
-  function trackCredential(link) {
-    var id = link.getAttribute('href') || link.getAttribute('data-credential') || link.textContent.trim();
-    if (!id || credentialOpenings.indexOf(id) !== -1) return;
-
-    credentialOpenings.push(id);
-    store.write(CRED_KEY, credentialOpenings);
-    if (credentialOpenings.length >= 3) unlock('credential-collector');
-  }
-
-  /* Certificate links inside the Skills section */
-  $$('.cert-compact a[href], a[data-credential]').forEach(function (link) {
-    link.addEventListener('click', function () { trackCredential(link); });
-  });
-
   /* Network + email links */
   doc.addEventListener('click', function (event) {
     var anchor = event.target.closest ? event.target.closest('a') : null;
