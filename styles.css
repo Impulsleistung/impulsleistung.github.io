@@ -2402,4 +2402,312 @@ button:focus-visible {
   }
 }
 
+/* ==========================================================
+   FX LAYER 1 — HERO BACKDROP
+   A canvas starfield/dust field painted by the fixed-timestep
+   game loop in main.js. Sits with the hero's own ::before glow
+   (both z-index 0) and below .hero-container (z-index 1), so it
+   can never cover the headline or the CTAs.
+   ========================================================== */
+.fx-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+/* The loop fades the field in once the first frame is painted,
+   so there is no empty-canvas flash before the stars appear. */
+.fx-backdrop.is-live {
+  opacity: 1;
+}
+
+/* ==========================================================
+   FX LAYER 2 — HERO AURORA
+   Three slow-drifting colour blobs, blurred into a soft wash.
+   Purely decorative: transform-only animation keeps it on the
+   compositor and never triggers layout or paint.
+   ========================================================== */
+.hero-aurora {
+  position: absolute;
+  inset: -20% -10%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.85;
+  /* No filter: blur() here on purpose. The blobs animate forever, so a
+     blur on their parent would have to be re-rasterised every single
+     frame. Radial gradients are already soft, so the blur is baked into
+     the gradient itself and the animation stays compositor-only. */
+}
+
+.aurora-blob {
+  position: absolute;
+  display: block;
+  width: 42vmax;
+  height: 42vmax;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+.blob-a {
+  top: -12%;
+  left: -6%;
+  background: radial-gradient(circle at 35% 35%,
+      var(--color-accent) 0%, rgba(0, 102, 204, 0.34) 22%, transparent 68%);
+  opacity: 0.34;
+  animation: aurora-drift-a 26s ease-in-out infinite alternate;
+}
+
+.blob-b {
+  top: 6%;
+  right: -8%;
+  background: radial-gradient(circle at 60% 40%,
+      var(--color-ai) 0%, rgba(124, 58, 237, 0.26) 24%, transparent 70%);
+  opacity: 0.26;
+  animation: aurora-drift-b 32s ease-in-out infinite alternate;
+}
+
+.blob-c {
+  bottom: -18%;
+  left: 28%;
+  width: 34vmax;
+  height: 34vmax;
+  background: radial-gradient(circle at 50% 50%,
+      var(--color-cloud) 0%, rgba(37, 99, 235, 0.20) 26%, transparent 72%);
+  opacity: 0.20;
+  animation: aurora-drift-c 22s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-drift-a {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(9vmax, 5vmax, 0) scale(1.18); }
+}
+
+@keyframes aurora-drift-b {
+  0%   { transform: translate3d(0, 0, 0) scale(1.1); }
+  100% { transform: translate3d(-11vmax, 7vmax, 0) scale(0.92); }
+}
+
+@keyframes aurora-drift-c {
+  0%   { transform: translate3d(0, 0, 0) scale(0.95); }
+  100% { transform: translate3d(6vmax, -6vmax, 0) scale(1.22); }
+}
+
+/* ==========================================================
+   FX LAYER 3 — HERO VIGNETTE
+   Slightly darkens the hero edges so the parallax starfield
+   reads as depth instead of noise. Painted after the aurora
+   (same z-index 0) but still below the content (z-index 1).
+   ========================================================== */
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 78% 62% at 50% 44%, transparent 42%, var(--color-bg) 100%);
+  opacity: 0.55;
+}
+
+/* ==========================================================
+   FX LAYER 4 — FULL-VIEWPORT OVERLAY
+   Pointer comet trail, shockwave rings and floating XP text.
+   z-index 70: above page content and the HUD ring (60), below
+   the back-to-top button (80), toasts (90) and the mobile
+   sheet/backdrop (1000/1001). pointer-events: none so it can
+   never steal a click from the page beneath it.
+   ========================================================== */
+.fx-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.fx-overlay.is-live {
+  opacity: 1;
+}
+
+/* ==========================================================
+   FX LAYER 5 — SCREEN FLASH
+   A single full-viewport tint used as "impact" feedback.
+   The loop writes --fx-flash-a (alpha) and --fx-flash-c
+   (colour); the layer stays at opacity 0 when nothing fires so
+   it costs nothing while idle.
+   ========================================================== */
+.fx-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  background: var(--fx-flash-c, rgba(255, 255, 255, 0.9));
+  opacity: var(--fx-flash-a, 0);
+}
+
+/* ==========================================================
+   PARALLAX DEPTH
+   .hero-content and .hero-visual are the only parallax targets
+   because they own no transform of their own. Every descendant
+   that must stay centred (.hero-image, .visual-orbit,
+   .platform-card) keeps its own translateX(-50%), which would
+   be clobbered if the parallax transform were written directly
+   onto it.
+
+   The loop writes --par-x / --par-y ONCE on .hero; each layer
+   then multiplies those by its own depth. That is two style
+   writes per frame total, no matter how many layers exist.
+   ========================================================== */
+.hero {
+  --par-x: 0px;
+  --par-y: 0px;
+}
+
+.hero-content,
+.hero-visual {
+  transform: translate3d(calc(var(--par-x) * var(--depth, 1)), calc(var(--par-y) * var(--depth, 1)), 0);
+}
+
+.hero-content { --depth: 0.35; }
+.hero-visual  { --depth: 0.85; }
+
+/* will-change is only promoted once parallax is actually running.
+   Setting it permanently would keep two large hero layers composited
+   for the whole page lifetime — on mobile, where parallax never runs,
+   that is pure wasted memory for zero benefit. */
+.hero.is-parallax .hero-content,
+.hero.is-parallax .hero-visual {
+  will-change: transform;
+}
+
+/* The aurora drifts opposite to the content for real depth separation. */
+.hero-aurora {
+  transform: translate3d(calc(var(--par-x) * -0.45), calc(var(--par-y) * -0.45), 0);
+}
+
+/* ==========================================================
+   MAGNETIC BUTTONS
+   JS writes --mag-x / --mag-y while a fine pointer is inside a
+   primary button; the button eases toward the cursor and the
+   highlight follows it. Transform-only, so it stays composited.
+   ========================================================== */
+.btn-primary {
+  --mag-x: 0px;
+  --mag-y: 0px;
+}
+
+.btn-primary.is-magnetic {
+  transform: translate3d(var(--mag-x), var(--mag-y), 0) scale(1.03);
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow var(--transition-spring);
+}
+
+/* .btn-primary:active (specificity 0,2,0) is defined far above, so this
+   restatement is what keeps the press-down feel while magnetic pull is
+   active — otherwise the magnetic rule would simply win and the button
+   would stop responding to being clicked. */
+.btn-primary.is-magnetic:active {
+  transform: translate3d(var(--mag-x), var(--mag-y), 0) scale(0.98);
+}
+
+/* Snap back instantly instead of gliding when the pointer leaves */
+.btn-primary.is-magnetic.is-releasing {
+  transition-duration: 0.34s;
+}
+
+/* ==========================================================
+   BADGE POP — the HUD ring celebrates each unlock
+   ========================================================== */
+.hud-toggle.is-celebrating {
+  animation: hud-pop 0.72s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes hud-pop {
+  0%   { transform: scale(1); }
+  22%  { transform: scale(1.22) rotate(-7deg); }
+  48%  { transform: scale(0.94) rotate(4deg); }
+  74%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+/* Ring bar lights up while a badge is being awarded */
+.hud-toggle.is-celebrating .hud-ring-bar {
+  filter: drop-shadow(0 0 6px var(--color-accent));
+}
+
+/* Toast gains a shine sweep on entry */
+.toast.is-visible {
+  animation: toast-shine 1.1s ease-out 0.15s;
+}
+
+@keyframes toast-shine {
+  0%   { box-shadow: var(--shadow-lg), 0 0 0 0 var(--color-accent-glow); }
+  45%  { box-shadow: var(--shadow-lg), 0 0 0 10px transparent; }
+  100% { box-shadow: var(--shadow-lg), 0 0 0 0 transparent; }
+}
+
+/* ==========================================================
+   REDUCED MOTION — FX LAYERS
+   ----------------------------------------------------------
+   This block MUST come last. The earlier reduced-motion block sits above
+   the FX layers in source order, so anything declared here would win the
+   cascade and the aurora blobs, the badge pop and the toast shine would all
+   keep animating for a user who explicitly asked for reduced motion.
+
+   Note that main.js also refuses to start the canvas loop under this
+   preference, so this is the belt to that braces: it covers the pure-CSS
+   decoration that the JS engine has no say over.
+   ========================================================== */
+@media (prefers-reduced-motion: reduce) {
+  /* The canvases never receive .is-live, so they stay at opacity 0 and are
+     hidden outright to keep them out of the paint tree entirely. */
+  .fx-backdrop,
+  .fx-overlay {
+    display: none;
+  }
+
+  /* The flash is driven by a custom property, not by a transition, so the
+     alpha has to be pinned here rather than relying on transition: none. */
+  .fx-flash {
+    opacity: 0 !important;
+  }
+
+  .aurora-blob,
+  .blob-a,
+  .blob-b,
+  .blob-c {
+    animation: none;
+  }
+
+  .hud-toggle.is-celebrating {
+    animation: none;
+  }
+
+  /* Keep the reward readable, drop the sweep. */
+  .toast.is-visible {
+    animation: none;
+  }
+
+  /* Parallax is disabled in JS; this also guarantees the layers are not
+     left holding a stale offset if the preference flips mid-session. */
+  .hero-content,
+  .hero-visual,
+  .hero-aurora {
+    transform: none !important;
+    will-change: auto;
+  }
+
+  .btn-primary.is-magnetic,
+  .btn-primary.is-magnetic:active,
+  .btn-primary.is-magnetic.is-releasing {
+    transform: none !important;
+    transition: none;
+  }
+}
+
+
 
