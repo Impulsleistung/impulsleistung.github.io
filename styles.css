@@ -229,7 +229,7 @@ button:focus-visible {
   transform: translateX(-50%);
   padding: var(--space-3) var(--space-6);
   background: var(--color-accent);
-  color: white;
+  color: var(--color-bg);
   border-radius: var(--radius-full);
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-sm);
@@ -238,6 +238,7 @@ button:focus-visible {
 
 .skip-link:focus {
   top: var(--space-4);
+  color: var(--color-bg);
 }
 
 /* ============================================
@@ -352,7 +353,7 @@ button:focus-visible {
   overflow: hidden;
   isolation: isolate;
   background: var(--color-accent);
-  color: white !important;
+  color: var(--color-bg) !important;
   padding: var(--space-2) var(--space-5);
   margin-left: var(--space-2);
   border-radius: var(--radius-full);
@@ -363,7 +364,7 @@ button:focus-visible {
 
 .nav-cta:hover {
   background: var(--color-accent-hover);
-  color: white !important;
+  color: var(--color-bg) !important;
   transform: scale(1.04);
   box-shadow: 0 2px 12px var(--color-accent-glow);
 }
@@ -423,6 +424,8 @@ button:focus-visible {
 }
 
 .hero-content {
+  min-width: 0;
+  overflow-wrap: anywhere;
   max-width: 580px;
 }
 
@@ -490,13 +493,13 @@ button:focus-visible {
 
 .btn-primary {
   background: var(--color-accent);
-  color: white;
+  color: var(--color-bg);
   box-shadow: 0 2px 12px var(--color-accent-glow);
 }
 
 .btn-primary:hover {
   background: var(--color-accent-hover);
-  color: white;
+  color: var(--color-bg);
   transform: scale(1.03);
   box-shadow: 0 6px 24px var(--color-accent-glow);
 }
@@ -645,6 +648,7 @@ button:focus-visible {
 }
 
 .section-title {
+  overflow-wrap: anywhere;
   font-size: var(--font-size-5xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
@@ -919,21 +923,21 @@ button:focus-visible {
 }
 
 /* ============================================
-   CERTIFICATIONS SECTION — Timeline-inspired
+   CERTIFICATIONS SECTION — Compact, readable cards
    ============================================ */
 .section-skills {
   background: var(--color-bg-elevated);
 }
 
 .section-skills > .container > .section-subtitle {
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-8);
 }
 
 .skills-grid-compact {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
   align-items: stretch;
-  gap: var(--space-4);
+  gap: var(--space-3);
   max-width: 920px;
   margin: 0 auto;
 }
@@ -941,15 +945,16 @@ button:focus-visible {
 .cert-compact {
   display: flex;
   flex-direction: column;
-  min-height: 230px;
-  padding: var(--space-6);
+  min-width: 0;
+  padding: var(--space-4);
   background: linear-gradient(155deg, var(--color-bg-elevated), var(--color-bg-subtle));
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   border: 1px solid var(--border-subtle);
   transition: transform var(--transition-spring), box-shadow var(--transition-base), border-color var(--transition-base);
 }
 
-.cert-compact:hover {
+.cert-compact:hover,
+.cert-compact:focus-within {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
   border-color: var(--border-strong);
@@ -959,8 +964,9 @@ button:focus-visible {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 28px;
-  margin-bottom: var(--space-5);
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
 }
 
 .cert-badge {
@@ -977,7 +983,7 @@ button:focus-visible {
 }
 
 .cert-badge-lf {
-  background: #309B5F;
+  background: #227344;
 }
 
 .cert-badge-pmi {
@@ -989,7 +995,7 @@ button:focus-visible {
 }
 
 .cert-badge-uni {
-  background: #E86A17;
+  background: #AD4A0B;
 }
 
 .cert-badge-azure {
@@ -1013,6 +1019,7 @@ button:focus-visible {
   font-size: var(--font-size-xs);
   color: var(--color-text-tertiary);
   font-weight: var(--font-weight-medium);
+  white-space: nowrap;
 }
 
 .cert-title {
@@ -1022,18 +1029,22 @@ button:focus-visible {
   margin-bottom: var(--space-1);
   line-height: var(--line-height-snug);
   letter-spacing: var(--letter-spacing-tight);
+  overflow-wrap: anywhere;
 }
 
 .cert-org {
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
-  margin-bottom: var(--space-3);
+  line-height: var(--line-height-snug);
+  margin-bottom: var(--space-2);
+  overflow-wrap: anywhere;
 }
 
 .cert-link {
   align-self: flex-start;
   margin-top: auto;
-  padding-top: var(--space-5);
+  min-height: 44px;
+  padding: var(--space-1) 0;
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
   color: var(--color-accent);
@@ -1052,7 +1063,7 @@ button:focus-visible {
 .cert-more {
   font-size: var(--font-size-sm);
   color: var(--color-text-tertiary);
-  margin-top: var(--space-10);
+  margin-top: var(--space-6);
   text-align: center;
 }
 
@@ -1103,6 +1114,7 @@ button:focus-visible {
 }
 
 .contact-title {
+  overflow-wrap: anywhere;
   font-size: var(--font-size-5xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
@@ -1175,6 +1187,8 @@ button:focus-visible {
 
 .footer-links {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-6);
 }
 
@@ -1301,6 +1315,7 @@ button:focus-visible {
 
 .hero-greeting {
   display: inline-flex;
+  max-width: 100%;
   align-items: center;
   gap: var(--space-2);
   padding: 6px 11px;
@@ -1419,7 +1434,7 @@ button:focus-visible {
 .contact-title, .contact-text, .contact-buttons { z-index: 1; }
 
 @media (max-width: 900px) {
-  .hero-container { grid-template-columns: 1fr; gap: var(--space-12); }
+  .hero-container { grid-template-columns: minmax(0, 1fr); gap: var(--space-12); }
   .hero-content { max-width: 690px; text-align: center; margin: 0 auto; }
   .hero-greeting { margin-inline: auto; }
   .hero-subtitle { margin-inline: auto; }
@@ -1458,11 +1473,6 @@ button:focus-visible {
   .expertise-proof {
     grid-template-columns: 1fr;
     gap: var(--space-2);
-  }
-
-  .cert-compact {
-    min-height: 210px;
-    padding: var(--space-5);
   }
 }
 

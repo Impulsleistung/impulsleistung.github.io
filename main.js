@@ -495,7 +495,9 @@
         observer.unobserve(entry.target);
         startCounters(entry.target);
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    /* Tall sections may never fit 12% of their height into a small viewport,
+       especially with enlarged text. Reveal as soon as they enter instead. */
+    }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
 
     animatedElements.forEach(function (el) { revealer.observe(el); });
   }
@@ -704,6 +706,13 @@
     doc.addEventListener('click', function (event) {
       if (!hudPanel || !hudPanel.classList.contains('is-open')) return;
       if (!hud.contains(event.target)) setHudOpen(false);
+    });
+
+    doc.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape' || !hudPanel || !hudPanel.classList.contains('is-open')) return;
+      var focusInPanel = hudPanel.contains(doc.activeElement);
+      setHudOpen(false);
+      if (focusInPanel && hudToggle) hudToggle.focus();
     });
   }
 
