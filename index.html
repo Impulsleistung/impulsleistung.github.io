@@ -30,7 +30,7 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%232997FF%22/><text x=%2250%22 y=%2268%22 text-anchor=%22middle%22 font-family=%22Arial,sans-serif%22 font-size=%2252%22 font-weight=%22700%22 fill=%22white%22>KO</text></svg>">
     <link rel="canonical" href="https://impulsleistung.de">
 
-    <title>Kevin Ostheimer - Cloud & AI Product Owner</title>
+    <title>Kevin Ostheimer - Cloud &amp; AI Product Owner</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -121,12 +121,12 @@
                     <a href="https://www.linkedin.com/in/kevin-ostheimer/" target="_blank" rel="noopener" class="btn-link">View LinkedIn →</a>
                 </div>
 
-                <div class="hero-proof" aria-label="Key professional focus areas">
+                <div class="hero-proof" role="group" aria-label="Key professional focus areas">
                     <span>AI strategy</span><i aria-hidden="true"></i><span>Cloud platforms</span><i aria-hidden="true"></i><span>Product leadership</span>
                 </div>
             </div>
 
-            <div class="hero-visual" aria-label="Illustration of an AI platform operating reliably at scale">
+            <div class="hero-visual" role="group" aria-label="Illustration of an AI platform operating reliably at scale">
                 <div class="visual-orbit orbit-one" aria-hidden="true"></div>
                 <div class="visual-orbit orbit-two" aria-hidden="true"></div>
                 <div class="hero-image">
@@ -398,19 +398,45 @@
                 </div>
             </div>
         </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container footer-container">
-                <p class="footer-copyright">© 2026 Kevin Ostheimer</p>
-                <div class="footer-links">
-                    <a href="https://www.hs-pforzheim.de/news_detailansicht/news/fuenf_fragen_an_3" target="_blank" rel="noopener" class="footer-link">Interview</a>
-                    <a href="https://www.linkedin.com/in/kevin-ostheimer/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
-                    <a href="https://github.com/Impulsleistung" target="_blank" rel="noopener" class="footer-link">GitHub</a>
-                </div>
-            </div>
-        </footer>
     </main>
+
+    <!-- Footer & Legal Notice -->
+    <footer class="footer">
+        <section class="container legal-notice" id="impressum" lang="de" aria-labelledby="impressum-title">
+            <div class="legal-notice-heading">
+                <h2 id="impressum-title">Impressum</h2>
+                <p>Angaben gemäß §§ 5, 6 DDG<br>&amp; Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</p>
+            </div>
+
+            <address class="legal-notice-address">
+                <span class="legal-notice-name">Kevin Ostheimer</span>
+                <span>Uhlandstrasse 3</span>
+                <span>75438 Knittlingen</span>
+                <span>Deutschland</span>
+            </address>
+
+            <ul class="legal-notice-contact" aria-label="Kontaktdaten">
+                <li>
+                    <span class="legal-notice-label">E-Mail</span>
+                    <a href="mailto:people@impulsleistung.de">people@impulsleistung.de</a>
+                </li>
+                <li>
+                    <span class="legal-notice-label">Telefon</span>
+                    <a href="tel:+497043940004">+49&nbsp;(0)7043&nbsp;940004</a>
+                </li>
+            </ul>
+        </section>
+
+        <div class="container footer-container">
+            <p class="footer-copyright">© 2026 Kevin Ostheimer</p>
+            <div class="footer-links">
+                <a href="#impressum" class="footer-link">Impressum</a>
+                <a href="https://www.hs-pforzheim.de/news_detailansicht/news/fuenf_fragen_an_3" target="_blank" rel="noopener" class="footer-link">Interview</a>
+                <a href="https://www.linkedin.com/in/kevin-ostheimer/" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+                <a href="https://github.com/Impulsleistung" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+            </div>
+        </div>
+    </footer>
 
     <!-- Explorer HUD — achievement progress -->
     <div class="explorer-hud">
@@ -422,7 +448,7 @@
             <span class="hud-ring-label" aria-hidden="true">0%</span>
         </button>
 
-        <div class="hud-panel" id="hud-panel" aria-hidden="true">
+        <div class="hud-panel" id="hud-panel" aria-hidden="true" inert>
             <div class="hud-panel-header">
                 <div>
                     <span class="hud-panel-title">Explorer progress</span>

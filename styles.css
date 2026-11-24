@@ -1173,6 +1173,83 @@ button:focus-visible {
   background: var(--color-bg-elevated);
 }
 
+.legal-notice {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr) minmax(0, 1fr);
+  gap: var(--space-8);
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-normal);
+}
+
+.legal-notice-heading h2 {
+  margin-bottom: var(--space-2);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+}
+
+.legal-notice-heading p {
+  max-width: 42ch;
+  color: var(--color-text-tertiary);
+}
+
+.legal-notice-address {
+  font-style: normal;
+}
+
+.legal-notice-address span {
+  display: block;
+}
+
+.legal-notice-address .legal-notice-name {
+  margin-bottom: var(--space-1);
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+}
+
+.legal-notice-contact {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+}
+
+.legal-notice-contact li {
+  min-width: 0;
+}
+
+.legal-notice-label {
+  display: block;
+  color: var(--color-text-tertiary);
+}
+
+.legal-notice-contact a {
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-color: rgba(41, 151, 255, 0.35);
+  text-underline-offset: 3px;
+}
+
+.legal-notice-contact a:hover {
+  text-decoration-color: currentColor;
+}
+
+@media (max-width: 900px) {
+  .legal-notice {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .legal-notice-heading {
+    grid-column: 1 / -1;
+  }
+}
+
 .footer-container {
   display: flex;
   justify-content: space-between;
@@ -1203,7 +1280,20 @@ button:focus-visible {
   color: var(--color-accent);
 }
 
+@media (max-width: 768px) {
+  .footer {
+    padding-bottom: calc(var(--space-20) + var(--safe-bottom));
+  }
+}
+
 @media (max-width: 500px) {
+  .legal-notice {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-6);
+  }
+
   .footer-container {
     flex-direction: column;
     gap: var(--space-4);

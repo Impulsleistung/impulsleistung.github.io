@@ -692,6 +692,8 @@
     if (!hudPanel) return;
     hudPanel.classList.toggle('is-open', isOpen);
     hudPanel.setAttribute('aria-hidden', String(!isOpen));
+    if (isOpen) hudPanel.removeAttribute('inert');
+    else hudPanel.setAttribute('inert', '');
     if (hudToggle) hudToggle.setAttribute('aria-expanded', String(isOpen));
   }
 
