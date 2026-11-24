@@ -53,6 +53,45 @@
   };
 
   /* ==========================================================
+     CONTACT DETAILS — human-initiated reveal
+     Values are XOR-obfuscated and decoded only after a deliberate
+     interaction. This deters static scrapers; it is not encryption.
+     ========================================================== */
+  var CONTACT_VALUES = {
+    email: { display: 'Wk9FWkZPakNHWl9GWUZPQ1leX0RNBE5P', target: null },
+    phone: { display: 'AR4TCgIaAx0aHhkKEx4aGhoe', target: 'AR4THRoeGRMeGhoaHg==' }
+  };
+
+  function decodeContactValue(encoded) {
+    var bytes = window.atob(encoded);
+    var value = '';
+    for (var i = 0; i < bytes.length; i += 1) {
+      value += String.fromCharCode(bytes.charCodeAt(i) ^ 42);
+    }
+    return value;
+  }
+
+  $$('[data-contact-reveal]').forEach(function (button) {
+    button.disabled = false;
+    button.addEventListener('click', function () {
+      var kind = button.getAttribute('data-contact-reveal');
+      var details = CONTACT_VALUES[kind];
+      if (!details) return;
+
+      var displayValue = decodeContactValue(details.display);
+      var targetValue = details.target ? decodeContactValue(details.target) : displayValue;
+      var revealedLabel = button.getAttribute('data-contact-revealed-label');
+      var link = doc.createElement('a');
+      link.className = button.className + ' is-revealed';
+      link.href = (kind === 'email' ? 'mailto:' : 'tel:') + targetValue;
+      link.textContent = revealedLabel || displayValue;
+      if (revealedLabel) link.setAttribute('aria-label', revealedLabel + ': ' + displayValue);
+      button.parentNode.replaceChild(link, button);
+      link.focus();
+    });
+  });
+
+  /* ==========================================================
      1. GAMIFICATION — explorer badges
      ========================================================== */
   var BADGES_KEY = 'ko-badges-v2';

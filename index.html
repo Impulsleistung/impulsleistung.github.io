@@ -391,10 +391,13 @@
                     <p class="contact-text">Have a question, an idea, or something you'd like to learn together? I'd love to hear from you.</p>
 
                     <div class="contact-buttons">
-                        <a href="mailto:people@impulsleistung.de" class="btn btn-primary btn-large">Email Me</a>
+                        <button type="button" class="btn btn-primary btn-large contact-reveal" data-contact-reveal="email" data-contact-revealed-label="Open Email" disabled>Show Email</button>
                         <a href="https://www.linkedin.com/in/kevin-ostheimer/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
                         <a href="https://github.com/Impulsleistung" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
                     </div>
+                    <noscript>
+                        <p class="contact-noscript">To protect the email address from automated scraping, please use LinkedIn to get in touch.</p>
+                    </noscript>
                 </div>
             </div>
         </section>
@@ -418,13 +421,16 @@
             <ul class="legal-notice-contact" aria-label="Kontaktdaten">
                 <li>
                     <span class="legal-notice-label">E-Mail</span>
-                    <a href="mailto:people@impulsleistung.de">people@impulsleistung.de</a>
+                    <button type="button" class="contact-reveal" data-contact-reveal="email" disabled>E-Mail anzeigen</button>
                 </li>
                 <li>
                     <span class="legal-notice-label">Telefon</span>
-                    <a href="tel:+497043940004">+49&nbsp;(0)7043&nbsp;940004</a>
+                    <button type="button" class="contact-reveal" data-contact-reveal="phone" disabled>Telefonnummer anzeigen</button>
                 </li>
             </ul>
+            <noscript>
+                <p class="legal-notice-noscript">Zum Schutz vor automatisiertem Auslesen werden E-Mail-Adresse und Telefonnummer mit aktiviertem JavaScript nach einem Klick angezeigt. Alternativ können Sie mich über <a href="https://www.linkedin.com/in/kevin-ostheimer/" target="_blank" rel="noopener">LinkedIn</a> erreichen.</p>
+            </noscript>
         </section>
 
         <div class="container footer-container">
