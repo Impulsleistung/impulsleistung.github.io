@@ -105,8 +105,6 @@
 
     <!-- Hero Section -->
     <header class="hero" id="home">
-        <!-- FX backdrop: parallax starfield + dust, drawn by the fixed-timestep loop in main.js -->
-        <canvas class="fx-backdrop" id="fx-backdrop" aria-hidden="true"></canvas>
         <div class="hero-aurora" aria-hidden="true"><span class="aurora-blob blob-a"></span><span class="aurora-blob blob-b"></span><span class="aurora-blob blob-c"></span></div>
         <div class="hero-vignette" aria-hidden="true"></div>
 
@@ -378,6 +376,47 @@
 
                 <p class="cert-more">More credentials on <a href="https://www.linkedin.com/in/kevin-ostheimer/" target="_blank" rel="noopener">LinkedIn</a></p>
             </div>
+
+            <!-- Logo marquee — the organizations behind the credentials.
+                 The second group is an exact copy: it makes the CSS -50% loop
+                 seamless with no JavaScript and is hidden from assistive tech. -->
+            <section class="logo-marquee" aria-labelledby="logo-marquee-title">
+                <div class="logo-marquee-head">
+                    <p class="logo-marquee-label" id="logo-marquee-title">Institutions &amp; organizations</p>
+                    <!-- WCAG 2.2.2: moving content needs a keyboard-operable pause. -->
+                    <button class="logo-marquee-toggle" type="button" data-marquee-toggle
+                            aria-pressed="false" aria-label="Pause the logo animation">
+                        <svg class="logo-marquee-icon logo-marquee-icon-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3h3v10H4zM9 3h3v10H9z"></path></svg>
+                        <svg class="logo-marquee-icon logo-marquee-icon-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z"></path></svg>
+                    </button>
+                </div>
+                <div class="logo-marquee-viewport">
+                    <div class="logo-marquee-track">
+                        <ul class="logo-marquee-group" aria-label="Institutions and organizations">
+                            <li class="logo-marquee-item lm-amazon"><img src="assets/logos/amazon.svg" width="100" height="33" alt="Amazon" decoding="async"></li>
+                            <li class="logo-marquee-item lm-cariad"><img src="assets/logos/cariad.svg" width="238" height="29" alt="CARIAD" decoding="async"></li>
+                            <li class="logo-marquee-item lm-microsoft"><img src="assets/logos/microsoft.svg" width="21" height="21" alt="Microsoft" decoding="async"></li>
+                            <li class="logo-marquee-item lm-github"><img src="assets/logos/github.svg" width="416" height="95" alt="GitHub" decoding="async"></li>
+                            <li class="logo-marquee-item lm-pforzheim-university"><img src="assets/logos/pforzheim-university.svg" width="171" height="109" alt="Pforzheim University" decoding="async"></li>
+                            <li class="logo-marquee-item lm-linux-foundation"><img src="assets/logos/linux-foundation.svg" width="1000" height="328" alt="The Linux Foundation" decoding="async"></li>
+                            <li class="logo-marquee-item lm-linkedin"><img src="assets/logos/linkedin.png" width="524" height="128" alt="LinkedIn" decoding="async"></li>
+                            <li class="logo-marquee-item lm-project-management-institute"><img src="assets/logos/project-management-institute.png" width="424" height="128" alt="Project Management Institute" decoding="async"></li>
+                            <li class="logo-marquee-item lm-ai-research-institute-suat"><img src="assets/logos/ai-research-institute-suat.png" width="552" height="53" alt="AI Research Institute of Shenzhen University of Advanced Technology" decoding="async"></li>
+                        </ul>
+                        <ul class="logo-marquee-group" aria-hidden="true">
+                            <li class="logo-marquee-item lm-amazon"><img src="assets/logos/amazon.svg" width="100" height="33" alt="" decoding="async"></li>
+                            <li class="logo-marquee-item lm-cariad"><img src="assets/logos/cariad.svg" width="238" height="29" alt="" decoding="async"></li>
+                            <li class="logo-marquee-item lm-microsoft"><img src="assets/logos/microsoft.svg" width="21" height="21" alt="" decoding="async"></li>
+                            <li class="logo-marquee-item lm-github"><img src="assets/logos/github.svg" width="416" height="95" alt="" decoding="async"></li>
+                            <li class="logo-marquee-item lm-pforzheim-university"><img src="assets/logos/pforzheim-university.svg" width="171" height="109" alt="" decoding="async"></li>
+                            <li class="logo-marquee-item lm-linux-foundation"><img src="assets/logos/linux-foundation.svg" width="1000" height="328" alt="" decoding="async"></li>
+                            <li class="logo-marquee-item lm-linkedin"><img src="assets/logos/linkedin.png" width="524" height="128" alt="" decoding="async"></li>
+                            <li class="logo-marquee-item lm-project-management-institute"><img src="assets/logos/project-management-institute.png" width="424" height="128" alt="" decoding="async"></li>
+                            <li class="logo-marquee-item lm-ai-research-institute-suat"><img src="assets/logos/ai-research-institute-suat.png" width="552" height="53" alt="" decoding="async"></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </section>
 
         <!-- Contact -->
@@ -444,33 +483,6 @@
         </div>
     </footer>
 
-    <!-- Explorer HUD — achievement progress -->
-    <div class="explorer-hud">
-        <button class="hud-toggle" type="button" aria-expanded="false" aria-controls="hud-panel" aria-label="Explorer progress: 0 of 5 badges unlocked. Show achievements.">
-            <svg class="hud-ring" viewBox="0 0 40 40" aria-hidden="true">
-                <circle class="hud-ring-track" cx="20" cy="20" r="16"></circle>
-                <circle class="hud-ring-bar" cx="20" cy="20" r="16" transform="rotate(-90 20 20)"></circle>
-            </svg>
-            <span class="hud-ring-label" aria-hidden="true">0%</span>
-        </button>
-
-        <div class="hud-panel" id="hud-panel" aria-hidden="true" inert>
-            <div class="hud-panel-header">
-                <div>
-                    <span class="hud-panel-title">Explorer progress</span>
-                    <span class="hud-count">0 of 5 unlocked</span>
-                </div>
-                <button class="hud-reset" type="button">Reset</button>
-            </div>
-
-            <div class="hud-progress" aria-hidden="true"><span class="hud-progress-bar"></span></div>
-            <ul class="hud-list"></ul>
-        </div>
-    </div>
-
-    <!-- Badge toasts -->
-    <div class="toast-region" role="status" aria-live="polite"></div>
-
     <!-- Back to top -->
     <button class="back-to-top" type="button" aria-label="Back to top">
         <svg class="back-to-top-progress" viewBox="0 0 44 44" aria-hidden="true">
@@ -478,15 +490,6 @@
         </svg>
         <span class="material-symbols-rounded" aria-hidden="true">arrow_upward</span>
     </button>
-
-    <canvas id="confetti-canvas" aria-hidden="true" hidden></canvas>
-
-    <!-- FX overlay: pointer comet trail, shockwaves, floating XP text.
-         Lives above page content but below the mobile sheet / backdrop. -->
-    <canvas class="fx-overlay" id="fx-overlay" aria-hidden="true"></canvas>
-
-    <!-- Screen-shake flash layer — driven by trauma decay in main.js -->
-    <div class="fx-flash" id="fx-flash" aria-hidden="true"></div>
 
     <script src="main.js" defer></script>
 </body>

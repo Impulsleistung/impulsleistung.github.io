@@ -1,51 +1,24 @@
-# Site settings
+# Site settings — the page is plain static HTML. Jekyll only needs to copy the
+# published files; source artwork and build tooling are excluded below.
 title: "Kevin Ostheimer - Cloud & AI Product Owner"
 description: "Kevin Ostheimer - Cloud & AI Product Owner helping people deploy faster, scale reliably, and reduce costs with cloud-native AI solutions."
 author: "Kevin Ostheimer"
-url: "https://impulsleistung.github.io"
-baseurl: ""
+url: "https://impulsleistung.de"
 
-# SEO settings
-lang: en
-timezone: Europe/Berlin
-
-# Social media and professional links
-github_username: Impulsleistung
-linkedin_profile: # Add LinkedIn profile if available
-
-# Build settings
-markdown: kramdown
-highlighter: rouge
-permalink: pretty
-
-# Exclude files from processing
+# CNAME is intentionally NOT excluded: GitHub Pages needs it for the custom
+# domain. assets/logos is published; logos/ holds the untouched originals.
 exclude:
   - README.md
-  - README-imp-hp.md
   - LICENSE
   - .gitignore
+  - logos
+  - tools
+  - local
+  - "*.py"
+  - "*.pyc"
 
-# Include files
-include:
-  - _pages
-
-# Plugin settings
+# Sitemap for the single static page. The HTML already carries its own
+# canonical, Open Graph, Twitter and JSON-LD metadata, so no feed or
+# SEO-tag plugin is needed.
 plugins:
   - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag
-
-# SEO tag settings
-seo:
-  type: Person
-  name: Kevin Ostheimer
-  links:
-    - https://patents.google.com/?q=(Kevin)&inventor=Ostheimer&oq=Kevin+Ostheimer
-
-# Default front matter
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: default
-      author: Kevin Ostheimer
