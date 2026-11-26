@@ -7,7 +7,7 @@
    comet trails, screen shake and magnetic buttons are gone: they
    were game feedback on a professional portfolio and cost a
    permanent canvas render loop for no benefit. The marquee scrolls
-   in CSS; JS only handles its accessible pause control.
+   and pauses entirely in CSS, so it needs no JavaScript at all.
    ============================================================ */
 (function () {
   'use strict';
@@ -256,31 +256,6 @@
       });
     }
   }
-
-  /* ==========================================================
-     LOGO MARQUEE — keyboard-operable pause (WCAG 2.2.2)
-     The animation itself is pure CSS; JS only owns the toggle state.
-     ========================================================== */
-  $$('[data-marquee-toggle]').forEach(function (button) {
-    var marquee = button.closest('.logo-marquee');
-    if (!marquee) return;
-
-    button.addEventListener('click', function () {
-      var paused = marquee.classList.toggle('is-paused');
-      button.setAttribute('aria-pressed', String(paused));
-      button.setAttribute('aria-label',
-        paused ? 'Resume the logo animation' : 'Pause the logo animation');
-    });
-
-    /* If the user switches to reduced motion while paused, remove the
-       stale state so a later switch back starts from a clean default. */
-    onMediaChange(motionQuery, function (event) {
-      if (!event.matches) return;
-      marquee.classList.remove('is-paused');
-      button.setAttribute('aria-pressed', 'false');
-      button.setAttribute('aria-label', 'Pause the logo animation');
-    });
-  });
 
   /* ==========================================================
      RIPPLE — small tactile feedback on buttons.

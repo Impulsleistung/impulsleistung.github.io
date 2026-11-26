@@ -1786,92 +1786,34 @@ button:focus-visible {
 }
 
 /* ==========================================================
-   LOGO MARQUEE — institutions & organisations
+   LOGO MARQUEE — seamless credential footer
    ----------------------------------------------------------
-   Two identical groups inside one track. Each group carries its
-   own trailing gap as padding, so translate3d(-50%) lands exactly
-   one group later: a seamless loop with no JS and no jump.
-   The edge fades let logos enter and leave instead of being cut.
+   No heading, button, border or own background: the logos simply
+   continue the certifications section. Two identical groups make
+   the CSS -50% loop seamless; edge fades soften entry and exit.
    ========================================================== */
 .logo-marquee {
   --marquee-gap: clamp(2.5rem, 5vw, 4.5rem);
   --marquee-height: 44px;
   --marquee-duration: 42s;
-  margin-top: var(--space-16);
-  padding: var(--space-8) 0;
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
-  background: radial-gradient(ellipse 60% 150% at 50% 50%, rgba(255, 255, 255, 0.022), transparent 72%);
+  margin-top: var(--space-8);
+  padding: var(--space-4) 0;
+  border: 0;
+  background: none;
 }
-
-.logo-marquee-head {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  padding: 0 var(--edge-pad, 24px) 20px;
-}
-
-.logo-marquee-label {
-  margin: 0;
-  text-align: center;
-  font-size: 0.6875rem;
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: var(--letter-spacing-wider);
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-}
-
-/* An unobtrusive but real control: WCAG 2.2.2 requires a way to stop
-   auto-moving content without needing a mouse. */
-.logo-marquee-toggle {
-  display: inline-grid;
-  place-items: center;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  padding: 0;
-  border: 1px solid var(--border-subtle);
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.03);
-  color: var(--color-text-muted);
-  cursor: pointer;
-  transition: color var(--transition-base), border-color var(--transition-base),
-              background-color var(--transition-base);
-}
-
-.logo-marquee-toggle:hover,
-.logo-marquee-toggle:focus-visible {
-  color: var(--color-text);
-  border-color: var(--color-text-muted);
-  background: rgba(255, 255, 255, 0.08);
-}
-
-/* Replace the UA's blue focus ring with a crisp neutral one, so keyboard
-   focus stays obvious without breaking the monochrome logo band. */
-.logo-marquee-toggle:focus {
-  outline: 2px solid var(--color-text-muted);
-  outline-offset: 3px;
-}
-
-.logo-marquee-toggle:focus-visible {
-  outline-color: var(--color-text);
-}
-
-.logo-marquee-icon {
-  width: 11px;
-  height: 11px;
-  fill: currentColor;
-}
-
-.logo-marquee-icon-play,
-.logo-marquee-toggle[aria-pressed="true"] .logo-marquee-icon-pause { display: none; }
-.logo-marquee-toggle[aria-pressed="true"] .logo-marquee-icon-play { display: block; }
 
 .logo-marquee-viewport {
   overflow: hidden;
   -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 9%, #000 91%, transparent 100%);
   mask-image: linear-gradient(90deg, transparent 0, #000 9%, #000 91%, transparent 100%);
+}
+
+/* The viewport is the pause affordance: Tab focuses it and the animation
+   stops. A neutral inset ring appears only for keyboard focus, so no
+   visible button or divider is introduced. */
+.logo-marquee-viewport:focus-visible {
+  outline: 2px solid var(--color-text-muted);
+  outline-offset: -3px;
 }
 
 .logo-marquee-track {
@@ -1881,11 +1823,9 @@ button:focus-visible {
   will-change: transform;
 }
 
-/* Reading a single logo should not require chasing it. The explicit toggle
-   mirrors what hover/focus do, but is also reachable from the keyboard. */
+/* Hover or keyboard focus pauses the motion without visible chrome. */
 .logo-marquee-viewport:hover .logo-marquee-track,
-.logo-marquee-viewport:focus-within .logo-marquee-track,
-.logo-marquee.is-paused .logo-marquee-track {
+.logo-marquee-viewport:focus-within .logo-marquee-track {
   animation-play-state: paused;
 }
 
@@ -1945,7 +1885,8 @@ button:focus-visible {
   .logo-marquee {
     --marquee-duration: 32s;
     --marquee-height: 38px;
-    margin-top: var(--space-12);
+    margin-top: var(--space-6);
+    padding: var(--space-3) 0;
   }
 
   .logo-marquee-item {
@@ -2003,11 +1944,6 @@ button:focus-visible {
   .logo-marquee-viewport {
     -webkit-mask-image: none;
     mask-image: none;
-  }
-
-  /* Nothing moves here, so a pause control would be a dead control. */
-  .logo-marquee-toggle {
-    display: none;
   }
 
   .logo-marquee-item img {

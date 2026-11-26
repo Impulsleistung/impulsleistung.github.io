@@ -377,20 +377,13 @@
                 <p class="cert-more">More credentials on <a href="https://www.linkedin.com/in/kevin-ostheimer/" target="_blank" rel="noopener">LinkedIn</a></p>
             </div>
 
-            <!-- Logo marquee — the organizations behind the credentials.
-                 The second group is an exact copy: it makes the CSS -50% loop
-                 seamless with no JavaScript and is hidden from assistive tech. -->
-            <section class="logo-marquee" aria-labelledby="logo-marquee-title">
-                <div class="logo-marquee-head">
-                    <p class="logo-marquee-label" id="logo-marquee-title">Institutions &amp; organizations</p>
-                    <!-- WCAG 2.2.2: moving content needs a keyboard-operable pause. -->
-                    <button class="logo-marquee-toggle" type="button" data-marquee-toggle
-                            aria-pressed="false" aria-label="Pause the logo animation">
-                        <svg class="logo-marquee-icon logo-marquee-icon-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3h3v10H4zM9 3h3v10H9z"></path></svg>
-                        <svg class="logo-marquee-icon logo-marquee-icon-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3l8 5-8 5z"></path></svg>
-                    </button>
-                </div>
-                <div class="logo-marquee-viewport">
+            <!-- Logo marquee — a seamless continuation of the credentials.
+                 The second group is an exact copy for a CSS-only -50% loop and
+                 is hidden from assistive tech. The viewport itself is focusable:
+                 keyboard focus pauses the motion without visible chrome. -->
+            <section class="logo-marquee" aria-label="Institutions and organizations">
+                <div class="logo-marquee-viewport" tabindex="0" role="group"
+                     aria-label="Logo animation; focus to pause">
                     <div class="logo-marquee-track">
                         <ul class="logo-marquee-group" aria-label="Institutions and organizations">
                             <li class="logo-marquee-item lm-amazon"><img src="assets/logos/amazon.svg" width="100" height="33" alt="Amazon" decoding="async"></li>
