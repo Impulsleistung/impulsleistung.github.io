@@ -412,25 +412,32 @@
             </section>
         </section>
 
-        <!-- Contact -->
-        <section class="section section-contact" id="contact">
-            <div class="container">
-                <div class="contact-box">
-                    <div class="contact-visual" aria-hidden="true">
-                        <span class="contact-orbit orbit-a"></span><span class="contact-orbit orbit-b"></span><span class="contact-dot dot-a"></span><span class="contact-dot dot-b"></span><span class="contact-dot dot-c"></span><span class="contact-spark">✦</span>
-                    </div>
-                    <h2 class="contact-title">Let's build something together</h2>
-                    <p class="contact-text">Have a question, an idea, or something you'd like to learn together? I'd love to hear from you.</p>
-
-                    <div class="contact-buttons">
-                        <button type="button" class="btn btn-primary btn-large contact-reveal" data-contact-reveal="email" data-contact-revealed-label="Open Email" disabled>Show Email</button>
-                        <a href="https://www.linkedin.com/in/kevin-ostheimer/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
-                        <a href="https://github.com/Impulsleistung" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
-                    </div>
-                    <noscript>
-                        <p class="contact-noscript">To protect the email address from automated scraping, please use LinkedIn to get in touch.</p>
-                    </noscript>
-                </div>
+        <!-- Contact — image-only CTA: three translucent icon actions, no tile or copy -->
+        <section class="section section-contact" id="contact" aria-label="Contact">
+            <div class="container contact-container">
+                <nav class="contact-actions" aria-label="Contact links">
+                    <button type="button" class="contact-icon-button contact-reveal"
+                            data-contact-reveal="email" aria-label="Show email address"
+                            data-contact-revealed-label="Open email" disabled>
+                        <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <rect x="3" y="5" width="18" height="14" rx="2.5" />
+                            <path d="m4 7 8 6 8-6" />
+                        </svg>
+                    </button>
+                    <a href="https://www.linkedin.com/in/kevin-ostheimer/" target="_blank" rel="noopener"
+                       class="contact-icon-button" aria-label="LinkedIn (opens in a new tab)">
+                        <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <rect x="3" y="3" width="18" height="18" rx="3" />
+                            <path d="M7.5 10.5v6.5M7.5 7.75v.01M11.25 17v-3.6c0-1.9 1.15-2.9 2.65-2.9s2.6 1 2.6 2.9V17M11.25 10.5v6.5" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/Impulsleistung" target="_blank" rel="noopener"
+                       class="contact-icon-button" aria-label="GitHub (opens in a new tab)">
+                        <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                            <path d="M8.6 20.5v-2.7c-2.8.6-3.5-1.2-3.5-1.2-.5-1.2-1.2-1.5-1.2-1.5-1-.7.07-.68.07-.68 1.1.08 1.68 1.13 1.68 1.13 1 1.7 2.55 1.2 3.17.92.1-.72.38-1.2.7-1.48-2.3-.26-4.7-1.15-4.7-5.1 0-1.13.4-2.05 1.06-2.77-.1-.26-.46-1.3.1-2.7 0 0 .87-.28 2.85 1.06a9.7 9.7 0 0 1 5.18 0c1.98-1.34 2.85-1.06 2.85-1.06.56 1.4.2 2.44.1 2.7.66.72 1.06 1.64 1.06 2.77 0 3.96-2.42 4.83-4.72 5.08.39.34.74 1 .74 2.02v3.35" />
+                        </svg>
+                    </a>
+                </nav>
             </div>
         </section>
     </main>

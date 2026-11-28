@@ -68,8 +68,19 @@
       var link = doc.createElement('a');
       link.className = button.className + ' is-revealed';
       link.href = (kind === 'email' ? 'mailto:' : 'tel:') + targetValue;
-      link.textContent = revealedLabel || displayValue;
-      if (revealedLabel) link.setAttribute('aria-label', revealedLabel + ': ' + displayValue);
+      link.setAttribute('aria-label', revealedLabel || displayValue);
+
+      /* The contact CTA is icon-only: keep its SVG when the reveal swaps the
+         button for a mailto/tel link. Text-based reveal buttons in the legal
+         notice continue to show the decoded value as before. */
+      var icon = button.querySelector('.contact-icon');
+      if (icon) {
+        var iconCopy = icon.cloneNode(true);
+        iconCopy.removeAttribute('aria-hidden');
+        link.appendChild(iconCopy);
+      } else {
+        link.textContent = revealedLabel || displayValue;
+      }
       button.parentNode.replaceChild(link, button);
       link.focus();
     });
@@ -264,7 +275,7 @@
      ========================================================== */
   if (!reducedMotion) {
     doc.addEventListener('pointerdown', function (event) {
-      var target = event.target.closest ? event.target.closest('.btn, .nav-cta') : null;
+      var target = event.target.closest ? event.target.closest('.btn, .nav-cta, .contact-icon-button') : null;
       if (!target) return;
 
       var rect = target.getBoundingClientRect();
