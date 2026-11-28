@@ -127,8 +127,9 @@
   --hero-img-border: rgba(255, 255, 255, 0.2);
   --contact-image-overlay: rgba(4, 7, 14, 0.30);
   --contact-image-vignette: rgba(4, 7, 14, 0.22);
-  --contact-focus-scrim: rgba(4, 7, 14, 0.26);
-  --contact-icon-surface: rgba(9, 12, 18, 0.34);
+  --contact-focus-scrim: rgba(4, 7, 14, 0.18);
+  --contact-icon-surface: rgba(9, 12, 18, 0.16);
+  --contact-action-gap: clamp(2.5rem, 6vw, 5.5rem);
   --metric-positive: #54D36D;
 
   /* Safe-area insets for notched devices */
@@ -1089,16 +1090,18 @@ button:focus-visible {
   position: relative;
   isolation: isolate;
   display: grid;
-  align-items: center;
+  /* The photograph owns the upper two thirds; the actions rest on the lower
+     optical third with generous air before the footer. */
+  align-items: end;
   min-height: clamp(340px, 38vw, 500px);
-  padding: var(--space-20) 0;
+  padding: var(--space-16) 0 clamp(4rem, 8vw, 6rem);
   overflow: hidden;
   background: var(--color-bg-elevated);
 }
 
 /* The photograph is decorative and stays out of the accessibility tree.
-   The overlay is deliberately much lighter than the former card layout:
-   only the seams and a soft focus pool behind the icons are darkened. */
+   A light global wash keeps the image present; a small lower pool protects
+   the now highly transparent icon row without becoming another tile. */
 .section-contact::before,
 .section-contact::after {
   content: '';
@@ -1120,9 +1123,9 @@ button:focus-visible {
       var(--contact-image-overlay) 14%,
       var(--contact-image-overlay) 86%,
       var(--color-bg-elevated) 100%),
-    radial-gradient(ellipse 42% 46% at 50% 50%,
+    radial-gradient(ellipse 48% 34% at 50% 76%,
       var(--contact-focus-scrim) 0%,
-      rgba(4, 7, 14, 0.1) 48%,
+      rgba(4, 7, 14, 0.08) 48%,
       rgba(4, 7, 14, 0) 100%),
     linear-gradient(90deg,
       var(--contact-image-vignette) 0%,
@@ -1145,12 +1148,12 @@ button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-4);
+  gap: var(--contact-action-gap);
 }
 
 /* Three independent translucent discs — no containing tile, no labels. */
 .contact-icon-button {
-  --ripple-color: rgba(255, 255, 255, 0.45);
+  --ripple-color: rgba(255, 255, 255, 0.38);
   position: relative;
   isolation: isolate;
   display: inline-grid;
@@ -1159,13 +1162,14 @@ button:focus-visible {
   height: 58px;
   padding: 0;
   overflow: hidden;
-  color: var(--color-text);
+  color: #fff;
   background: var(--contact-icon-surface);
-  border: 1px solid rgba(255, 255, 255, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: var(--radius-full);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28), inset 0 1px rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(14px) brightness(0.72) saturate(125%);
-  -webkit-backdrop-filter: blur(14px) brightness(0.72) saturate(125%);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18), inset 0 1px rgba(255, 255, 255, 0.16);
+  /* No brightness() darkening: the photo must read through the glass. */
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
   transition: background var(--transition-base), border-color var(--transition-base),
               box-shadow var(--transition-base), color var(--transition-fast),
               transform var(--transition-spring);
@@ -1177,9 +1181,13 @@ button:focus-visible {
   height: 26px;
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.7;
+  stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
+  /* A halo, not a filled plate: white strokes stay legible on bright photo
+     areas while the disc itself remains genuinely translucent. */
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.85))
+          drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
 }
 
 .contact-icon-button:focus-visible {
@@ -1187,7 +1195,7 @@ button:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 4px;
   border-radius: var(--radius-full);
-  box-shadow: 0 0 0 7px rgba(41, 151, 255, 0.24), 0 10px 28px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 0 0 7px rgba(41, 151, 255, 0.22), 0 8px 22px rgba(0, 0, 0, 0.24);
   transform: translateY(-2px);
 }
 
@@ -1196,16 +1204,16 @@ button:focus-visible {
 }
 
 .contact-icon-button.is-revealed {
-  background: rgba(41, 151, 255, 0.30);
-  border-color: rgba(255, 255, 255, 0.62);
+  background: rgba(41, 151, 255, 0.20);
+  border-color: rgba(255, 255, 255, 0.68);
 }
 
 @media (hover: hover) {
   .contact-icon-button:hover {
     color: #fff;
-    background: rgba(41, 151, 255, 0.28);
-    border-color: rgba(255, 255, 255, 0.72);
-    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.34), 0 0 24px var(--color-accent-glow);
+    background: rgba(41, 151, 255, 0.20);
+    border-color: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.26), 0 0 24px var(--color-accent-glow);
     transform: translateY(-3px) scale(1.04);
   }
 }
@@ -1214,9 +1222,8 @@ button:focus-visible {
   .section-contact {
     --contact-image-overlay: rgba(4, 7, 14, 0.30);
     --contact-image-vignette: rgba(4, 7, 14, 0.18);
-    --contact-focus-scrim: rgba(4, 7, 14, 0.20);
+    --contact-focus-scrim: rgba(4, 7, 14, 0.22);
     min-height: 360px;
-    padding: var(--space-16) 0;
   }
 
   .section-contact::before {
@@ -1237,10 +1244,7 @@ button:focus-visible {
 @media (max-width: 500px) {
   .section-contact {
     min-height: 330px;
-  }
-
-  .contact-actions {
-    gap: var(--space-3);
+    padding: var(--space-12) 0 3.5rem;
   }
 }
 
